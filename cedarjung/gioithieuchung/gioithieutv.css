@@ -1,0 +1,98 @@
+.main-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  color: #222;
+}
+
+.teacher-section {
+  padding: 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.teacher-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+
+.teacher-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+  border: 4px solid #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-info h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.teacher-info h3 {
+  margin: 5px 0;
+  color: #555;
+  font-weight: 600;
+}
+
+.teacher-info p {
+  line-height: 1.6;
+  margin-top: 10px;
+  color: #333;
+}
+
+.switch-buttons {
+  margin-bottom: 20px;
+}
+
+.switch-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.switch-buttons button.active {
+  background: #4caf50;
+  color: white;
+}
+
+.content-section {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* === PHẦN HỌC SINH === */
+.student-section {
+  padding: 30px;
+  width: 100%;
+  margin: 0 auto;
+  display: none; /* Ẩn ban đầu */
+}
+
+.student-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.student-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Animation chuyển trang mượt */
+.teacher-section,
+.student-section {
+  transition: opacity 0.3s ease;
+}

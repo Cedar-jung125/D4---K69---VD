@@ -1,0 +1,72 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 20px 0;
+}
+
+/* Tiêu đề chính */
+table tr:first-child td {
+  background: linear-gradient(135deg, #88d8c0, #b8d8d8);
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Tiêu đề phụ */
+table tr:first-child td:last-child {
+  background: linear-gradient(135deg, #b8d8d8, #d4c4fb);
+}
+
+/* Tiêu đề buổi học */
+table tr:nth-child(2) td,
+table tr:nth-child(9) td {
+  background-color: #f0f7f4;
+  color: #555;
+  font-size: 15px;
+  padding: 8px;
+}
+
+/* Các ô thứ */
+table tr:nth-child(3) td,
+table tr:nth-child(10) td {
+  background-color: #e8f3f1;
+  font-weight: 500;
+}
+
+/* Ô tiết học */
+table td:first-child {
+  background-color: #e8f3f1;
+  font-weight: 500;
+}
+
+/* Màu các môn học */
+td[style*="Vật lý"] {
+  background-color: #d4e4f7 !important;
+}
+td[style*="Văn học"] {
+  background-color: #f7d4f0 !important;
+}
+td[style*="Toán"] {
+  background-color: #d4f7e8 !important;
+}
+td[style*="Ngoại ngữ"] {
+  background-color: #e8d4f7 !important;
+}
+td[style*="HĐ TN, HN"] {
+  background-color: #fff2d4 !important;
+}
+td[style*="Sinh hoạt"] {
+  background-color: #f0f0f0 !important;
+  font-style: italic;
+}
+
+/* Hiệu ứng hover */
+table td:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}

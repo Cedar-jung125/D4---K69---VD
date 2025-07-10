@@ -1,0 +1,91 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+.mnc-a93xqp {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px; /* Co vào */
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.main-bg-wrapper {
+  background: url("/img/david-hofmann-GFt6VfdVdbk-unsplash.jpg") no-repeat
+    center center;
+  background-size: cover;
+  padding: 40px 0;
+}
+
+.col-l93xoa,
+.col-r39xpa {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.art-v94nqp {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+  color: inherit;
+  cursor: pointer;
+}
+.art-v94nqp:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.img-b93lqp {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.ctn-b83lqp {
+  padding: 10px;
+}
+.ttl-n93opa {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 6px 0;
+  color: #222;
+  transition: color 0.3s;
+}
+.art-v94nqp:hover .ttl-n93opa {
+  color: #c00;
+}
+.des-z38qla {
+  font-size: 14px;
+  color: #555;
+}
+.sec-h93opa {
+  font-size: 22px; /* Phóng to thêm */
+  font-weight: bold;
+  color: #d60000; /* Màu đỏ nổi bật */
+  margin-bottom: 6px;
+  border-bottom: 3px solid #d60000; /* Đậm hơn, cùng màu */
+  padding-bottom: 4px;
+  text-transform: uppercase; /* In hoa toàn bộ nếu muốn nhấn mạnh hơn nữa */
+}
+.meta-d93opa {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.meta-d93opa span {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}

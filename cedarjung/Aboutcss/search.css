@@ -1,0 +1,39 @@
+.search-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  z-index: 1000;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px; /* Bo góc trái */
+  outline: none;
+}
+
+.search-button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0; /* Bo góc phải */
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background: #0056b3;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    width: 90%;
+    right: 5%;
+  }
+}

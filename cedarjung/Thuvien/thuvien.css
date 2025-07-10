@@ -1,0 +1,89 @@
+.library-main {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+  margin-top: 60px;
+}
+
+.library-main h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* đúng 3 cột */
+  gap: 30px;
+  justify-items: center;
+}
+
+.book-card {
+  width: 260px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.book-card img {
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card p {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Flipbook viewer */
+.flipbook-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.flipbook-viewer iframe {
+  width: 80%;
+  height: 85%;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 30px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: 1fr 1fr; /* 2 cột khi nhỏ */
+  }
+
+  @media (max-width: 480px) {
+    .book-grid {
+      grid-template-columns: 1fr; /* 1 cột khi siêu nhỏ */
+    }
+  }
+}
