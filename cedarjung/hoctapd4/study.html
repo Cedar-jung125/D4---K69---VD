@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khoá học D4</title>
     <base href="/D4---K69---VD/" />
-    <meta name="keywords" content="Trường THPT Việt Đức" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -118,13 +117,15 @@
                 Khóa học được tạo ra dành cho các học sinh của lớp D4
               </div>
             </div>
-            <a href="/cedarjung/hoctapd4/Baigiang/Math.html" target="_blank" class="exam-link">Trang khóa học & bài tập →</a>
+            <a href="cedarjung/hoctapd4/Baigiang/Math.html" target="_blank" class="exam-link">Trang khóa học & bài tập →</a>
           </div>
 
           <div class="course-card">
             <h2>✍️ Ngữ Văn</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to Classroom</button>
+            <a href="#">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="#">Hướng dẫn →</a>
               <a href="#">Tài liệu, bài tập →</a>
@@ -144,7 +145,9 @@
           <div class="course-card">
             <h2>🗣️ Ngoại ngữ (Tiếng Anh)</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to Classroom</button>
+            <a href="#">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="#">Hướng dẫn →</a>
               <a href="#">Tài liệu, bài tập →</a>
@@ -164,7 +167,9 @@
           <div class="course-card">
             <h2>📜 Lịch sử</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to AP Classroom</button>
+            <a href="#">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="#">Hướng dẫn →</a>
               <a href="#">Tài liệu, bài tập →</a>
@@ -184,7 +189,9 @@
             <div class="course-card">
             <h2>💡 Vật lí</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to Classroom</button>
+            <a href="cedarjung/hoctapd4/Baigiang/Physics.html">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="cedarjung/hoctapd4/Baigiang/Physics.html" target="_blank">Hướng dẫn →</a>
               <a href="cedarjung/hoctapd4/Baigiang/Physics.html" target="_blank">Tài liệu, bài tập →</a>
@@ -204,7 +211,9 @@
             <div class="course-card">
             <h2>🌍 Địa lí</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to Classroom</button>
+            <a href="#">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="#">Hướng dẫn →</a>
               <a href="#">Tài liệu, bài tập →</a>
@@ -224,7 +233,9 @@
             <div class="course-card">
             <h2>💻 Tin học</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to Classroom</button>
+            <a href="#">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="#">Hướng dẫn →</a>
               <a href="#">Tài liệu, bài tập →</a>
@@ -244,7 +255,9 @@
             <div class="course-card">
             <h2>⚖️ GDKT - PL</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to Classroom</button>
+            <a href="#">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="#">Hướng dẫn →</a>
               <a href="#">Tài liệu, bài tập →</a>
@@ -264,7 +277,9 @@
             <div class="course-card">
             <h2>🏃‍♂️ GDQP - AN && GDTC</h2>
             <div class="exam-status">10 - 11 - 12</div>
-            <button class="ap-button">Go to Classroom</button>
+            <a href="#">
+              <button class="ap-button">Go to Classroom</button>
+          </a>
             <div class="links">
               <a href="#">Hướng dẫn →</a>
               <a href="#">Tài liệu, bài tập →</a>
@@ -396,7 +411,6 @@
     <script src="cedarjung/hoctapd4/apcedar.js"></script>
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script>
-    // Sử dụng namespace riêng để tránh xung đột
     const APCalendar = {
         init: function() {
             this.currentDate = new Date();
@@ -493,21 +507,9 @@
     function initializeAPCalendar() {
         APCalendar.init();
     }
-    
-    // Thêm vào sự kiện DOMContentLoaded hiện có
-    const originalOnReady = window.onDOMContentReady || function() {};
-    window.onDOMContentReady = function() {
-        originalOnReady();
-        initializeAPCalendar();
-    };
-    
-    // Nếu chưa có sự kiện DOMContentLoaded nào
-    if (!window.DOMContentReadyInitialized) {
-        document.addEventListener("DOMContentLoaded", function() {
-            window.onDOMContentReady();
-            window.DOMContentReadyInitialized = true;
-        });
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+    initializeAPCalendar();
+});
     </script>
   </body>
 </html>
