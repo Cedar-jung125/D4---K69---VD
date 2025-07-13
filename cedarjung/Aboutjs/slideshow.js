@@ -91,38 +91,141 @@ function startSlideShow() {
   }, 5000); // Tự động chuyển sau 5 giây
 }
 
-// Khởi động tất cả hiệu ứng
 window.onload = function () {
   typeWriterEffect();
   startSlideShow();
+  setInterval(magicNext1, 10000);
+  setInterval(magicNext2, 10000);
+  setInterval(magicNext3, 10000);
+  setInterval(magicNext4, 10000);
 };
 
-let currentIndex = 0;
-const wrapper = document.querySelector(".article-wrapper");
-const cards = document.querySelectorAll(".article-card");
-const visibleCount = 3;
-const cardWidth = 300 + 16; // card + gap
+/* ====== SECTION 1 ====== */
+let currentIndex1 = 0;
+const wrapper1 = document.querySelector("#section1 .article-wrapper");
+const cards1 = document.querySelectorAll("#section1 .article-card");
+const visibleCount1 = 3;
+const cardWidth1 = document.querySelector(
+  "#section1 .article-card"
+).offsetWidth;
+const maxIndex1 = Math.max(0, cards1.length - visibleCount1);
 
-function updateSlider() {
-  const offset = -(currentIndex * cardWidth);
-  wrapper.style.transform = `translateX(${offset}px)`;
+function updateSlider1() {
+  const offset = -(currentIndex1 * cardWidth1);
+  wrapper1.style.transform = `translateX(${offset}px)`;
 }
 
-function magicNext() {
-  currentIndex++;
-  if (currentIndex > cards.length - visibleCount) {
-    currentIndex = 0;
+function magicNext1() {
+  if (currentIndex1 >= maxIndex1) {
+    currentIndex1 = 0;
+  } else {
+    currentIndex1++;
   }
-  updateSlider();
+  updateSlider1();
 }
 
-function magicPrev() {
-  currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = cards.length - visibleCount;
+function magicPrev1() {
+  if (currentIndex1 <= 0) {
+    currentIndex1 = maxIndex1;
+  } else {
+    currentIndex1--;
   }
-  updateSlider();
+  updateSlider1();
 }
 
-// Auto slide
-setInterval(magicNext, 10000);
+/* ====== SECTION 2 ====== */
+let currentIndex2 = 0;
+const wrapper2 = document.querySelector("#section2 .article-wrapper");
+const cards2 = document.querySelectorAll("#section2 .article-card");
+const visibleCount2 = 3;
+const cardWidth2 = document.querySelector(
+  "#section2 .article-card"
+).offsetWidth;
+const maxIndex2 = Math.max(0, cards2.length - visibleCount2);
+
+function updateSlider2() {
+  const offset = -(currentIndex2 * cardWidth2);
+  wrapper2.style.transform = `translateX(${offset}px)`;
+}
+
+function magicNext2() {
+  if (currentIndex2 >= maxIndex2) {
+    currentIndex2 = 0;
+  } else {
+    currentIndex2++;
+  }
+  updateSlider2();
+}
+
+function magicPrev2() {
+  if (currentIndex2 <= 0) {
+    currentIndex2 = maxIndex2;
+  } else {
+    currentIndex2--;
+  }
+  updateSlider2();
+}
+
+let currentIndex3 = 0;
+const wrapper3 = document.querySelector("#section3 .article-wrapper");
+const cards3 = document.querySelectorAll("#section3 .article-card");
+const visibleCount3 = 3;
+const cardWidth3 = document.querySelector(
+  "#section3 .article-card"
+).offsetWidth;
+const maxIndex3 = Math.max(0, cards3.length - visibleCount3);
+
+function updateSlider3() {
+  const offset = -(currentIndex3 * cardWidth3);
+  wrapper3.style.transform = `translateX(${offset}px)`;
+}
+
+function magicNext3() {
+  if (currentIndex3 >= maxIndex3) {
+    currentIndex3 = 0;
+  } else {
+    currentIndex3++;
+  }
+  updateSlider3();
+}
+
+function magicPrev3() {
+  if (currentIndex3 <= 0) {
+    currentIndex3 = maxIndex3;
+  } else {
+    currentIndex3--;
+  }
+  updateSlider3();
+}
+
+let currentIndex4 = 0;
+const wrapper4 = document.querySelector("#section4 .article-wrapper");
+const cards4 = document.querySelectorAll("#section4 .article-card");
+const visibleCount4 = 3;
+const cardWidth4 = document.querySelector(
+  "#section4 .article-card"
+).offsetWidth;
+const maxIndex4 = Math.max(0, cards4.length - visibleCount4);
+
+function updateSlider4() {
+  const offset = -(currentIndex4 * cardWidth4);
+  wrapper4.style.transform = `translateX(${offset}px)`;
+}
+
+function magicNext4() {
+  if (currentIndex4 >= maxIndex4) {
+    currentIndex4 = 0;
+  } else {
+    currentIndex4++;
+  }
+  updateSlider4();
+}
+
+function magicPrev4() {
+  if (currentIndex4 <= 0) {
+    currentIndex4 = maxIndex4;
+  } else {
+    currentIndex4--;
+  }
+  updateSlider4();
+}
