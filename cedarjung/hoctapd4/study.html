@@ -338,7 +338,7 @@
     
     <div class="support-layout">
       <div class="support-visual">
-        <img src="/img/support.avif" alt="Hỗ trợ học tập" class="support-picture">
+        <img src="img/support.avif" alt="Hỗ trợ học tập" class="support-picture">
       </div>
       
       <div class="support-info">
@@ -482,7 +482,7 @@
     <script src="cedarjung/hoctapd4/apcedar.js"></script>
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script>
-    const APCalendar = {
+        const D4Calendar = {
         init: function() {
             this.currentDate = new Date();
             this.displayMonth = this.currentDate.getMonth();
@@ -493,11 +493,11 @@
         },
         
         setupEventListeners: function() {
-            document.getElementById('apCalendarPrevBtn').addEventListener('click', () => {
+            document.getElementById('d4CalendarPrevBtn').addEventListener('click', () => {
                 this.navigateMonth(-1);
             });
             
-            document.getElementById('apCalendarNextBtn').addEventListener('click', () => {
+            document.getElementById('d4CalendarNextBtn').addEventListener('click', () => {
                 this.navigateMonth(1);
             });
         },
@@ -519,7 +519,7 @@
         renderCalendar: function() {
             const monthNames = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", 
                               "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
-            document.getElementById('apCalendarTitle').textContent = 
+            document.getElementById('d4CalendarTitle').textContent = 
                 `${monthNames[this.displayMonth]} ${this.displayYear}`;
             
             const firstDayOfMonth = new Date(this.displayYear, this.displayMonth, 1);
@@ -528,7 +528,7 @@
             const startDayOfWeek = firstDayOfMonth.getDay();
             const daysInMonth = lastDayOfMonth.getDate();
             
-            const daysContainer = document.getElementById('apCalendarDaysGrid');
+            const daysContainer = document.getElementById('d4CalendarDaysGrid');
             daysContainer.innerHTML = '';
             
             // Thêm các ô trống đầu tháng
@@ -544,7 +544,7 @@
                 if (day === this.currentDate.getDate() && 
                     this.displayMonth === this.currentDate.getMonth() && 
                     this.displayYear === this.currentDate.getFullYear()) {
-                    dayElement.classList.add('ap-calendar-day-current');
+                    dayElement.classList.add('d4-day-current');
                 }
                 
                 daysContainer.appendChild(dayElement);
@@ -562,10 +562,10 @@
         
         createDayElement: function(dayContent) {
             const dayElement = document.createElement('div');
-            dayElement.className = 'ap-calendar-day-cell';
+            dayElement.className = 'd4-day';
             
             if (dayContent === '') {
-                dayElement.classList.add('ap-calendar-day-other-month');
+                dayElement.classList.add('d4-day-other-month');
             } else {
                 dayElement.textContent = dayContent;
             }
@@ -575,12 +575,24 @@
     };
     
     // Khởi tạo calendar sau khi DOM đã sẵn sàng
-    function initializeAPCalendar() {
-        APCalendar.init();
+    function initializeD4Calendar() {
+        D4Calendar.init();
     }
-    document.addEventListener("DOMContentLoaded", function () {
-    initializeAPCalendar();
-});
+    
+    // Thêm vào sự kiện DOMContentLoaded hiện có
+    const originalOnReady = window.onDOMContentReady || function() {};
+    window.onDOMContentReady = function() {
+        originalOnReady();
+        initializeD4Calendar();
+    };
+    
+    // Nếu chưa có sự kiện DOMContentLoaded nào
+    if (!window.DOMContentReadyInitialized) {
+        document.addEventListener("DOMContentLoaded", function() {
+            window.onDOMContentReady();
+            window.DOMContentReadyInitialized = true;
+        });
+    }
    </script>
  </body>
 </html>
