@@ -1,96 +1,15 @@
-.ap-calendar-container {
-  font-family: "Segoe UI", system-ui, sans-serif;
-  background-color: #f5f8fa;
-  color: #2d3b45;
-  margin: 0;
-  padding: 20px;
-  line-height: 1.5;
-}
-
-/* Phần lịch */
-.ap-calendar-widget {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.ap-calendar-header-area {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e1e6eb;
-}
-
-.ap-calendar-title-text {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2d3b45;
-}
-
-.ap-calendar-navigation {
-  display: flex;
-  gap: 10px;
-}
-
-.ap-calendar-nav-btn {
-  background: none;
-  border: 1px solid #c7cdd1;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.ap-calendar-weekdays-row {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-  font-weight: 600;
-  color: #6b7780;
-  margin-bottom: 10px;
-}
-
-.ap-calendar-days-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-}
-
-.ap-calendar-day-cell {
-  padding: 10px;
-  text-align: center;
-  border-radius: 4px;
-  min-height: 40px;
-}
-
-.ap-calendar-day-cell:hover {
-  background-color: #f0f3f5;
-}
-
-.ap-calendar-day-other-month {
-  color: #c7cdd1;
-}
-
-.ap-calendar-day-current {
-  background-color: #f0f7fc;
-  color: #0374b5;
-  font-weight: 600;
-}
-
 .ap-content {
   display: flex;
-  font-family: Arial, sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: none; 
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar {
-  width: 250px;
-  padding-right: 30px;
+  width: 300px;
+  min-width: 300px; 
+  padding: 2rem;
+  border-right: 1px solid var(--vd4-main);
 }
 
 .nav-menu {
@@ -99,12 +18,22 @@
   margin: 20px 0;
 }
 
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .content-section {
-  display: none;
+  display: flex;
+  gap: 2rem; /* khoảng cách giữa menu và nội dung */
   padding: 30px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
 }
 
 .content-section.active {
@@ -139,26 +68,241 @@
     transform: translateY(0);
   }
 }
-.courses-assignments {
-  margin-top: 40px;
+/* ===== D4 CALENDAR STYLES ===== */
+:root {
+  --d4-primary: #4a6bdf;
+  --d4-secondary: #3a56c4;
+  --d4-accent: #ff6b6b;
+  --d4-light: #f8f9fa;
+  --d4-dark: #2d3748;
+  --d4-gray: #e2e8f0;
+  --d4-current-day: #4a6bdf;
+  --d4-pattern-opacity: 0.05;
+  --d4-border-radius: 16px;
 }
 
-.math-symbols {
+.d4-calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Đẩy lịch sang phải */
+  padding: 0;
+  gap: 2rem;
+}
+
+.d4-calendar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  border-radius: var(--d4-border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  overflow: hidden;
+  border: 1px solid var(--d4-gray);
+}
+
+/* ===== CHỈ SỬA PHẦN NÀY ===== */
+.d4-pattern {
+  position: absolute;
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: var(--d4-primary);
+  opacity: 0.15; /* Giảm độ đậm */
+  z-index: 0;
+  pointer-events: none;
+  font-family: "Arial Black", sans-serif;
+  margin: 0; /* Loại bỏ margin */
+}
+
+/* Góc trên trái - sát góc */
+.d4-pattern-tl {
+  top: 0;
+  left: 0;
+  transform: translate(-10%, -10%); /* Nhô ra khỏi góc 1 chút */
+}
+
+/* Góc dưới phải - sát góc */
+.d4-pattern-br {
+  bottom: 0;
+  right: 0;
+  transform: translate(10%, 10%); /* Nhô ra khỏi góc 1 chút */
+}
+
+/* Ẩn 2 góc không dùng */
+.d4-pattern-tr,
+.d4-pattern-bl {
+  display: none;
+}
+
+.d4-calendar {
+  position: relative;
+  z-index: 1;
+}
+
+.d4-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--d4-gray);
+}
+
+.d4-calendar-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--d4-dark);
+  position: relative;
+}
+
+.d4-calendar-title::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--d4-accent);
+}
+
+.d4-calendar-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.d4-nav-btn {
+  background: var(--d4-light);
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.d4-nav-btn:hover {
+  background: var(--d4-primary);
+  color: white;
+}
+
+.d4-nav-btn svg {
+  fill: currentColor;
+}
+
+.d4-nav-btn:hover svg {
+  fill: white;
+}
+
+.d4-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.d4-weekday {
+  text-align: center;
+  font-weight: 600;
+  color: var(--d4-primary);
+  padding: 0.5rem;
+}
+
+.d4-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.d4-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  background: white;
+  border: 1px solid var(--d4-gray);
+}
+
+.d4-day:hover {
+  background: var(--d4-light);
+  transform: translateY(-2px);
+}
+
+.d4-day-current {
+  background: var(--d4-current-day);
+  color: white;
+  font-weight: 600;
+  border: 1px solid var(--d4-primary);
+}
+
+.d4-day-other-month {
+  color: #cbd5e0;
+  background: #f8fafc;
+}
+
+.d4-courses-assignments {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--d4-gray);
+}
+
+.d4-courses-title {
+  font-size: 1.5rem;
+  color: var(--d4-dark);
+  margin-bottom: 1rem;
+}
+
+.d4-math-symbols {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 0.8rem;
+}
+
+.d4-math-symbols span {
+  background: var(--d4-light);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-family: "Times New Roman", serif;
   font-style: italic;
+  border: 1px solid var(--d4-gray);
+  transition: all 0.2s ease;
 }
 
-.math-symbols span {
-  background: #f5f5f5;
-  padding: 5px 10px;
-  border-radius: 4px;
+.d4-math-symbols span:hover {
+  background: var(--d4-primary);
+  color: white;
+  transform: translateY(-2px);
 }
 
-.main-content {
-  flex: 1;
+/* Responsive */
+@media (max-width: 768px) {
+  .d4-calendar-container {
+    padding: 1rem;
+  }
+
+  .d4-calendar-wrapper {
+    padding: 1.5rem;
+  }
+
+  .d4-pattern {
+    font-size: 5rem;
+  }
+}
+
+.calendar-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .course-card {
@@ -312,4 +456,443 @@
   background-color: #4285f4;
   color: white;
   font-weight: bold;
+}
+
+:root {
+  --support-main: #4361ee;
+  --support-dark: #3a0ca3;
+  --support-highlight: #f72585;
+  --support-bright: #f8f9fa;
+  --support-text: #212529;
+  --option-bg: #f8f9fa;
+  --round-large: 16px;
+  --round-medium: 12px;
+  --shadow-effect: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Support Section Styles */
+.support-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.support-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--support-dark);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.support-main-title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--support-main),
+    var(--support-highlight)
+  );
+  border-radius: 2px;
+}
+
+.support-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.support-picture {
+  width: 100%;
+  height: auto;
+  border-radius: var(--round-large);
+  box-shadow: var(--shadow-effect);
+  transition: transform 0.3s ease;
+}
+
+.support-picture:hover {
+  transform: scale(1.02);
+}
+
+.support-panel {
+  background: var(--support-bright);
+  border-radius: var(--round-large);
+  padding: 2rem;
+  box-shadow: var(--shadow-effect);
+  height: 100%;
+}
+
+.support-heading {
+  color: var(--support-main);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.support-heading:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--support-highlight);
+}
+
+.support-text {
+  color: var(--support-text);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.support-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.option-card {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--option-bg);
+  border-radius: var(--round-medium);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.option-indicator {
+  background: var(--support-main);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.option-details {
+  flex-grow: 1;
+}
+
+.option-details p {
+  margin-bottom: 0.8rem;
+  color: var(--support-text);
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  color: white !important; /* Ưu tiên giữ màu trắng khi hover */
+}
+
+.facebook {
+  background: #1877f2;
+}
+.instagram {
+  background: #d44638;
+}
+.email {
+  background: #06c755;
+}
+
+.direct-support-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--support-highlight);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.direct-support-btn:hover {
+  background: var(--support-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .support-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .support-main-title {
+    font-size: 2rem;
+  }
+}
+
+:root {
+  --vd4-main: #6e00ff;
+  --vd4-dark: #0f0033;
+  --vd4-light: #e0c3ff;
+  --vd4-accent: #ff00aa;
+  --vd4-neon: #00f7ff;
+  --vd4-pixel: #00ff2a;
+}
+
+/* Reset độc đáo */
+.vietduc-portal * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", monospace;
+}
+
+/* Header glitch effect */
+.vd4-header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.vd4-title-glitch {
+  position: relative;
+  font-size: 3rem;
+  color: var(--vd4-main);
+  text-shadow: 0 0 10px var(--vd4-light);
+  animation: vd4-glitch 2s infinite alternate;
+}
+
+.vd4-pixel {
+  color: var(--vd4-pixel);
+  font-family: "Press Start 2P", cursive;
+  position: relative;
+}
+
+.vd4-pixel::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--vd4-pixel);
+  animation: vd4-pixel-flicker 1s infinite;
+}
+
+/* Neon menu */
+.vd4-neon-menu {
+  border: 2px solid var(--vd4-main);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: rgba(15, 0, 51, 0.7);
+  margin-bottom: 2rem;
+}
+
+.vd4-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.vd4-menu-item::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--vd4-accent),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.vd4-menu-item:hover {
+  background: rgba(110, 0, 255, 0.2);
+  transform: translateX(10px);
+}
+
+.vd4-menu-item:hover::before {
+  left: 100%;
+}
+
+.vd4-item-active {
+  border-left: 4px solid var(--vd4-accent);
+  background: rgba(110, 0, 255, 0.1);
+}
+
+.vd4-menu-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  width: 30px;
+  text-align: center;
+}
+
+.vd4-menu-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--vd4-light);
+}
+
+/* Document section */
+.vd4-document-section {
+  border-top: 2px dashed var(--vd4-accent);
+  padding-top: 2rem;
+}
+
+.vd4-subtitle-flicker {
+  color: var(--vd4-neon);
+  text-shadow: 0 0 5px var(--vd4-neon);
+  animation: vd4-flicker 3s infinite;
+  margin-bottom: 1.5rem;
+}
+
+.vd4-doc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.vd4-doc-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: calc(33.333% - 1rem);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: rgba(15, 0, 51, 0.5);
+  border: 1px solid var(--vd4-main);
+  text-decoration: none;
+  position: relative;
+}
+
+.vd4-doc-glow:hover {
+  box-shadow: 0 0 20px var(--vd4-accent);
+  transform: translateY(-5px);
+}
+
+.vd4-doc-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.vd4-doc-title {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.vd4-doc-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--vd4-accent);
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes vd4-glitch {
+  0% {
+    text-shadow: 0 0 10px var(--vd4-light);
+  }
+  25% {
+    text-shadow: -5px -5px 0 var(--vd4-accent);
+  }
+  50% {
+    text-shadow: 5px 5px 0 var(--vd4-neon);
+  }
+  100% {
+    text-shadow: 0 0 15px var(--vd4-main);
+  }
+}
+
+@keyframes vd4-pixel-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes vd4-flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 5px var(--vd4-neon);
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .ap-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--vd4-main);
+  }
 }
