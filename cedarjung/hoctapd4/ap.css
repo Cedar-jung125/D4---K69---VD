@@ -68,38 +68,6 @@
     transform: translateY(0);
   }
 }
-.ap-search-box {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
-  padding: 0 10px;
-}
-
-.ap-search-input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-#ap-search-btn {
-  padding: 10px;
-  font-size: 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-#ap-search-btn:hover {
-  background-color: #0056b3;
-}
-
 
 /* ========== PHẦN DANH SÁCH HỌC SINH ========== */
 .ap-student-list-view {
