@@ -7,7 +7,7 @@
 
 .sidebar {
   width: 300px;
-  min-width: 300px; 
+  min-width: 300px;
   padding: 2rem;
   border-right: 1px solid var(--vd4-main);
 }
@@ -68,6 +68,280 @@
     transform: translateY(0);
   }
 }
+
+/* ========== PHẦN DANH SÁCH HỌC SINH ========== */
+.ap-student-list-view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ap-student-list-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.ap-student-list-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  border-radius: 2px;
+}
+
+.ap-student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.ap-student-card {
+  padding: 1.8rem 1.2rem;
+  background: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.ap-student-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+}
+
+.ap-student-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ap-student-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.ap-student-id {
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.ap-student-card:hover .ap-student-name {
+  color: #3498db;
+}
+
+/* ========== PHẦN PROFILE CHI TIẾT ========== */
+.ap-profile-view {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 2rem;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ap-back-btn {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ap-back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9, #27ae60);
+}
+
+.ap-profile-header {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ap-profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.ap-profile-avatar:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.ap-profile-info {
+  flex: 1;
+}
+
+.ap-profile-name {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.ap-profile-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.ap-profile-meta span {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ap-profile-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.ap-detail-section {
+  background: #f8f9fa;
+  padding: 1.8rem;
+  border-radius: 12px;
+  border-left: 4px solid #3498db;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ap-detail-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.ap-detail-title {
+  margin-top: 0;
+  color: #3498db;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ap-detail-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ap-detail-section p strong {
+  color: #2c3e50;
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .ap-profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ap-profile-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .ap-profile-name {
+    font-size: 1.8rem;
+  }
+
+  .ap-student-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-detail-section {
+    padding: 1.5rem;
+  }
+}
+
+/* ========== HIỆU ỨNG ĐẶC BIỆT ========== */
+.ap-student-card:nth-child(odd)::before {
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.ap-student-card:nth-child(even)::before {
+  background: linear-gradient(90deg, #e74c3c, #f39c12);
+}
+
+.ap-detail-section:nth-child(odd) {
+  border-left-color: #3498db;
+}
+
+.ap-detail-section:nth-child(even) {
+  border-left-color: #2ecc71;
+}
+
 /* ===== D4 CALENDAR STYLES ===== */
 :root {
   --d4-primary: #4a6bdf;
