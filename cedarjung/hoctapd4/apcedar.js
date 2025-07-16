@@ -46,23 +46,11 @@ function setupClassroomButtons() {
   });
 }
 
-// 4. Thêm tính năng tìm kiếm (nâng cao)
 function addSearchFunctionality() {
-  const sidebar = document.querySelector(".sidebar");
+  const searchBtn = document.getElementById("ap-search-btn");
+  const searchInput = document.querySelector(".ap-search-input");
 
-  // Kiểm tra xem ô tìm kiếm đã tồn tại chưa
-  if (!document.querySelector(".search-box")) {
-    const searchHTML = `
-            <div class="search-box">
-                <input type="text" placeholder="Tìm kiếm khóa học...">
-                <button id="search-btn">Tìm</button>
-            </div>
-        `;
-    sidebar.insertAdjacentHTML("afterbegin", searchHTML);
-  }
-
-  const searchBtn = document.getElementById("search-btn");
-  const searchInput = document.querySelector(".search-box input");
+  if (!searchBtn || !searchInput) return;
 
   searchBtn.addEventListener("click", performSearch);
   searchInput.addEventListener("keypress", function (e) {
@@ -71,10 +59,18 @@ function addSearchFunctionality() {
 }
 
 function performSearch() {
+  // Kiểm tra xem tab hiện tại có phải là "courses-exams" không
+  const activeTab = document.querySelector(".content-section#courses-exams");
+  if (!activeTab || activeTab.style.display === "none") {
+    alert("Bạn cần mở tab 📚 Khoá học trước khi tìm kiếm.");
+    return;
+  }
+
   const searchTerm = document
-    .querySelector(".search-box input")
+    .querySelector(".ap-search-input")
     .value.toLowerCase();
-  const courseCards = document.querySelectorAll(".course-card");
+
+  const courseCards = activeTab.querySelectorAll(".course-card");
   let foundAny = false;
 
   courseCards.forEach((card) => {
@@ -86,6 +82,19 @@ function performSearch() {
       card.style.display = "none";
     }
   });
+
+  const noResultsMsg = document.getElementById("no-results-message");
+  if (!foundAny) {
+    if (!noResultsMsg) {
+      activeTab.insertAdjacentHTML(
+        "beforeend",
+        `<div id="no-results-message" class="no-results">Không tìm thấy khóa học phù hợp</div>`
+      );
+    }
+  } else if (noResultsMsg) {
+    noResultsMsg.remove();
+  }
+}
 
   // Hiển thị thông báo nếu không tìm thấy
   const noResultsMsg = document.getElementById("no-results-message");
