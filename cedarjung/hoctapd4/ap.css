@@ -1,6 +1,6 @@
 .ap-content {
   display: flex;
-  max-width: none; 
+  max-width: none;
   margin: 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@
 }
 
 .content-section {
-  display: flex;
+  display: none;
   gap: 2rem; /* khoảng cách giữa menu và nội dung */
   padding: 30px;
   background: white;
@@ -100,7 +100,6 @@
 #ap-search-btn:hover {
   background-color: #0056b3;
 }
-
 
 /* ========== PHẦN DANH SÁCH HỌC SINH ========== */
 .ap-student-list-view {
@@ -1202,4 +1201,391 @@
     border-right: none;
     border-bottom: 1px solid var(--vd4-main);
   }
+}
+
+#credit-placement {
+  width: calc(100% - 300px);
+  padding: 2rem;
+  box-sizing: border-box;
+  max-width: none;
+}
+
+/* Chế độ danh sách */
+#credit-placement .glow-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+#credit-placement .sparkle-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3498db;
+}
+
+#credit-placement .combo-vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+#credit-placement .combo-vertical-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem 1.8rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#credit-placement .combo-vertical-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  border-color: #3498db;
+}
+
+#credit-placement .combo-main-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#credit-placement .combo-code {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  min-width: 50px;
+}
+
+#credit-placement .combo-subjects {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+#credit-placement .combo-view-detail {
+  color: #3498db;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#credit-placement .combo-vertical-card:hover .combo-view-detail {
+  transform: translateX(5px);
+}
+
+#credit-placement .d4-special-search-box {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1.5rem;
+}
+
+#credit-placement .d4-special-search-input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+#credit-placement .d4-special-search-input:focus {
+  border-color: #3498db;
+}
+
+#credit-placement .d4-special-search-btn {
+  padding: 0 1.5rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+#credit-placement .d4-special-search-btn:hover {
+  background: #2980b9;
+}
+
+/* Chế độ chi tiết */
+#credit-placement .combo-detail-container {
+  width: 100%;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+#credit-placement .back-to-list-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+#credit-placement .back-to-list-btn:hover {
+  background: #edf2f7;
+  transform: translateX(-3px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#credit-placement .detail-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+#credit-placement .detail-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+#credit-placement .detail-subject {
+  font-size: 1.1rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+#credit-placement .detail-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+#credit-placement .detail-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #edf2f7;
+}
+
+#credit-placement .detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#credit-placement .detail-card-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#credit-placement .progress-container {
+  height: 8px;
+  background: #edf2f7;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+#credit-placement .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1s ease-out;
+}
+
+#credit-placement .major-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#credit-placement .major-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #eee;
+  display: flex;
+  align-items: center;
+}
+
+#credit-placement .major-list li::before {
+  content: "•";
+  color: #3498db;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+#credit-placement .school-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#credit-placement .school-tag {
+  background: #e8f4fc;
+  color: #2980b9;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+#credit-placement .advice-text {
+  line-height: 1.6;
+  color: #34495e;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #credit-placement {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #credit-placement .combo-main-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  #credit-placement .detail-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bubble khối */
+#credit-placement .combo-bubbles {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+#credit-placement .bubble {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+#credit-placement .bubble span {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+#credit-placement .bubble::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#credit-placement .bubble:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+#credit-placement .bubble:hover::before {
+  opacity: 1;
+}
+
+/* Màu sắc từng bubble */
+#credit-placement .bubble-a {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+#credit-placement .bubble-b {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+#credit-placement .bubble-c {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+#credit-placement .bubble-d {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+#credit-placement .bubble-all {
+  background: #2c3e50 !important;
+  color: white !important;
+}
+
+/* Hiệu ứng active */
+#credit-placement .bubble:active {
+  transform: scale(0.95);
+}
+
+/* Tiêu đề động */
+.dynamic-title-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#mainDynamicTitle {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+#subDynamicTitle {
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  font-weight: normal;
+  margin-top: 0;
+  transition: all 0.3s ease;
+}
+
+.not-found {
+  color: #e74c3c;
 }
