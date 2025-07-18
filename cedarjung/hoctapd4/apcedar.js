@@ -20,17 +20,36 @@ document.addEventListener("DOMContentLoaded", function () {
 // 1. Thiết lập menu điều hướng
 function setupNavigation() {
   const navItems = document.querySelectorAll(".nav-menu li");
+  const contentSections = document.querySelectorAll(".content-section");
+
   navItems.forEach((item) => {
     item.addEventListener("click", function () {
-      // Xóa active class từ tất cả các mục
+      // Xóa trạng thái active
       navItems.forEach((nav) => nav.classList.remove("active"));
-      // Thêm active class cho mục được chọn
-      this.classList.add("active");
+      contentSections.forEach((section) => section.classList.remove("active"));
 
-      // Có thể thêm logic tải nội dung tại đây
-      console.log(`Đã chọn: ${this.textContent}`);
+      // Đặt trạng thái active mới
+      this.classList.add("active");
+      const tabId = this.getAttribute("data-tab");
+      document.getElementById(tabId).classList.add("active");
     });
   });
+
+  // Nút từ welcome chuyển sang profile
+  const startBtn = document.getElementById("startExploring");
+  if (startBtn) {
+    startBtn.addEventListener("click", function () {
+      // Xóa trạng thái active khỏi tất cả section
+      contentSections.forEach((section) => section.classList.remove("active"));
+
+      // Kích hoạt phần profile
+      document.getElementById("my-ap").classList.add("active");
+
+      // Xóa trạng thái active khỏi tất cả menu
+      navItems.forEach((nav) => nav.classList.remove("active"));
+      navItems[0].classList.add("active"); // Kích hoạt mục "Profile"
+    });
+  }
 }
 
 // 2. Thiết lập nút AP Classroom
@@ -46,6 +65,7 @@ function setupClassroomButtons() {
   });
 }
 
+// 4. Thêm tính năng tìm kiếm (nâng cao)
 function addSearchFunctionality() {
   const sidebar = document.querySelector(".sidebar");
 
