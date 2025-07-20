@@ -320,7 +320,7 @@
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 40px;
-  background-image: url("/img/nenmongdihoc.png"); /* Đường dẫn ảnh bạn có */
+  background-image: url("img/nenmongdihoc.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
