@@ -2833,9 +2833,10 @@
             return;
           }
 
+          const fullPdfPath = `${window.location.origin}/D4---K69---VD/pdf/${encodeURIComponent(pdf.filename)}`;
           viewer.innerHTML = `
             <h3>${title} - ${phase} - Môn ${subject}</h3>
-            <iframe src="${encodeURI('pdf/' + pdf.filename)}"
+            <iframe src="${fullPdfPath}"
                     width="100%" 
                     height="600px" 
                     frameborder="0"></iframe>
