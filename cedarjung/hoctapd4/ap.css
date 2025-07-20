@@ -388,17 +388,20 @@
 }
 
 .d4-calendar-container {
+  width: 70vw; /* chiếm hết màn hình ngang nếu cần */
   display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* Đẩy lịch sang phải */
-  padding: 0;
+  flex-direction: row; /* Quan trọng */
+  justify-content: space-between;
+  align-items: flex-start; /* Căn đỉnh cho 2 cột đều hàng */
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .d4-calendar-wrapper {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: unset;
+  flex: 1;
   background: white;
   border-radius: var(--d4-border-radius);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -435,7 +438,12 @@
 }
 
 /* Ẩn 2 góc không dùng */
-.d4-pattern-tr,
+.d4-pattern-tr {
+  top: 40px;
+  right: 0;
+  transform: translate(-10%, -10%);
+}
+
 .d4-pattern-bl {
   display: none;
 }
@@ -554,50 +562,138 @@
   background: #f8fafc;
 }
 
-.d4-courses-assignments {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 2px solid var(--d4-gray);
-}
-
-.d4-courses-title {
-  font-size: 1.5rem;
-  color: var(--d4-dark);
-  margin-bottom: 1rem;
-}
-
-.d4-math-symbols {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.d4-math-symbols span {
-  background: var(--d4-light);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-family: "Times New Roman", serif;
-  font-style: italic;
+.d4-upcoming-events {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: white;
   border: 1px solid var(--d4-gray);
-  transition: all 0.2s ease;
+  border-radius: var(--d4-border-radius);
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  font-family: "Segoe UI", sans-serif;
+  transition: all 0.3s ease;
 }
 
-.d4-math-symbols span:hover {
+.d4-events-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--d4-dark);
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--d4-primary);
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+}
+
+.d4-events-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.d4-events-list li {
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-left: 4px solid transparent;
+  border-radius: 8px;
+  background: var(--d4-light);
+  color: var(--d4-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.d4-events-list li:hover {
   background: var(--d4-primary);
   color: white;
-  transform: translateY(-2px);
+  border-left: 4px solid var(--d4-accent);
+  transform: translateX(4px);
 }
 
-/* Responsive */
+.d4-events-list li strong {
+  color: var(--d4-accent);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* Ẩn khi chưa cần hiển thị */
+.hidden {
+  display: none;
+}
+
+.d4-day.selected {
+  background-color: #e0f7fa;
+  border: 2px solid #00acc1;
+  color: #004d40;
+  font-weight: bold;
+}
+
+/* Phần chi tiết sự kiện */
+#d4EventDetailContainer {
+  padding: 40px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Nút quay lại */
+#d4BackToEventsBtn {
+  background-color: #ffdddd;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#d4BackToEventsBtn:hover {
+  background-color: #ffcccc;
+}
+
+#d4EventDetailContainer h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+#d4EventDetailContainer p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .d4-calendar-container {
-    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .d4-calendar-wrapper {
-    padding: 1.5rem;
+  .d4-calendar-wrapper,
+  .d4-upcoming-events {
+    max-width: 100%;
+    width: 100%;
   }
-
   .d4-pattern {
     font-size: 5rem;
   }
@@ -1589,3 +1685,4 @@
 .not-found {
   color: #e74c3c;
 }
+
