@@ -340,3 +340,105 @@ document.addEventListener("DOMContentLoaded", function () {
 `
   );
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Lưu trạng thái điều hướng
+  let currentView = "bd-main-options";
+  const viewHistory = ["bd-main-options"];
+
+  // Các phần tử chính
+  const heroBg = document.getElementById("bd-hero-bg");
+  const mainOptions = document.getElementById("bd-main-options");
+
+  // Ẩn tất cả sections nội dung
+  function hideContentSections() {
+    document
+      .querySelectorAll(
+        ".bd-country-container, .bd-university-container, .bd-standards-container"
+      )
+      .forEach((section) => {
+        section.style.display = "none";
+      });
+  }
+
+  // Hiển thị section theo ID
+  function showView(viewId) {
+    hideContentSections();
+
+    // Xử lý hiển thị view chính
+    if (viewId === "bd-main-options") {
+      heroBg.style.display = "flex";
+      mainOptions.style.display = "flex";
+      return;
+    }
+
+    // Ẩn view chính khi xem nội dung
+    heroBg.style.display = "none";
+    mainOptions.style.display = "none";
+
+    // Hiển thị view được chọn
+    const view = document.getElementById(viewId);
+    if (!view) return;
+
+    if (view.classList.contains("bd-country-container")) {
+      view.style.display = "flex";
+    } else if (view.classList.contains("bd-university-container")) {
+      view.style.display = "flex";
+    } else if (view.classList.contains("bd-standards-container")) {
+      view.style.display = "block";
+    }
+
+    window.scrollTo(0, 0);
+  }
+
+  // Điều hướng tới view mới
+  function navigateTo(viewId) {
+    if (currentView === viewId) return;
+
+    viewHistory.push(viewId);
+    currentView = viewId;
+    showView(viewId);
+  }
+
+  // Quay lại view trước đó
+  function goBack() {
+    if (viewHistory.length <= 1) return;
+
+    viewHistory.pop();
+    const previousView = viewHistory[viewHistory.length - 1];
+    console.log("Going back to:", previousView);
+    currentView = previousView;
+    showView(previousView);
+  }
+
+  // Gắn sự kiện click cho các card
+  document.querySelectorAll("[data-target]").forEach((card) => {
+    card.addEventListener("click", function () {
+      const targetId = this.getAttribute("data-target");
+      if (targetId) navigateTo(targetId);
+    });
+  });
+
+  // Gắn sự kiện click cho nút back (PHẦN QUAN TRỌNG ĐÃ SỬA)
+  document.addEventListener("click", function (e) {
+    if (e.target.closest(".bd-back-btn")) {
+      e.preventDefault();
+      goBack();
+    }
+  });
+
+  // Khởi tạo
+  showView("bd-main-options");
+
+  // Đảm bảo content-section chiếm full width
+  const contentSection = document.querySelector("#scores .content-section");
+  if (contentSection) {
+    contentSection.style.display = "block";
+    contentSection.style.width = "100%";
+    contentSection.style.maxWidth = "none";
+    contentSection.style.padding = "0";
+    contentSection.style.background = "transparent";
+    contentSection.style.boxShadow = "none";
+  }
+});
+
