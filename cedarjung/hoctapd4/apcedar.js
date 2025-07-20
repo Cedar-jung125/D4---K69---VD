@@ -10,9 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 4. Thêm tính năng tìm kiếm (nâng cao)
   addSearchFunctionality();
-
-  // 5. Load động dữ liệu khóa học (nâng cao, bỏ comment nếu cần)
-  // loadCourseData();
 });
 
 // ========== CÁC HÀM CHỨC NĂNG ========== //
