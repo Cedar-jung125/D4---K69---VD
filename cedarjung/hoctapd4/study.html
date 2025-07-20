@@ -169,7 +169,7 @@
             alt="Study"
           />
           <h2>Khám phá tất cả mọi thứ về chương trình học tập ở cấp THPT</h2>
-          <p>Tất cả chỉ cách bạn một cú click chuột.</p>
+          <p>Tất cả chỉ cách bạn một cú click chuột</p>
         </div>
         <div class="intro-slide">
           <img src="img/public-health.png" alt="Community" />
@@ -710,43 +710,713 @@
             </div>
           </div>
         </div>
+        
         <div class="content-section" id="practice-exams">
-          <h2 class="vd4-subtitle-flicker">Đề cương THPT Việt Đức</h2>
-          <div class="vd4-doc-grid">
-            <a href="#" class="vd4-doc-card vd4-doc-glow">
-              <div class="vd4-doc-icon">📘</div>
-              <div class="vd4-doc-title">Đề cương khối 10</div>
-              <div class="vd4-doc-badge">NEW</div>
-            </a>
-            <a href="#" class="vd4-doc-card vd4-doc-glow">
-              <div class="vd4-doc-icon">📘</div>
-              <div class="vd4-doc-title">Đề cương khối 11</div>
-              <div class="vd4-doc-badge">NEW</div>
-            </a>
-            <a href="#" class="vd4-doc-card vd4-doc-glow">
-              <div class="vd4-doc-icon">📘</div>
-              <div class="vd4-doc-title">Đề cương khối 12</div>
-              <div class="vd4-doc-badge">NEW</div>
-            </a>
-            <a href="#" class="vd4-doc-card vd4-doc-glow">
-              <div class="vd4-doc-icon">🔑</div>
-              <div class="vd4-doc-title">Đáp án đề cương khối 10</div>
-              <div class="vd4-doc-badge">HOT</div>
-            </a>
-            <a href="#" class="vd4-doc-card vd4-doc-glow">
-              <div class="vd4-doc-icon">🔑</div>
-              <div class="vd4-doc-title">Đáp án đề cương khối 11</div>
-              <div class="vd4-doc-badge">HOT</div>
-            </a>
-            <a href="#" class="vd4-doc-card vd4-doc-glow">
-              <div class="vd4-doc-icon">🔑</div>
-              <div class="vd4-doc-title">Đáp án đề cương khối 12</div>
-              <div class="vd4-doc-badge">HOT</div>
-            </a>
+          <div class="vd4-mode-gateway">
+            <h2 class="vd4-mode-title">Chọn chế độ học tập</h2>
+            <div class="vd4-portal-container">
+              <div
+                class="vd4-portal-card"
+                onclick="openPracticeMode('decuong')"
+              >
+                <div class="vd4-portal-icon">📘</div>
+                <div class="vd4-portal-label">Đề cương</div>
+              </div>
+              <div class="vd4-portal-card" onclick="openPracticeMode('thithu')">
+                <div class="vd4-portal-icon">📝</div>
+                <div class="vd4-portal-label">Thi thử</div>
+              </div>
+            </div>
+          </div>
+          <div class="vd4-doc-section" style="display: none">
+            <button class="vd4-back-btn" onclick="goBackToGateway()">
+              ← Quay lại
+            </button>
+            <h2 class="vd4-subtitle-flicker">Đề cương THPT Việt Đức</h2>
+            <div class="vd4-doc-grid">
+              <a href="#" class="vd4-doc-card vd4-doc-glow">
+                <div class="vd4-doc-icon">📘</div>
+                <div class="vd4-doc-title">Đề cương khối 10</div>
+                <div class="vd4-doc-badge">NEW</div>
+              </a>
+              <a href="#" class="vd4-doc-card vd4-doc-glow">
+                <div class="vd4-doc-icon">📘</div>
+                <div class="vd4-doc-title">Đề cương khối 11</div>
+                <div class="vd4-doc-badge">NEW</div>
+              </a>
+              <a href="#" class="vd4-doc-card vd4-doc-glow">
+                <div class="vd4-doc-icon">📘</div>
+                <div class="vd4-doc-title">Đề cương khối 12</div>
+                <div class="vd4-doc-badge">NEW</div>
+              </a>
+              <a href="#" class="vd4-doc-card vd4-doc-glow">
+                <div class="vd4-doc-icon">🔑</div>
+                <div class="vd4-doc-title">Đáp án đề cương khối 10</div>
+                <div class="vd4-doc-badge">HOT</div>
+              </a>
+              <a href="#" class="vd4-doc-card vd4-doc-glow">
+                <div class="vd4-doc-icon">🔑</div>
+                <div class="vd4-doc-title">Đáp án đề cương khối 11</div>
+                <div class="vd4-doc-badge">HOT</div>
+              </a>
+              <a href="#" class="vd4-doc-card vd4-doc-glow">
+                <div class="vd4-doc-icon">🔑</div>
+                <div class="vd4-doc-title">Đáp án đề cương khối 12</div>
+                <div class="vd4-doc-badge">HOT</div>
+              </a>
+            </div>
+            <div class="vd4-content-viewer" id="doc-viewer"></div>
+          </div>
+
+          <div class="vd4-test-section" style="display: none">
+            <button class="vd4-back-btn" onclick="goBackToGateway()">
+              ← Quay lại
+            </button>
+            <h2 class="vd4-subtitle-flicker">Thi thử THPT Việt Đức</h2>
+            <div class="vd4-test-grid">
+              <!-- thẻ đề thi -->
+            </div>
           </div>
         </div>
+        
         <div class="content-section" id="scores">
-          Mục tiêu của bạn là gì?...
+          <div class="bd-content-container">
+            <!-- Hero section with background image -->
+            <div class="bd-hero-section" id="bd-hero-bg">
+              <div class="bd-hero-content">
+                <h1 class="bd-hero-title">Mục tiêu của bạn là gì?</h1>
+                <p class="bd-hero-subtitle">
+                  Hãy lựa chọn con đường học tập phù hợp nhất với mọi người nha
+                </p>
+              </div>
+            </div>
+
+            <!-- Main options (Du học/Trong nước/Tiêu chuẩn học sinh) -->
+            <div class="bd-card-container" id="bd-main-options">
+              <div class="bd-main-card" data-target="bd-study-abroad">
+                <div
+                  class="bd-card-image"
+                  style="
+                    background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+                  "
+                >
+                  <div class="bd-card-overlay"></div>
+                </div>
+                <div class="bd-card-content">
+                  <h3 class="bd-card-title">Du học</h3>
+                  <p class="bd-card-desc">
+                    Khám phá các cơ hội học tập tại các quốc gia hàng đầu thế
+                    giới
+                  </p>
+                  <button class="bd-card-btn">
+                    Xem chi tiết <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="bd-main-card" data-target="bd-domestic">
+                <div
+                  class="bd-card-image"
+                  style="
+                    background-image: url('https://images.baodantoc.vn/uploads/2021/Th%C3%A1ng_10/Ng%C3%A0y_21/Anh/untitled%20folder/C%E1%BB%99t%20c%E1%BB%9D%20L%C5%A9ng%20C%C3%BA%20nh%C3%ACn%20t%E1%BB%AB%20cao.jpg');
+                  "
+                >
+                  <div class="bd-card-overlay"></div>
+                </div>
+                <div class="bd-card-content">
+                  <h3 class="bd-card-title">Trong nước</h3>
+                  <p class="bd-card-desc">
+                    Tìm hiểu các trường đại học chất lượng tại Việt Nam
+                  </p>
+                  <button class="bd-card-btn">
+                    Xem chi tiết <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="bd-main-card" data-target="bd-standards">
+                <div
+                  class="bd-card-image"
+                  style="
+                    background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+                  "
+                >
+                  <div class="bd-card-overlay"></div>
+                </div>
+                <div class="bd-card-content">
+                  <h3 class="bd-card-title">Tiêu chuẩn học sinh</h3>
+                  <p class="bd-card-desc">
+                    Tìm hiểu các tiêu chuẩn mà học sinh cần có khi lên cấp bậc
+                    đại học
+                  </p>
+                  <button class="bd-card-btn">
+                    Xem chi tiết <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Study abroad countries -->
+            <div class="bd-country-container" id="bd-study-abroad">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+              <h2
+                style="
+                  width: 100%;
+                  text-align: center;
+                  margin-bottom: 20px;
+                  color: #004890;
+                "
+              >
+                Chọn quốc gia mà bạn có định hướng du học
+              </h2>
+
+              <div class="bd-country-card" data-target="bd-usa-universities">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png');
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">Mỹ</h3>
+                  <p class="bd-country-desc">
+                    Hệ thống giáo dục đại học hàng đầu thế giới
+                  </p>
+                </div>
+              </div>
+
+              <div class="bd-country-card" data-target="bd-uk-universities">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png');
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">Anh</h3>
+                  <p class="bd-country-desc">
+                    Nền giáo dục lâu đời với nhiều trường đại học danh tiếng
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bd-country-card"
+                data-target="bd-australia-universities"
+              >
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1200px-Flag_of_Australia_%28converted%29.svg.png');
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">Úc</h3>
+                  <p class="bd-country-desc">
+                    Môi trường học tập đa văn hóa và chất lượng cao
+                  </p>
+                </div>
+              </div>
+
+              <div class="bd-country-card" data-target="bd-canada-universities">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1200px-Flag_of_Canada_%28Pantone%29.svg.png');
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">Canada</h3>
+                  <p class="bd-country-desc">
+                    Chất lượng giáo dục cao với chi phí hợp lý
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bd-country-card"
+                data-target="bd-finland-universities"
+              >
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/250px-Flag_of_Finland.svg.png');
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">Phần Lan</h3>
+                  <p class="bd-country-desc">
+                    Học phí siêu rẻ với nhiều ưu đãi, học bổng cao
+                  </p>
+                </div>
+              </div>
+
+              <div class="bd-country-card" data-target="bd-china-universities">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/500px-Flag_of_the_People%27s_Republic_of_China.svg.png');
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">Trung Quốc</h3>
+                  <p class="bd-country-desc">
+                    Chất lượng giáo dục cao với các trường đại học danh giá
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Domestic universities -->
+            <div class="bd-country-container" id="bd-domestic">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+              <h2
+                style="
+                  width: 100%;
+                  text-align: center;
+                  margin-bottom: 20px;
+                  color: #004890;
+                "
+              >
+                Các trường đại học danh giá tại Hà Nội
+              </h2>
+
+              <div class="bd-country-card" data-target="bd-hust-info">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('img/bkhn.png');
+                    background-color: white;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">ĐH Bách Khoa HN</h3>
+                  <p class="bd-country-desc">
+                    Trường đại học kỹ thuật hàng đầu Việt Nam
+                  </p>
+                </div>
+              </div>
+
+              <div class="bd-country-card" data-target="bd-ftu-info">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://upload.wikimedia.org/wikipedia/vi/thumb/4/47/FTU_logo_2020.svg/500px-FTU_logo_2020.svg.png');
+                    background-color: white;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">ĐH Ngoại Thương</h3>
+                  <p class="bd-country-desc">
+                    Trường đại học kinh tế và thương mại hàng đầu
+                  </p>
+                </div>
+              </div>
+
+              <div class="bd-country-card" data-target="bd-vnu-info">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://cdn.haitrieu.com/wp-content/uploads/2021/12/Logo-DH-Quoc-Gia-Ha-Noi-VNU.png');
+                    background-color: white;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">ĐH Quốc Gia HN</h3>
+                  <p class="bd-country-desc">
+                    Hệ thống các trường đại học đa ngành
+                  </p>
+                </div>
+              </div>
+
+              <div class="bd-country-card" data-target="bd-ueb-info">
+                <div
+                  class="bd-country-flag"
+                  style="
+                    background-image: url('https://inkythuatso.com/uploads/thumbnails/800/2021/11/logo-neu-inkythuatso-01-09-10-41-01.jpg');
+                    background-color: white;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                  "
+                ></div>
+                <div class="bd-country-info">
+                  <h3 class="bd-country-name">ĐH Kinh Tế Quốc Dân</h3>
+                  <p class="bd-country-desc">
+                    Trường đại học kinh tế hàng đầu Việt Nam
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- University details - USA -->
+            <div class="bd-university-container" id="bd-usa-universities">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+
+              <div class="bd-university-card">
+                <div
+                  class="bd-university-image"
+                  style="background-image: url('img/dai-hoc-harvard-my.jpg')"
+                ></div>
+                <div class="bd-university-info">
+                  <h3 class="bd-university-name">Harvard University</h3>
+                  <div class="bd-university-meta">
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-map-marker-alt"></i> Cambridge,
+                      Massachusetts</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-star"></i> Xếp hạng: #1</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-graduation-cap"></i> Thành lập:
+                      1636</span
+                    >
+                  </div>
+                  <p class="bd-university-desc">
+                    Harvard là một trong những trường đại học danh tiếng nhất
+                    thế giới, nổi tiếng với các chương trình đào tạo về Luật, Y
+                    khoa, Kinh doanh và Nghệ thuật.
+                  </p>
+
+                  <div class="bd-majors-container">
+                    <h4 class="bd-majors-title">Các ngành đào tạo nổi bật:</h4>
+                    <div class="bd-majors-list">
+                      <span class="bd-major-tag">Khoa học Máy tính</span>
+                      <span class="bd-major-tag">Kinh tế</span>
+                      <span class="bd-major-tag">Y khoa</span>
+                      <span class="bd-major-tag">Luật</span>
+                      <span class="bd-major-tag">Kinh doanh</span>
+                      <span class="bd-major-tag">Chính trị học</span>
+                      <span class="bd-major-tag">Tâm lý học</span>
+                      <span class="bd-major-tag">Kỹ thuật</span>
+                    </div>
+                  </div>
+
+                  <div class="bd-detail-grid">
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Học phí (năm)</div>
+                      <div class="bd-detail-value">~$54,000</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Sinh hoạt phí (năm)</div>
+                      <div class="bd-detail-value">~$20,000</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Điểm SAT yêu cầu</div>
+                      <div class="bd-detail-value">1460-1580</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Điểm TOEFL yêu cầu</div>
+                      <div class="bd-detail-value">100+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bd-university-card" style="margin-top: 30px">
+                <div
+                  class="bd-university-image"
+                  style="background-image: url('img/stanforduni.jpg')"
+                ></div>
+                <div class="bd-university-info">
+                  <h3 class="bd-university-name">Stanford University</h3>
+                  <div class="bd-university-meta">
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-map-marker-alt"></i> Stanford,
+                      California</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-star"></i> Xếp hạng: #2</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-graduation-cap"></i> Thành lập:
+                      1885</span
+                    >
+                  </div>
+                  <p class="bd-university-desc">
+                    Stanford nổi tiếng với các chương trình đào tạo về Khoa học
+                    Máy tính, Kỹ thuật và Kinh doanh, là cái nôi của nhiều công
+                    ty công nghệ lớn trong Thung lũng Silicon.
+                  </p>
+
+                  <div class="bd-majors-container">
+                    <h4 class="bd-majors-title">Các ngành đào tạo nổi bật:</h4>
+                    <div class="bd-majors-list">
+                      <span class="bd-major-tag">Khoa học Máy tính</span>
+                      <span class="bd-major-tag">Kỹ thuật Điện</span>
+                      <span class="bd-major-tag">Kinh doanh</span>
+                      <span class="bd-major-tag">Y sinh</span>
+                      <span class="bd-major-tag">Khoa học Dữ liệu</span>
+                      <span class="bd-major-tag">Trí tuệ Nhân tạo</span>
+                      <span class="bd-major-tag">Vật lý</span>
+                      <span class="bd-major-tag">Kinh tế</span>
+                    </div>
+                  </div>
+
+                  <div class="bd-detail-grid">
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Học phí (năm)</div>
+                      <div class="bd-detail-value">~$56,000</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Sinh hoạt phí (năm)</div>
+                      <div class="bd-detail-value">~$18,000</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Điểm SAT yêu cầu</div>
+                      <div class="bd-detail-value">1440-1570</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Điểm TOEFL yêu cầu</div>
+                      <div class="bd-detail-value">100+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- University details - UK -->
+            <div class="bd-university-container" id="bd-uk-universities">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+
+              <div class="bd-university-card">
+                <div
+                  class="bd-university-image"
+                  style="
+                    background-image: url('img/view-University-of-Oxford-England-Oxfordshire.webp');
+                  "
+                ></div>
+                <div class="bd-university-info">
+                  <h3 class="bd-university-name">University of Oxford</h3>
+                  <div class="bd-university-meta">
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-map-marker-alt"></i> Oxford, Anh</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-star"></i> Xếp hạng: #1 UK</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-graduation-cap"></i> Thành lập:
+                      1096</span
+                    >
+                  </div>
+                  <p class="bd-university-desc">
+                    Oxford là trường đại học lâu đời nhất trong thế giới nói
+                    tiếng Anh, nổi tiếng với hệ thống giảng dạy theo từng cá
+                    nhân và các trường đại học thành viên.
+                  </p>
+
+                  <div class="bd-majors-container">
+                    <h4 class="bd-majors-title">Các ngành đào tạo nổi bật:</h4>
+                    <div class="bd-majors-list">
+                      <span class="bd-major-tag">Triết học</span>
+                      <span class="bd-major-tag">Chính trị & Kinh tế</span>
+                      <span class="bd-major-tag">Y khoa</span>
+                      <span class="bd-major-tag">Luật</span>
+                      <span class="bd-major-tag">Lịch sử</span>
+                      <span class="bd-major-tag">Văn học Anh</span>
+                      <span class="bd-major-tag">Toán học</span>
+                      <span class="bd-major-tag">Khoa học Máy tính</span>
+                    </div>
+                  </div>
+
+                  <div class="bd-detail-grid">
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Học phí (năm)</div>
+                      <div class="bd-detail-value">£25,740-£36,065</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Sinh hoạt phí (năm)</div>
+                      <div class="bd-detail-value">£12,000-£15,000</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Điểm IELTS yêu cầu</div>
+                      <div class="bd-detail-value">7.0-7.5</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Yêu cầu A-level</div>
+                      <div class="bd-detail-value">A*A*A - AAA</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bd-university-container" id="bd-australia-universities">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+            </div>
+
+            <div class="bd-university-container" id="bd-canada-universities">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+            </div>
+
+            <div class="bd-university-container" id="bd-finland-universities">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+            </div>
+
+            <div class="bd-university-container" id="bd-china-universities">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+            </div>
+
+            <!-- University details - Vietnam -->
+            <div class="bd-university-container" id="bd-hust-info">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+
+              <div class="bd-university-card">
+                <div
+                  class="bd-university-image"
+                  style="
+                    background-image: url('https://bcp.cdnchinhphu.vn/334894974524682240/2022/12/6/img0376-16703035897261163550207.jpg');
+                  "
+                ></div>
+                <div class="bd-university-info">
+                  <h3 class="bd-university-name">Đại học Bách Khoa Hà Nội</h3>
+                  <div class="bd-university-meta">
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-map-marker-alt"></i> Số 1 Đại Cồ Việt,
+                      Hà Nội</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-star"></i> Xếp hạng: #1 Kỹ thuật</span
+                    >
+                    <span class="bd-meta-item"
+                      ><i class="fas fa-graduation-cap"></i> Thành lập:
+                      1956</span
+                    >
+                  </div>
+                  <p class="bd-university-desc">
+                    Trường Đại học Bách khoa Hà Nội là trường đại học kỹ thuật
+                    hàng đầu Việt Nam, đào tạo đa ngành về kỹ thuật, công nghệ
+                    và quản lý.
+                  </p>
+
+                  <div class="bd-majors-container">
+                    <h4 class="bd-majors-title">Các ngành đào tạo nổi bật:</h4>
+                    <div class="bd-majors-list">
+                      <span class="bd-major-tag">Công nghệ Thông tin</span>
+                      <span class="bd-major-tag">Điện tử - Viễn thông</span>
+                      <span class="bd-major-tag">Cơ khí</span>
+                      <span class="bd-major-tag">Tự động hóa</span>
+                      <span class="bd-major-tag">Xây dựng</span>
+                      <span class="bd-major-tag">Công nghệ Ô tô</span>
+                      <span class="bd-major-tag">Kỹ thuật Hóa học</span>
+                      <span class="bd-major-tag">Kỹ thuật Năng lượng</span>
+                    </div>
+                  </div>
+
+                  <div class="bd-detail-grid">
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Học phí (năm)</div>
+                      <div class="bd-detail-value">18-25 triệu VNĐ</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Chỉ tiêu (năm)</div>
+                      <div class="bd-detail-value">~6,000 sinh viên</div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Ngành đào tạo chính</div>
+                      <div class="bd-detail-value">
+                        Công nghệ Thông tin, Điện - Điện tử, Cơ khí, Xây dựng
+                      </div>
+                    </div>
+                    <div class="bd-detail-item">
+                      <div class="bd-detail-label">Điểm chuẩn (2023)</div>
+                      <div class="bd-detail-value">24-28 điểm (tùy ngành)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Student standards -->
+            <div class="bd-standards-container" id="bd-standards">
+              <button class="bd-back-btn">
+                <i class="fas fa-arrow-left"></i> Quay lại
+              </button>
+
+              <h2 class="bd-standards-title">Tiêu Chuẩn Học Sinh</h2>
+
+              <div class="bd-standards-content">
+                <div class="bd-standard-section">
+                  <h3 class="bd-standard-title">
+                    <i class="fas fa-graduation-cap"></i> Tiêu chuẩn học tập
+                  </h3>
+                  <ul class="bd-standard-list">
+                    <li>Điểm trung bình học tập từ 7.0 trở lên</li>
+                    <li>Thành tích học tập ổn định trong 3 năm gần nhất</li>
+                    <li>
+                      Có chứng chỉ ngoại ngữ (IELTS 6.5+ hoặc tương đương)
+                    </li>
+                    <li>Tham gia các hoạt động nghiên cứu khoa học (nếu có)</li>
+                    <li>Có bài luận cá nhân thể hiện rõ mục tiêu học tập</li>
+                  </ul>
+                </div>
+
+                <div class="bd-standard-section">
+                  <h3 class="bd-standard-title">
+                    <i class="fas fa-user-graduate"></i> Tiêu chuẩn cá nhân
+                  </h3>
+                  <ul class="bd-standard-list">
+                    <li>Có mục tiêu học tập rõ ràng</li>
+                    <li>Khả năng tự học và nghiên cứu độc lập</li>
+                    <li>Tinh thần trách nhiệm và kỷ luật cao</li>
+                    <li>Khả năng thích nghi với môi trường mới</li>
+                    <li>Kỹ năng quản lý thời gian hiệu quả</li>
+                  </ul>
+                </div>
+
+                <div class="bd-standard-section">
+                  <h3 class="bd-standard-title">
+                    <i class="fas fa-globe-americas"></i> Tiêu chuẩn du học
+                  </h3>
+                  <ul class="bd-standard-list">
+                    <li>Đáp ứng yêu cầu đầu vào của trường/quốc gia</li>
+                    <li>Khả năng tài chính đảm bảo cho toàn khóa học</li>
+                    <li>Chứng minh được mục đích học tập rõ ràng</li>
+                    <li>Có kế hoạch học tập và làm việc sau tốt nghiệp</li>
+                    <li>Đạt yêu cầu về sức khỏe theo quy định</li>
+                  </ul>
+                </div>
+
+                <div class="bd-standard-section">
+                  <h3 class="bd-standard-title">
+                    <i class="fas fa-home"></i> Tiêu chuẩn trong nước
+                  </h3>
+                  <ul class="bd-standard-list">
+                    <li>Đạt điểm chuẩn đầu vào của trường</li>
+                    <li>Đáp ứng điều kiện xét tuyển theo ngành</li>
+                    <li>Có hiểu biết cơ bản về ngành học đăng ký</li>
+                    <li>Thể hiện được đam mê với lĩnh vực theo đuổi</li>
+                    <li>Có kế hoạch phát triển bản thân rõ ràng</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
          <div class="content-section" id="credit-placement">
@@ -984,7 +1654,7 @@
               <div class="d4-pattern d4-pattern-tl">K69</div>
               <div class="d4-pattern d4-pattern-tr">D4</div>
               <div class="d4-pattern d4-pattern-bl">D4</div>
-              <div class="d4-pattern d4-pattern-br">D4</div>
+              <div class="d4-pattern d4-pattern-br">✏️</div>
 
               <div class="d4-calendar">
                 <div class="d4-calendar-header">
@@ -1016,19 +1686,29 @@
                 </div>
               </div>
             </div>
-            <div class="d4-courses-assignments">
-              <h3 class="d4-courses-title">Courses & Assignments</h3>
-              <div class="d4-math-symbols">
-                <span>AB</span>
-                <span>d<sub>1</sub>/VA</span>
-                <span>dx</span>
-                <span>vdt = f(x)</span>
-              </div>
+            <div class="d4-upcoming-events" id="upcomingEvents">
+              <h3 class="d4-events-title">📅 Sự kiện sắp tới</h3>
+              <ul class="d4-events-list">
+                <li><strong>09/08</strong> Sinh nhật bạn Thảo Nguyên</li>
+                <li><strong>22/08</strong> Quay trở lại trường học</li>
+                <li>
+                  <strong>25/08</strong> Sinh nhật bạn Anh Khoa và Chí Quân
+                </li>
+                <li><strong>27/08</strong> Sinh nhật bạn Minh Khôi</li>
+                <li><strong>28/08</strong> Sinh nhật bạn Hà Châu</li>
+              </ul>
+            </div>
+            <!-- Phần hiện chi tiết sự kiện (ẩn đi lúc đầu) -->
+            <div id="d4EventDetailContainer" class="hidden">
+              <button id="d4BackToEventsBtn">Quay lại</button>
+              <h3 id="d4EventDateTitle"></h3>
+              <p id="d4EventContent"></p>
             </div>
           </div>
         </div>
+        
       </div>
-    </main>
+  </main>
 
     <footer class="school-footer">
       <div class="footer-container">
@@ -1218,7 +1898,93 @@
           window.DOMContentReadyInitialized = true;
         });
       }
+
+      const d4Events = {
+        "2025-08-09": "Sinh nhật bạn Thảo Nguyên",
+        "2025-08-22": "Quay trở lại trường học",
+        "2025-08-25": "Sinh nhật bạn Anh Khoa và Chí Quân",
+        "2025-08-27": "Sinh nhật bạn Minh Khôi",
+        "2025-08-28": "Sinh nhật bạn Hà Châu",
+        "2025-08-28": "Sinh nhật bạn Hà Châu",
+        "2025-09-05": "Khai giảng năm học 2025 - 2026, sinh nhật bạn Minh Thư",
+        "2025-09-08": "Sinh nhật bạn Ngọc Mai",
+        "2025-09-09": "Sinh nhật bạn Minh Tùng",
+        "2025-09-10": "Sinh nhật bạn Ngọc Linh",
+      };
+
+      // DOM cần thao tác
+      const upcomingEventsBox = document.getElementById("upcomingEvents");
+      const eventDetailBox = document.getElementById("d4EventDetailContainer");
+      const eventDateTitle = document.getElementById("d4EventDateTitle");
+      const eventContent = document.getElementById("d4EventContent");
+      const backBtn = document.getElementById("d4BackToEventsBtn");
+
+      function enableDayClickHandlers() {
+        const allDays = document.querySelectorAll(".d4-day");
+        allDays.forEach((el) => {
+          const dayText = el.textContent;
+          if (!dayText || isNaN(dayText)) return;
+
+          el.addEventListener("click", () => {
+            document.querySelectorAll(".d4-day.selected").forEach((d) => {
+              d.classList.remove("selected");
+            });
+
+            el.classList.add("selected");
+            const day = parseInt(dayText);
+            const month = String(D4Calendar.displayMonth + 1).padStart(2, "0");
+            const year = D4Calendar.displayYear;
+            const dateStr = `${year}-${month}-${String(day).padStart(2, "0")}`;
+
+            const selectedDate = new Date(year, D4Calendar.displayMonth, day);
+            const now = new Date();
+
+            if (selectedDate < now.setHours(0, 0, 0, 0)) {
+              showNoEvent(dateStr);
+            } else if (d4Events[dateStr]) {
+              showEvent(dateStr, d4Events[dateStr]);
+            } else {
+              showNoEvent(dateStr);
+            }
+          });
+        });
+      }
+
+      // Hiển thị chi tiết sự kiện
+      function showEvent(date, content) {
+        const [y, m, d] = date.split("-");
+        eventDateTitle.textContent = `Sự kiện ngày ${d}/${m}/${y}`;
+        eventContent.textContent = content;
+
+        upcomingEventsBox.classList.add("hidden");
+        eventDetailBox.classList.remove("hidden");
+      }
+
+      // Hiển thị "Không có sự kiện nào"
+      function showNoEvent(date) {
+        const [y, m, d] = date.split("-");
+        eventDateTitle.textContent = `Ngày ${d}/${m}/${y}`;
+        eventContent.textContent = "Không có sự kiện nào.";
+        upcomingEventsBox.classList.add("hidden");
+        eventDetailBox.classList.remove("hidden");
+      }
+
+      // Nút quay lại
+      backBtn.addEventListener("click", () => {
+        upcomingEventsBox.classList.remove("hidden");
+        eventDetailBox.classList.add("hidden");
+        const selected = document.querySelector(".d4-day.selected");
+        if (selected) selected.classList.remove("selected");
+      });
+
+      // Thêm vào sau khi render lịch
+      const originalRenderCalendar = D4Calendar.renderCalendar.bind(D4Calendar);
+      D4Calendar.renderCalendar = function () {
+        originalRenderCalendar();
+        enableDayClickHandlers();
+      };
     </script>
+    
     <script>
       // Hàm hiển thị profile học sinh
       function apShowProfile(studentId) {
@@ -1864,7 +2630,7 @@
         });
       });
     </script>
-        <script src="cedarjung/hoctapd4/dinhhuong.js"></script>
+    <script src="cedarjung/hoctapd4/dinhhuong.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const slides = document.querySelectorAll(".intro-slide");
@@ -1923,6 +2689,196 @@
         // Bắt đầu
         showSlide(0);
         scheduleNextSlide();
+      });
+    </script>
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. Xử lý phần chọn chế độ (Đề cương/Thi thử)
+        function openPracticeMode(mode) {
+          document.querySelector(".vd4-mode-gateway").style.display = "none";
+          if (mode === "decuong") {
+            document.querySelector(".vd4-doc-section").style.display = "block";
+          } else {
+            document.querySelector(".vd4-test-section").style.display = "block";
+          }
+        }
+
+        function goBackToGateway() {
+          document.querySelector(".vd4-mode-gateway").style.display = "block";
+          document.querySelector(".vd4-doc-section").style.display = "none";
+          document.querySelector(".vd4-test-section").style.display = "none";
+          resetViewer();
+        }
+
+        // 2. Xử lý phần xem PDF
+        const viewer = document.getElementById("doc-viewer");
+        let currentDoc = null;
+        let currentPhase = null;
+        const phases = ["Giữa HKI", "HKI", "Giữa HKII", "HKII"];
+        const subjects = [
+          "Toán",
+          "Ngữ Văn",
+          "Ngoại ngữ",
+          "Lịch Sử",
+          "Vật lí",
+          "Địa lí",
+          "GDKT - PL",
+          "Tin học",
+        ];
+        let pdfData = [];
+
+        // Load dữ liệu PDF
+        fetch("data.pdf.json")
+          .then((res) => res.json())
+          .then((data) => {
+            pdfData = data;
+            console.log("PDF data loaded:", pdfData);
+            initDocumentEvents();
+          })
+          .catch((error) => {
+            console.error("Error loading PDF data:", error);
+            initDocumentEvents();
+          });
+
+        function initDocumentEvents() {
+          const documents = document.querySelectorAll(".vd4-doc-card");
+          documents.forEach((doc) => {
+            doc.addEventListener("click", (e) => {
+              e.preventDefault();
+              const title = doc.querySelector(".vd4-doc-title").innerText;
+              if (currentDoc !== title) {
+                currentDoc = title;
+                currentPhase = null;
+                renderPhases(title);
+              } else {
+                resetViewer();
+              }
+            });
+          });
+        }
+
+        function renderPhases(title) {
+          viewer.innerHTML = `
+            <h3>${title}</h3>
+            <div class="subject-list">
+                ${phases
+                  .map(
+                    (phase) => `
+                    <button class="phase-btn" data-title="${title}" data-phase="${phase}">${phase}</button>
+                `
+                  )
+                  .join("")}
+            </div>
+        `;
+
+          // Gắn sự kiện cho các nút phase
+          document.querySelectorAll(".phase-btn").forEach((btn) => {
+            btn.addEventListener("click", function () {
+              selectPhase(
+                this.getAttribute("data-title"),
+                this.getAttribute("data-phase")
+              );
+            });
+          });
+        }
+
+        function selectPhase(title, phase) {
+          currentDoc = title;
+          currentPhase = phase;
+
+          viewer.innerHTML = `
+            <h3>${title} - ${phase}</h3>
+            <div class="subject-list">
+                ${subjects
+                  .map(
+                    (subject) => `
+                    <button class="subject-btn" 
+                            data-title="${title}" 
+                            data-phase="${phase}" 
+                            data-subject="${subject}">${subject}</button>
+                `
+                  )
+                  .join("")}
+            </div>
+            <button class="back-phase-btn">← Quay lại học kỳ</button>
+        `;
+
+          // Gắn sự kiện cho các nút môn học
+          document.querySelectorAll(".subject-btn").forEach((btn) => {
+            btn.addEventListener("click", function () {
+              loadPDF(
+                this.getAttribute("data-title"),
+                this.getAttribute("data-phase"),
+                this.getAttribute("data-subject")
+              );
+            });
+          });
+
+          // Gắn sự kiện nút quay lại
+          document
+            .querySelector(".back-phase-btn")
+            .addEventListener("click", () => {
+              renderPhases(title);
+            });
+        }
+
+        function loadPDF(title, phase, subject) {
+          const pdf = pdfData.find(
+            (p) =>
+              p.title === title && p.phase === phase && p.subject === subject
+          );
+
+          if (!pdf) {
+            viewer.innerHTML = `<p class="pdf-error">Không tìm thấy file PDF phù hợp!</p>`;
+            return;
+          }
+
+          viewer.innerHTML = `
+            <h3>${title} - ${phase} - Môn ${subject}</h3>
+            <iframe src="/pdf/${encodeURIComponent(pdf.filename)}" 
+                    width="100%" 
+                    height="600px" 
+                    frameborder="0"></iframe>
+            <div class="back-button-wrapper">
+                <button class="back-subject-btn">← Quay lại môn học</button>
+            </div>
+        `;
+
+          // Gắn sự kiện nút quay lại
+          document
+            .querySelector(".back-subject-btn")
+            .addEventListener("click", () => {
+              selectPhase(title, phase);
+            });
+        }
+
+        function resetViewer() {
+          currentDoc = null;
+          currentPhase = null;
+          viewer.innerHTML = "";
+        }
+
+        // 3. Gắn sự kiện cho các nút chính
+        document
+          .querySelectorAll('[onclick^="openPracticeMode"]')
+          .forEach((btn) => {
+            const mode = btn
+              .getAttribute("onclick")
+              .replace("openPracticeMode('", "")
+              .replace("')", "");
+            btn.addEventListener("click", () => openPracticeMode(mode));
+          });
+
+        document
+          .querySelectorAll('[onclick="goBackToGateway()"]')
+          .forEach((btn) => {
+            btn.addEventListener("click", goBackToGateway);
+          });
+
+        // 4. Khởi tạo trạng thái ban đầu
+        document.querySelector(".vd4-mode-gateway").style.display = "block";
+        document.querySelector(".vd4-doc-section").style.display = "none";
+        document.querySelector(".vd4-test-section").style.display = "none";
       });
     </script>
   </body>
