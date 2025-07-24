@@ -388,11 +388,11 @@
 }
 
 .d4-calendar-container {
-  width: 70vw; /* chiếm hết màn hình ngang nếu cần */
+  width: 70vw;
   display: flex;
-  flex-direction: row; /* Quan trọng */
+  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start; /* Căn đỉnh cho 2 cột đều hàng */
+  align-items: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
 }
@@ -566,7 +566,7 @@
   flex: 1;
   min-width: 300px;
   max-width: 500px;
-  background: white;
+  background: rgb(144, 230, 53);
   border: 1px solid var(--d4-gray);
   border-radius: var(--d4-border-radius);
   padding: 2rem;
@@ -1685,4 +1685,3 @@
 .not-found {
   color: #e74c3c;
 }
-
