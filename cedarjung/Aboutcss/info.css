@@ -1,5 +1,4 @@
 body {
-  font-family: sans-serif;
   margin: 0;
   padding: 0;
   background: #f9f9f9;
@@ -9,15 +8,16 @@ body {
   grid-template-columns: 2fr 1fr;
   gap: 20px;
   padding: 20px;
-  max-width: 1100px; /* Co vào */
+  max-width: none;
+  width: 80%;
   margin: 0 auto;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .main-bg-wrapper {
-  background: url("https://plus.unsplash.com/premium_photo-1670148434900-5f0af77ba500?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat
-    center center;
+  background: url("https://plus.unsplash.com/premium_photo-1670148434900-5f0af77ba500?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center center;
   background-size: cover;
   padding: 40px 0;
 }
@@ -38,7 +38,12 @@ body {
   transition: box-shadow 0.3s, transform 0.3s;
   color: inherit;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
+.art-v94nqp:hover img {
+  filter: brightness(1.05) contrast(1.05);
+}
+
 .art-v94nqp:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
@@ -46,13 +51,19 @@ body {
 .img-b93lqp {
   width: 100%;
   height: auto;
-  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/9; /* Hoặc 4/3 nếu bạn thích dạng gần vuông hơn */
+  border-radius: 6px;
+  transition: transform 0.4s ease;
+}
+.img-b93lqp:hover {
+  transform: scale(1.02);
 }
 .ctn-b83lqp {
   padding: 10px;
 }
 .ttl-n93opa {
-  font-size: 17px;
+  font-size: 21px;
   font-weight: bold;
   margin: 6px 0;
   color: #222;
@@ -62,20 +73,20 @@ body {
   color: #c00;
 }
 .des-z38qla {
-  font-size: 14px;
+  font-size: 18px;
   color: #555;
 }
 .sec-h93opa {
-  font-size: 22px; /* Phóng to thêm */
+  font-size: 28px;
   font-weight: bold;
-  color: #d60000; /* Màu đỏ nổi bật */
+  color: #d60000;
   margin-bottom: 6px;
-  border-bottom: 3px solid #d60000; /* Đậm hơn, cùng màu */
+  border-bottom: 3px solid #d60000;
   padding-bottom: 4px;
-  text-transform: uppercase; /* In hoa toàn bộ nếu muốn nhấn mạnh hơn nữa */
+  text-transform: uppercase;
 }
 .meta-d93opa {
-  font-size: 12px;
+  font-size: 13px;
   color: #888;
   margin-top: 4px;
   display: flex;
@@ -88,4 +99,67 @@ body {
   display: flex;
   align-items: center;
   gap: 2px;
+}
+/* Container tin tức */
+.news-container {
+  transition: opacity 0.4s ease;
+}
+
+/* Phân trang */
+.news-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.news-pagination-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.news-pagination-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+.news-pagination-btn:disabled {
+  background: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+#page-indicator {
+  font-size: 0.9rem;
+  color: #666;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* New enhancements */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
