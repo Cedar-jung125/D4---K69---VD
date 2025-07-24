@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sửa đường dẫn PDF thành tương đối (bỏ dấu / ở đầu)
     viewer.innerHTML = `
         <h3>${title} - ${phase} - Môn ${subject}</h3>
-        <iframe src="/pdf/${encodeURIComponent(pdf.filename)}" 
+        <iframe src="pdf/${encodeURIComponent(pdf.filename)}" 
                 width="100%" 
                 height="600px" 
                 frameborder="0"></iframe>
