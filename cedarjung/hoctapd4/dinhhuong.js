@@ -5,22 +5,57 @@ document.addEventListener("DOMContentLoaded", function () {
       mainTitle: "Kỹ thuật - Tự nhiên - Kinh tế",
       subTitle: "Các tổ hợp Khối A",
     },
-    B00: { mainTitle: "Y dược - Sinh học", subTitle: "Các tổ hợp Khối B" },
+    B00: {
+      mainTitle: "Y dược - Sinh học - Nông lâm",
+      subTitle: "Các tổ hợp Khối B",
+    },
     C00: { mainTitle: "Xã hội - Nhân văn", subTitle: "Các tổ hợp Khối C" },
     D01: {
-      mainTitle: "Ngoại ngữ - Kinh tế quốc tế",
+      mainTitle: "Ngoại ngữ - Thương mại - Truyền thông",
       subTitle: "Các tổ hợp Khối D",
     },
     default: {
-      mainTitle: "Định hướng tổ hợp môn học",
+      mainTitle: "Các khối truyền thống và tổ hợp xét tuyển",
       subTitle: "Chọn khối để xem chi tiết",
     },
   };
 
   const comboGroups = {
-    "Khối A": ["A00", "A01", "A02"],
-    "Khối B": ["B00", "B01", "B02"],
-    "Khối C": ["C00", "C01", "C02"],
+    "Khối A": [
+      "A00",
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A11",
+    ],
+    "Khối B": ["B00", "B01", "B02", "B03", "B04", "B08"],
+    "Khối C": [
+      "C00",
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C08",
+      "C09",
+      "C10",
+      "C12",
+      "C13",
+      "C14",
+      "C16",
+      "C17",
+      "C18",
+      "C19",
+      "C20",
+    ],
     "Khối D": ["D00", "D01", "D02"],
   };
 
@@ -440,5 +475,125 @@ document.addEventListener("DOMContentLoaded", function () {
     contentSection.style.background = "transparent";
     contentSection.style.boxShadow = "none";
   }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // ============ XỬ LÝ CLICK THẺ VÀ HIỂN THỊ NỘI DUNG ============
+  const cards = document.querySelectorAll(".d4-card__super-rare");
+  const contents = {
+    school: document.getElementById("schoolContent"),
+    subjects: document.getElementById("subjectsContent"),
+    requirements: document.getElementById("requirementsContent"),
+  };
+
+  // Ẩn tất cả nội dung chi tiết ban đầu
+  Object.values(contents).forEach((content) => {
+    if (content) {
+      content.style.display = "none";
+    }
+  });
+
+  // Xử lý click thẻ
+  cards.forEach((card) => {
+    card.addEventListener("click", function (e) {
+      e.preventDefault();
+      const cardType = this.getAttribute("data-card");
+
+      // Ẩn tất cả nội dung
+      Object.values(contents).forEach((content) => {
+        if (content) content.style.display = "none";
+      });
+
+      // Hiển thị nội dung tương ứng
+      if (contents[cardType]) {
+        contents[cardType].style.display = "block";
+
+        // Cuộn đến nội dung mượt mà
+        contents[cardType].scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
+
+  // Xử lý nút quay lại
+  document.querySelectorAll(".d4-back-btn__cosmic-flare").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Ẩn tất cả nội dung chi tiết
+      Object.values(contents).forEach((content) => {
+        if (content) content.style.display = "none";
+      });
+
+      // Cuộn lên đầu trang
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // ============ ĐẾM NGƯỢC THỜI GIAN ============
+  function updateCountdown() {
+    const countdownElement = document.querySelector(
+      ".d4-countdown__crazy-unique"
+    );
+    if (!countdownElement) return;
+
+    const startDate = new Date(
+      countdownElement.getAttribute("data-start-date")
+    );
+    const endDate = new Date(countdownElement.getAttribute("data-end-date"));
+    const now = new Date();
+
+    // Kiểm tra thời gian hợp lệ
+    if (now >= endDate) {
+      document.getElementById("days").textContent = "000";
+      document.getElementById("hours").textContent = "00";
+      document.getElementById("minutes").textContent = "00";
+      return;
+    }
+
+    if (now < startDate) {
+      document.getElementById("days").textContent = "000";
+      document.getElementById("hours").textContent = "00";
+      document.getElementById("minutes").textContent = "00";
+      return;
+    }
+
+    // Tính thời gian còn lại
+    const remaining = endDate - now;
+    const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+
+    // Cập nhật hiển thị
+    document.getElementById("days").textContent = days
+      .toString()
+      .padStart(3, "0");
+    document.getElementById("hours").textContent = hours
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes
+      .toString()
+      .padStart(2, "0");
+  }
+
+  // Khởi chạy đếm ngược và cập nhật mỗi phút
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+
+  // ============ HIỆU ỨNG KHI LOAD TRANG ============
+  setTimeout(() => {
+    const banner = document.querySelector(".d4-banner__ultra-mega-super");
+    const cards = document.querySelector(".d4-cards__wild-grid");
+
+    if (banner) banner.style.opacity = "1";
+    if (cards) cards.style.opacity = "1";
+  }, 100);
 });
 
