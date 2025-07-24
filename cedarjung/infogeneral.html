@@ -67,6 +67,9 @@
           </ul>
         </li>
         <li>
+          <a href="cedarjung/healthy.html">Sức khỏe</a>
+        </li>
+        <li>
           <a href="cedarjung/thongbaophobien/schedule.html">Thời khoá biểu</a>
         </li>
         <li class="dropdown">
@@ -85,160 +88,193 @@
       <main class="mnc-a93xqp">
         <div class="col-l93xoa">
           <div class="sec-h93opa">Tin tức chính</div>
-          <a href="#" class="art-v94nqp">
+
+          <!-- Container chứa các bài báo -->
+          <div id="news-container" class="news-container">
+            <!-- Các bài báo sẽ được thêm tự động bằng JS -->
+          </div>
+
+          <!-- Phân trang -->
+          <div class="news-pagination">
+            <button id="prev-page" class="news-pagination-btn" disabled>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                />
+              </svg>
+              Trang trước
+            </button>
+            <span id="page-indicator">1/3</span>
+            <button id="next-page" class="news-pagination-btn">
+              Trang sau
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-r39xpa">
+          <div class="sec-h93opa">Học tập</div>
+          <a href="cedarjung/baibao/dethivao10hn.html" class="art-v94nqp">
             <img
-              src="img/tiepsucmuathi.jpg"
-              alt="Tiếp sức mùa thi"
+              src="img/dithivao10d4.jpg"
+              alt="Ảnh đi thi"
               class="img-b93lqp"
             />
             <div class="meta-d93opa">
               <span class="meta-time">⏰ 09/06/2025</span>
               ·
-              <span class="meta-comment">💬 10 bình luận</span>
+              <span class="meta-comment">💬 14 bình luận</span>
             </div>
             <div class="ctn-b83lqp">
               <h2 class="ttl-n93opa">
-                Học sinh lớp D4 trường THPT Việt Đức tham gia tiếp sức kì thi
-                vào 10 và tốt nghiệp THPT tại Hà Nội năm 2025
+                Đáp án đề thi vào 10 sở Hà Nội năm 2025
               </h2>
               <p class="des-z38qla">
-                Tháng 6 ai cũng phải đối mặt với những kỳ thi quan trọng và mùa thi là nơi gặp gỡ của những nối...
-              </p>
-            </div>
-          </a>
-
-          <a href="" class="art-v94nqp">
-            <img
-              src="img/gen-h-damcuoicothu.jpg"
-              alt="Đi dự đám cưới"
-              class="img-b93lqp"
-            />
-            <div class="meta-d93opa">
-              <span class="meta-time">⏰ 01/06/2025</span>
-              <span class="meta-comment">💬 02 bình luận</span>
-            </div>
-            <div class="ctn-b83lqp">
-              <h2 class="ttl-n93opa">
-                Học sinh đi dự đám cưới nhà giáo môn Địa lí lớp 10D4
-              </h2>
-              <p class="des-z38qla">
-                Ngày 01/06/2025, nhận được lời mời của nhà giáo Nguyễn Minh Thu, lớp chúng tôi...
+                Trong hai ngày 07/06 - 08/06, gần 116.000 lượt thí sinh Hà Nội
+                hoàn thành bài thi...
               </p>
             </div>
           </a>
 
           <a href="#" class="art-v94nqp">
             <img
-              src="img/111A2534.JPG"
-              alt="Nhảy Tết"
+              src="img/vexrobotics3.jpg"
+              alt="Học sinh đạt giải robot"
               class="img-b93lqp"
             />
             <div class="meta-d93opa">
-              <span class="meta-time">⏰ 16/06/2025</span>
+              <span class="meta-time">⏰ 09/05/2025</span>
               ·
-              <span class="meta-comment">💬 27 bình luận</span>
+              <span class="meta-comment">💬 05 bình luận</span>
             </div>
             <div class="ctn-b83lqp">
-              <h2 class="ttl-n93opa">Lớp D4 tham gia hoạt động ghi hình tại Đài truyền hình Hà Nội </h2>
+              <h2 class="ttl-n93opa">
+                Học sinh lớp 10D4 tham dự giải đấu Robotics lớn nhất trên thế
+                giới tại Mỹ năm 2025
+              </h2>
               <p class="des-z38qla">
-                Lớp chúng tôi là một trong các đại diện tiêu biểu được nhà trường cử đi tham gia hoạt động ghi hình tại...
+                Vào mỗi tháng 4-5 trong năm, kì thi Robotics lớn nhất trên toàn
+                thế giới sẽ được...
               </p>
             </div>
           </a>
-        </div>
 
-        <div class="col-r39xpa">
-          <div>
-            <div class="sec-h93opa">Học tập</div>
-            <a href="cedarjung/baibao/dethivao10hn.html" class="art-v94nqp">
-              <img src="img/dithivao10d4.jpg" alt="Ảnh đi thi" class="img-b93lqp" />
-              <div class="meta-d93opa">
-                <span class="meta-time">⏰ 09/06/2025</span>
-                ·
-                <span class="meta-comment">💬 14 bình luận</span>
-              </div>
-              <div class="ctn-b83lqp">
-                <h2 class="ttl-n93opa">
-                  Đáp án đề thi vào 10 sở Hà Nội năm 2025
-                </h2>
-                <p class="des-z38qla">
-                  Trong hai ngày 07/06 - 08/06, gần 116.000 lượt thí sinh Hà Nội
-                  hoàn thành bài thi...
-                </p>
-              </div>
-            </a>
+          <a href="#" class="art-v94nqp">
+            <img
+              src="img/hocsinhdatgiaiboi.jpg"
+              alt="Học sinh đạt giải môn bơi"
+              class="img-b93lqp"
+            />
+            <div class="meta-d93opa">
+              <span class="meta-time">⏰ 11/04/2025</span>
+              ·
+              <span class="meta-comment">💬 04 bình luận</span>
+            </div>
+            <div class="ctn-b83lqp">
+              <h2 class="ttl-n93opa">
+                Học sinh lớp 10D4 đạt huy chương đồng trong giải thể thao học
+                sinh thành phố Hà Nội năm học 2024 - 2025
+              </h2>
+              <p class="des-z38qla">
+                Bạn Nguyễn Anh Khoa - niềm tự hào của lớp D4 khi đã xuất sắc
+                dành giải...
+              </p>
+            </div>
+          </a>
 
-            <a href="#" class="art-v94nqp">
-              <img
-                src="img/vexrobotics3.jpg"
-                alt="Học sinh đạt giải robot"
-                class="img-b93lqp"
-              />
-              <div class="meta-d93opa">
-                <span class="meta-time">⏰ 09/05/2025</span>
-                ·
-                <span class="meta-comment">💬 05 bình luận</span>
-              </div>
-              <div class="ctn-b83lqp">
-                <h2 class="ttl-n93opa">
-                  Học sinh lớp 10D4 tham dự giải đấu Robotics lớn nhất trên thế
-                  giới tại Mỹ năm 2025
-                </h2>
-                <p class="des-z38qla">
-                  Vào mỗi tháng 4-5 trong năm, kì thi Robotics lớn nhất trên toàn thế giới sẽ được...
-                </p>
-              </div>
-            </a>
+          <div class="sec-h93opa">NHẮC NHỞ</div>
+          <a href="#" class="art-v94nqp">
+            <img
+              src="img/chucthitot.png"
+              alt="Thi cuối kì II"
+              class="img-b93lqp"
+            />
+            <div class="meta-d93opa">
+              <span class="meta-time">⏰ 08/04/2025</span>
+              ·
+              <span class="meta-comment">💬 0 bình luận</span>
+            </div>
+            <div class="ctn-b83lqp">
+              <h2 class="ttl-n93opa">
+                Lịch thi cuối học kì II năm học 2024 - 2025
+              </h2>
+              <p class="des-z38qla">
+                Dưới đây là lịch thi cuối học kì II năm học 2024 - 2025 của
+                trường THPT Việt Đức...
+              </p>
+            </div>
+          </a>
 
-            <a href="#" class="art-v94nqp">
-              <img
-                src="img/hocsinhdatgiaiboi.jpg"
-                alt="Học sinh đạt giải môn bơi"
-                class="img-b93lqp"
-              />
-              <div class="meta-d93opa">
-                <span class="meta-time">⏰ 11/04/2025</span>
-                ·
-                <span class="meta-comment">💬 04 bình luận</span>
-              </div>
-              <div class="ctn-b83lqp">
-                <h2 class="ttl-n93opa">
-                  Học sinh lớp 10D4 đạt huy chương đồng trong giải thể thao học
-                  sinh thành phố Hà Nội năm học 2024 - 2025
-                </h2>
-                <p class="des-z38qla">
-                  Bạn Nguyễn Anh Khoa - niềm tự hào của lớp D4 khi đã xuất sắc dành giải...
-                </p>
-              </div>
-            </a>
-          </div>
+          <a href="#" class="art-v94nqp">
+            <img
+              src="img/lichthigiuakihaimot.png"
+              alt="Bóng đá"
+              class="img-b93lqp"
+            />
+            <div class="meta-d93opa">
+              <span class="meta-time">⏰ 03/03/2025</span>
+              ·
+              <span class="meta-comment">💬 0 bình luận</span>
+            </div>
+            <div class="ctn-b83lqp">
+              <h2 class="ttl-n93opa">
+                Lịch thi giữa học kì II năm học 2024 - 2025
+              </h2>
+              <p class="des-z38qla">
+                Dưới đây là lịch thi giữa học kì II năm học 2024 - 2025 của
+                trường THPT Việt Đức...
+              </p>
+            </div>
+          </a>
 
-          <div>
-            <div class="sec-h93opa">Giải trí</div>
-            <a href="#" class="art-v94nqp">
-              <img src="img/hinh-nen-free-fire-3d-40.jpg" alt="Fifai" class="img-b93lqp" />
-              <div class="ctn-b83lqp">
-                <h2 class="ttl-n93opa">
-                  Bạn Nguyễn Minh Khôi đạt rank cao thủ tử chiến trong Fifai
-                </h2>
-                <p class="des-z38qla">
-                  Các chuyên gia trong giới Fifai đều nhận định rằng bạn Khôi...
-                </p>
-              </div>
-            </a>
+          <div class="sec-h93opa">Giải trí</div>
+          <a href="#" class="art-v94nqp">
+            <img
+              src="img/hinh-nen-free-fire-3d-40.jpg"
+              alt="Fifai"
+              class="img-b93lqp"
+            />
+            <div class="ctn-b83lqp">
+              <h2 class="ttl-n93opa">
+                Bạn Nguyễn Minh Khôi đạt rank cao thủ tử chiến trong Fifai
+              </h2>
+              <p class="des-z38qla">
+                Các chuyên gia trong giới Fifai đều nhận định rằng bạn Khôi...
+              </p>
+            </div>
+          </a>
 
-            <a href="#" class="art-v94nqp">
-              <img src="bongda.jpg" alt="Bóng đá" class="img-b93lqp" />
-              <div class="ctn-b83lqp">
-                <h2 class="ttl-n93opa">
-                  Thắng tưng bừng, phong độ chói sáng của các cầu thủ nam lớp D4 và D5
-                </h2>
-                <p class="des-z38qla">
-                  Sau chiến thắng trước lớp A4 vào cuối tuần trước, tuần này lớp D4 lại tiếp tục...
-                </p>
-              </div>
-            </a>
-          </div>
+          <a href="#" class="art-v94nqp">
+            <img src="img/dabongthang.jpg" alt="Bóng đá" class="img-b93lqp" />
+            <div class="ctn-b83lqp">
+              <h2 class="ttl-n93opa">
+                Thắng tưng bừng, phong độ chói sáng của các cầu thủ nam lớp D4
+                và D5
+              </h2>
+              <p class="des-z38qla">
+                Sau chiến thắng trước lớp A4 vào cuối tuần trước, tuần này lớp
+                D4 lại tiếp tục...
+              </p>
+            </div>
+          </a>
         </div>
       </main>
     </div>
@@ -292,5 +328,148 @@
       </div>
     </footer>
     <script src="cedarjung/Aboutjs/watw.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Dữ liệu bài báo mẫu (thay bằng dữ liệu thực tế)
+        const allNews = [
+          {
+            img: "img/akiniem70namthanhlaptruong.jpg",
+            alt: "Tiếp sức mùa thi",
+            date: "14/07/2025",
+            comments: "15",
+            title:
+              "Mua ủng hộ gây dựng quỹ chương trình kỉ niệm 70 năm thành lập trường",
+            desc: "Hãy cùng đánh dấu khoảnh khắc lịch sử này bằng chiếc áo đồng hành, túi kỷ niệm, và bình nước thân thiện môi trường...",
+          },
+          {
+            img: "img/tiepsucmuathi.jpg",
+            alt: "Tiếp sức mùa thi",
+            date: "28/06/2025",
+            comments: "10",
+            title:
+              "Học sinh lớp D4 trường THPT Việt Đức tham gia tiếp sức kì thi vào 10 và tốt nghiệp THPT tại Hà Nội năm 2025",
+            desc: "Tháng 6 ai cũng phải đối mặt với những kỳ thi quan trọng và mùa thi là nơi gặp gỡ của những nối...",
+          },
+          {
+            img: "img/gen-h-damcuoicothu.jpg",
+            alt: "Đi dự đám cưới",
+            date: "01/06/2025",
+            comments: "2",
+            title: "Học sinh đi dự đám cưới nhà giáo môn Địa lí lớp 10D4",
+            desc: "Ngày 01/06/2025, nhận được lời mời của nhà giáo Nguyễn Minh Thu, lớp chúng tôi đã tham dự ...",
+          },
+          {
+            img: "img/summer.jpg",
+            alt: "Nghỉ hè",
+            date: "22/05/2025",
+            comments: "1",
+            title: "Học sinh đi dự đám cưới nhà giáo môn Địa lí lớp 10D4",
+            desc: "Ngày 01/06/2025, nhận được lời mời của nhà giáo Nguyễn Minh Thu, lớp chúng tôi...",
+          },
+          {
+            img: "img/lebegiang/NN_03156.jpg",
+            alt: "Lễ bế giảng",
+            date: "21/05/2025",
+            comments: "8",
+            title: "Lễ bế giảng năm học 2024 - 2025",
+            desc: "",
+          },
+          {
+            img: "img/chiataycaccothuctap.jpg",
+            alt: "Chia tay các cô thực tập",
+            date: "19/04/2025",
+            comments: "9",
+            title: "Buổi chia tay đầy cảm xúc các cô giáo thực tập lớp D4",
+            desc: "",
+          },
+          {
+            img: "img/111A2534.JPG",
+            alt: "Biểu diễn",
+            date: "11/01/2025",
+            comments: "5",
+            title: "Học sinh đi dự đám cưới nhà giáo môn Địa lí lớp 10D4",
+            desc: "Lớp chúng tôi là một trong  các đại diện tiêu biểu được nhà trường cử đi tham gia hoạt động ghi hình tại...",
+          },
+        ];
+
+        // Cấu hình phân trang
+        const newsPerPage = 5;
+        let currentPage = 1;
+        const totalPages = Math.ceil(allNews.length / newsPerPage);
+
+        // DOM Elements
+        const newsContainer = document.getElementById("news-container");
+        const prevBtn = document.getElementById("prev-page");
+        const nextBtn = document.getElementById("next-page");
+        const pageIndicator = document.getElementById("page-indicator");
+
+        // Hiển thị bài báo
+        function displayNews(page) {
+          // Tính toán bài báo cần hiển thị
+          const startIndex = (page - 1) * newsPerPage;
+          const endIndex = startIndex + newsPerPage;
+          const newsToShow = allNews.slice(startIndex, endIndex);
+
+          // Tạo HTML cho các bài báo
+          let newsHTML = "";
+          newsToShow.forEach((news) => {
+            newsHTML += `
+        <a href="#" class="art-v94nqp">
+          <img src="${news.img}" alt="${news.alt}" class="img-b93lqp" />
+          <div class="meta-d93opa">
+            <span class="meta-time">⏰ ${news.date}</span>
+            ·
+            <span class="meta-comment">💬 ${news.comments} bình luận</span>
+          </div>
+          <div class="ctn-b83lqp">
+            <h2 class="ttl-n93opa">${news.title}</h2>
+            <p class="des-z38qla">${news.desc}</p>
+          </div>
+        </a>
+      `;
+          });
+
+          // Hiệu ứng fade out -> thay đổi nội dung -> fade in
+          newsContainer.style.opacity = "0";
+          setTimeout(() => {
+            newsContainer.innerHTML = newsHTML;
+            newsContainer
+              .querySelectorAll(".art-v94nqp")
+              .forEach((el) => el.classList.add("fade-in"));
+
+            newsContainer.style.opacity = "1";
+
+            // Cập nhật trạng thái nút phân trang
+            updatePaginationButtons();
+          }, 400);
+        }
+
+        // Cập nhật trạng thái nút phân trang
+        function updatePaginationButtons() {
+          pageIndicator.textContent = `${currentPage}/${totalPages}`;
+          prevBtn.disabled = currentPage === 1;
+          nextBtn.disabled = currentPage === totalPages;
+        }
+
+        // Sự kiện click nút trang trước
+        prevBtn.addEventListener("click", () => {
+          if (currentPage > 1) {
+            currentPage--;
+            displayNews(currentPage);
+          }
+        });
+
+        // Sự kiện click nút trang sau
+        nextBtn.addEventListener("click", () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            displayNews(currentPage);
+          }
+        });
+
+        // Khởi tạo
+        displayNews(currentPage);
+      });
+    </script>
   </body>
 </html>
