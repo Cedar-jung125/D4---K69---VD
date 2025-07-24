@@ -22,7 +22,7 @@
         <p style="margin: 0">TRƯỜNG THPT VIỆT ĐỨC</p>
         <h1>K69 D4 (2024 -2027)</h1>
         <p style="margin: 0">
-          47 Lý Thường Kiệt, phường Trần Hưng Đạo, quận Hoàn Kiếm, Thành phố Hà
+          47 Lý Thường Kiệt, phường Cửa Nam, Thành phố Hà
           Nội
         </p>
       </div>
@@ -69,6 +69,9 @@
           </ul>
         </li>
         <li>
+          <a href="cedarjung/healthy.html">Sức khỏe</a>
+        </li>
+        <li>
           <a href="cedarjung/thongbaophobien/schedule.html">Thời khoá biểu</a>
         </li>
         <li class="dropdown">
@@ -83,27 +86,103 @@
       </ul>
     </nav>
 
-    <main class="main-centered">
-      <h1>📘 Chào mừng bạn đến với nền tảng luyện thi!</h1>
-      <p class="subtitle">Hãy chọn một kỳ thi để bắt đầu luyện tập</p>
-      <div class="card-grid">
-        <a href="https://classmarker.com" class="card">
-          <i class="fas fa-globe-europe icon"></i>
-          <span>IELTS</span>
-        </a>
-        <a href="https://classmarker.com" class="card">
-          <i class="fas fa-graduation-cap icon"></i>
-          <span>AP</span>
-        </a>
-        <a href="https://classmarker.com" class="card">
-          <i class="fas fa-language icon"></i>
-          <span>SAT</span>
-        </a>
-        <a href="https://classmarker.com" class="card">
-          <i class="fas fa-laptop-code icon"></i>
-          <span>THPTQG</span>
-        </a>
+   <main class="MN2ED_main-content">
+      <h1 class="MN2ED_hero-title" id="MN2ED_mainTitle">
+        Chào mừng các VĐ-er lớp D4 đến với phần Mở rộng!
+      </h1>
+      <p class="MN2ED_subtitle" id="MN2ED_mainSubtitle">
+        Hãy chọn một kỳ thi phù hợp để lấy tài liệu và bắt đầu luyện tập nha!
+      </p>
+
+      <div class="MN2ED_exam-grid" id="MN2ED_examGrid">
+        <!-- IELTS -->
+        <div
+          class="MN2ED_exam-card MN2ED_ielts"
+          onclick="MN2ED_showSkills('ielts')"
+        >
+          <div class="MN2ED_exam-icon"><i class="fas fa-language"></i></div>
+          <h2 class="MN2ED_exam-title">IELTS</h2>
+        </div>
+
+        <!-- SAT -->
+        <div
+          class="MN2ED_exam-card MN2ED_sat"
+          onclick="MN2ED_showSkills('sat')"
+        >
+          <div class="MN2ED_exam-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h2 class="MN2ED_exam-title">SAT</h2>
+        </div>
+
+        <!-- AP -->
+        <div class="MN2ED_exam-card MN2ED_ap" onclick="MN2ED_showSkills('ap')">
+          <div class="MN2ED_exam-icon"><i class="fas fa-atom"></i></div>
+          <h2 class="MN2ED_exam-title">AP</h2>
+        </div>
+
+        <!-- HSK -->
+        <div
+          class="MN2ED_exam-card MN2ED_hsk"
+          onclick="MN2ED_showSkills('hsk')"
+        >
+          <div class="MN2ED_exam-icon"><i class="fas fa-yin-yang"></i></div>
+          <h2 class="MN2ED_exam-title">HSK</h2>
+        </div>
+
+        <!-- Tiếng Đức -->
+        <div
+          class="MN2ED_exam-card MN2ED_german"
+          onclick="MN2ED_showSkills('german')"
+        >
+          <div class="MN2ED_exam-icon"><i class="fas fa-landmark"></i></div>
+          <h2 class="MN2ED_exam-title">Tiếng Đức</h2>
+        </div>
+
+        <!-- Tiếng Pháp -->
+        <div
+          class="MN2ED_exam-card MN2ED_french"
+          onclick="MN2ED_showSkills('french')"
+        >
+          <div class="MN2ED_exam-icon">
+            <i class="fas fa-wine-glass-alt"></i>
+          </div>
+          <h2 class="MN2ED_exam-title">Tiếng Pháp</h2>
+        </div>
+
+        <!-- Tiếng Nhật -->
+        <div
+          class="MN2ED_exam-card MN2ED_japanese"
+          onclick="MN2ED_showSkills('japanese')"
+        >
+          <div class="MN2ED_exam-icon"><i class="fas fa-torii-gate"></i></div>
+          <h2 class="MN2ED_exam-title">Tiếng Nhật</h2>
+        </div>
+
+        <!-- Tiếng Hàn -->
+        <div
+          class="MN2ED_exam-card MN2ED_korean"
+          onclick="MN2ED_showSkills('korean')"
+        >
+          <div class="MN2ED_exam-icon"><i class="fas fa-dharmachakra"></i></div>
+          <h2 class="MN2ED_exam-title">Tiếng Hàn</h2>
+        </div>
       </div>
+
+      <button
+        class="MN2ED_back-btn"
+        id="MN2ED_backBtn"
+        onclick="MN2ED_goBack()"
+      >
+        <i class="fas fa-arrow-left"></i> Quay lại
+      </button>
+
+      <div class="MN2ED_skills-container" id="MN2ED_skillsContainer"></div>
+      <div
+        class="MN2ED_materials-container"
+        id="MN2ED_materialsContainer"
+      ></div>
+      <div class="MN2ED_pdf-container" id="MN2ED_pdfContainer"></div>
     </main>
 
     <footer class="school-footer">
@@ -112,7 +191,7 @@
           <h3>Trường THPT Việt Đức</h3>
           <p>
             Trường THPT Việt Đức thành lập ngày 03-3-1955, tại Lý Thường Kiệt -
-            Quận Hoàn Kiếm - Hà Nội. Lớp D4 K69 thuộc khóa thứ 69 của trường
+             Phường Cửa Nam - Hà Nội. Lớp D4 K69 thuộc khóa thứ 69 của trường
             THPT Việt Đức và là lớp tổ hợp Địa lí, GDKT - PL, Vật lí, Tin học
             của trường
           </p>
@@ -120,7 +199,7 @@
         <div class="footer-column">
           <h3>Liên hệ</h3>
           <p>
-            Địa chỉ: 47 Lý Thường Kiệt, phường Trần Hưng Đạo, Hoàn Kiếm, Hà Nội
+            Địa chỉ: 47 Lý Thường Kiệt, phường Cửa Nam, Hà Nội
           </p>
         </div>
         <div class="footer-column">
