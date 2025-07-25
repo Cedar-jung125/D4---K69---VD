@@ -2,647 +2,226 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>K69 D4 trường Trung học phổ thông Việt Đức</title>
-    <meta name="keywords" content="Trường THPT Việt Đức" />
-    <base href="/D4---K69---VD/" />
-    <link rel="stylesheet" href="cedarjung/Aboutcss/style.css" />
-    <link rel="stylesheet" href="cedarjung/Aboutcss/search.css" />
+    <title>Đăng nhập vào hệ thống lớp D4</title>
+    <script>
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyD5Z6vQeAHQy4vP0tkTt-YiZ-aiFz0IHOs",
+        authDomain: "class-d4---k69---vd.firebaseapp.com",
+        projectId: "class-d4---k69---vd",
+        storageBucket: "class-d4---k69---vd.appspot.com",
+        messagingSenderId: "97705944134",
+        appId: "1:97705944134:web:9f3b244ffe668dac5d9647",
+        measurementId: "G-EJCD5PGHG1",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const provider = new GoogleAuthProvider();
+
+      document.getElementById("loginBtn").addEventListener("click", () => {
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            window.location.href = "cedarjung/home.html";
+          })
+          .catch((error) => {
+            alert("Đăng nhập thất bại: " + error.message);
+          });
+      });
+    </script>
     <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        font-family: "Montserrat", sans-serif;
+        overflow: hidden;
+      }
+      .login-container {
+        display: flex;
+        width: 100%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .login-image {
+        width: 40%;
+        background: url("/img/111A2534.JPG") center/cover no-repeat;
+        position: relative;
+        transition: all 0.5s ease;
+      }
+      .login-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(66, 133, 244, 0.7) 0%,
+          rgba(52, 119, 227, 0.7) 100%
+        );
+      }
+      .login-content {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background: #ffffff;
+        position: relative;
+      }
+      .login-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://www.transparenttextures.com/patterns/cubes.png");
+        opacity: 0.03;
+        z-index: 0;
+      }
+      .login-content h1 {
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        color: #2c3e50;
+        font-weight: 700;
+        position: relative;
+        animation: fadeInDown 1s ease;
+        text-align: center;
+      }
+      .login-content p {
+        margin-bottom: 2.5rem;
+        color: #7f8c8d;
+        font-size: 1.1rem;
+        max-width: 80%;
+        text-align: center;
+        line-height: 1.6;
+        position: relative;
+        animation: fadeIn 1.5s ease;
+      }
+      .login-content button {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        animation: fadeInUp 1s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+      }
+      .login-content button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 7px 20px rgba(66, 133, 244, 0.4);
+      }
+      .login-content button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+      .login-content button:hover::before {
+        opacity: 1;
+      }
+      .login-content button i {
+        margin-right: 10px;
+        font-size: 1.3rem;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .login-container {
+          flex-direction: column;
+        }
+        .login-image,
+        .login-content {
+          width: 100%;
+        }
+        .login-image {
+          height: 30vh;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
   </head>
   <body>
-    <button id="login-btn" style="display: none;">Đăng nhập</button>
-    <div data-auth-guard style="display: none;">
-     <header class="top-header">
-      <div class="header-left">
-        <img src="img/Logoclass.jpg" alt="Logo lớp" class="logo" />
-      </div>
-      <div class="header-center">
-        <p style="margin: 0">TRƯỜNG THPT VIỆT ĐỨC</p>
-        <h1>K69 D4 (2024 - 2027)</h1>
-        <p style="margin: 0">
-          47 Lý Thường Kiệt, phường Cửa Nam, Thành phố Hà Nội
+    <div class="login-container">
+      <div class="login-image"></div>
+      <div class="login-content">
+        <h1>Đăng nhập để tiếp tục</h1>
+        <p>
+          Chào mừng bạn đến với trang của lớp D4 - Việt Đức. Hãy đăng nhập để
+          truy cập vào hệ thống và khám phá những tiện ích dành riêng cho bạn.
         </p>
-      </div>
-      <div class="header-right">
-        <select class="lang-select">
-          <option value="vi">Tiếng Việt</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="fr">French</option>
-          <option value="ja">Japanese</option>
-          <option value="ko">Korean</option>
-        </select>
-      </div>
-    </header>
-    <div class="container">
-      <div class="text-section">
-        <div class="text-content">
-          <h1 class="main-title">WELCOMING TO D4 - VĐ</h1>
-          <div class="typewriter-container">
-            <span id="typewriter"></span>
-            <div id="dynamic-text"></div>
-          </div>
-          <div class="divider"></div>
-        </div>
-      </div>
-
-      <!-- Phần slideshow ảnh bên phải -->
-      <div class="slideshow-section">
-        <div class="slideshow-container">
-          <div class="slide active">
-            <img src="img/Anhdaunam.jpg" alt="Ảnh đầu năm" />
-          </div>
-          <div class="slide">
-            <img src="img/TAH09616.jpg" alt="Ảnh hoạt động" />
-          </div>
-          <div class="slide">
-            <img src="img/vannghedth.jpg" alt="Họp phụ huynh" />
-          </div>
-          <div class="slide">
-            <img src="img/nhagiaovietnam.jpg" alt="Nhà giáo Việt Nam" />
-          </div>
-          <div class="slide">
-            <img src="img/lebegiang/NN_03156.jpg" alt="Bế giảng" />
-          </div>
-
-          <!-- Nút điều hướng -->
-          <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-          <a class="next" onclick="changeSlide(1)">&#10095;</a>
-
-          <!-- Dot indicators -->
-          <div class="dots">
-            <span class="dot active" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
-            <span class="dot" onclick="goToSlide(2)"></span>
-            <span class="dot" onclick="goToSlide(3)"></span>
-            <span class="dot" onclick="goToSlide(4)"></span>
-          </div>
-        </div>
+        <button id="loginBtn">
+          <i class="fab fa-google"></i> Đăng nhập với Google
+        </button>
       </div>
     </div>
-
-    <nav class="navbar">
-      <div class="navbar-header">
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      </div>
-
-      <ul id="navbar-menu">
-        <li><a href="#">Trang chủ</a></li>
-        <li class="dropdown">
-          <a href="#">Giới thiệu ⯆</a>
-          <ul class="dropdown-content">
-            <li><a href="cedarjung/gioithieuchung/introduction.html">Về lớp</a></li>
-            <li><a href="cedarjung/gioithieuchung/member.html">Thành viên</a></li>
-          </ul>
-        </li>
-        <li><a href="cedarjung/infogeneral.html">Tin tức</a></li>
-        <li class="dropdown">
-          <a href="#">Học tập ⯆</a>
-          <ul class="dropdown-content">
-            <li><a href="cedarjung/hoctapd4/study.html">Khoá học</a></li>
-            <li><a href="cedarjung/Open/Homeopen.html">Mở rộng</a></li>
-            <li><a href="cedarjung/hoctapd4/result.html">Nhắc nhở bài tập</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="cedarjung/healthy.html">Sức khỏe</a>
-        </li>
-        <li><a href="cedarjung/thongbaophobien/schedule.html">Thời khoá biểu</a></li>
-        <li class="dropdown">
-          <a href="#">Khác ⯆</a>
-          <ul class="dropdown-content">
-            <li><a href="cedarjung/Thuvien/trangchuthuvien.html">Thư viện</a></li>
-            <li><a href="cedarjung/Game/trangchugame.html">Trò chơi</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <main>
-      <section class="event-section" id="section1">
-        <h2 class="section-title">SỰ KIỆN</h2>
-        <div class="article-slider">
-          <div class="article-wrapper">
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/tiepsucmuathi.jpg" alt="Tiếp sức mùa thi" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Jun/2025</span>
-                  <span class="day">29</span>
-                </div>
-                <h3 class="article-title">
-                  HỌC SINH D4 THAM GIA TIẾP SỨC MÙA THI VÀO 10 VÀ TỐT NGHIỆP THPT HÀ NỘI NĂM 2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/gen-h-damcuoicothu.jpg" alt="Tham quan" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Jun/2025</span>
-                  <span class="day">01</span>
-                </div>
-                <h3 class="article-title">
-                  ĐI DỰ ĐÁM CƯỚI NHÀ GIÁO MÔN ĐỊA LÍ LỚP 10D4
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/lebegiang/NN_03156.jpg" alt="Lễ bế giảng" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">May/2025</span>
-                  <span class="day">21</span>
-                </div>
-                <h3 class="article-title">LỄ BẾ GIẢNG NĂM HỌC 2024 - 2025</h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/chiataycaccothuctap.jpg" alt="Chia tay các cô thực tập" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Apr/2025</span>
-                  <span class="day">19</span>
-                </div>
-                <h3 class="article-title">BUỔI CHIA TAY ĐẦY CẢM XÚC CÁC CÔ GIÁO THỰC TẬP LỚP 10D4</h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="cedarjung/baibao/tochucngayphunuquocte" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/tochucngayphunu.jpg" alt="Tổ chức sự kiện" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Mar/2025</span>
-                  <span class="day">08</span>
-                </div>
-                <h3 class="article-title">
-                  LỚP 10D4 TỔ CHỨC NGÀY QUỐC TẾ 08-03-2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/111A2534.JPG" alt="Biểu diễn" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Jan/2025</span>
-                  <span class="day">11</span>
-                </div>
-                <h3 class="article-title">
-                  LỚP 10D4 THAM GIA HOẠT ĐỘNG GHI HÌNH TẠI ĐÀI TRUYỀN HÌNH HÀ
-                  NỘI
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="cedarjung/baibao/thamquan1.html" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/TAH00237.jpg" alt="Thông báo 2" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Nov/2024</span>
-                  <span class="day">25</span>
-                </div>
-                <h3 class="article-title">
-                  CHUYẾN THAM QUAN TẠI SẦM SƠN, THANH HÓA
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a
-                href="cedarjung/baibao/khaigiangnamhocdau.html"
-                class="card-link"
-              >
-                <div class="thumbnail-container">
-                  <img src="img/khaigiangnamhocmoi.jpg" alt="Thông báo 3" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Sep/2024</span>
-                  <span class="day">05</span>
-                </div>
-                <h3 class="article-title">
-                  KHAI GIẢNG ĐẦU TIÊN CỦA LỚP D4 NĂM HỌC 2024 - 2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="cedarjung/baibao/Nhaphocdaunam.html" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/Anhdaunam.jpg" alt="Thông báo 3" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Aug/2024</span>
-                  <span class="day">29</span>
-                </div>
-                <h3 class="article-title">NGÀY ĐẦU TẬP TRUNG</h3>
-              </a>
-            </article>
-          </div>
-        </div>
-        <div class="slider-controls">
-          <button onclick="magicPrev1()">Prev</button>
-          <button onclick="magicNext1()">Next</button>
-        </div>
-      </section>
-
-      <section class="event-section" id="section2">
-        <h2 class="section-title">THÔNG BÁO</h2>
-        <div class="article-slider">
-          <div class="article-wrapper">
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img
-                    src="img/akiniem70namthanhlaptruong.jpg"
-                    alt="Kỉ niệm 70 năm"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Jul/2025</span>
-                  <span class="day">14</span>
-                </div>
-                <h3 class="article-title">
-                  MUA ỦNG HỘ GÂY DỰNG QUỸ CHƯƠNG TRÌNH KỈ NIỆM 70 NĂM THÀNH LẬP
-                  TRƯỜNG
-                </h3>
-              </a>
-            </article>
-            
-            <article class="article-card">
-              <a
-                href="cedarjung/baibao/tuyensinhvao10namhocmoi.html"
-                class="card-link"
-              >
-                <div class="thumbnail-container">
-                  <img
-                    src="img/515513277_1292987046168779_8262999581809952345_n.jpg"
-                    alt="Thông báo 1"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Jul/2025</span>
-                  <span class="day">05</span>
-                </div>
-                <h3 class="article-title">
-                  THÔNG TIN TUYỂN SINH VÀO 10 TRƯỜNG THPT VIỆT ĐỨC NĂM HỌC 2025
-                  - 2026
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a
-                href="cedarjung/thongbaophobien/lichnghihek10.html"
-                class="card-link"
-              >
-                <div class="thumbnail-container">
-                  <img src="img/summer.jpg" alt="Lịch nghỉ hè" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">May/2025</span>
-                  <span class="day">22</span>
-                </div>
-                <h3 class="article-title">
-                  LỊCH NGHỈ HÈ NĂM HỌC 2024 - 2025 CỦA KHỐI 10
-                </h3>
-              </a>
-            </article>
-
-               <article class="article-card">
-              <a
-                href="#"
-                class="card-link"
-              >
-                <div class="thumbnail-container">
-                  <img
-                    src="img/hopphuhuynhdebun.png"
-                    alt="Lịch thi giữa học kì 1"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">May/2025</span>
-                  <span class="day">17</span>
-                </div>
-                <h3 class="article-title">
-                  LỊCH HỌP PHỤ HUYNH LỚP 10D4 CUỐI NĂM HỌC 2024 - 2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a
-                href="cedarjung/thongbaophobien/thicuoikihaimot.html"
-                class="card-link"
-              >
-                <div class="thumbnail-container">
-                  <img src="img/chucthitot.png" alt="Lịch thi cuối học kì 2" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Apr/2025</span>
-                  <span class="day">08</span>
-                </div>
-                <h3 class="article-title">
-                  LỊCH THI HỌC KÌ II CỦA LỚP 10D4 NĂM HỌC 2024 - 2025
-                </h3>
-              </a>
-            </article>
-
-             <article class="article-card">
-              <a
-                href="#"
-                class="card-link"
-              >
-                <div class="thumbnail-container">
-                  <img
-                    src="img/lichthigiuakihaimot.png"
-                    alt="Lịch thi giữa học kì 2"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Mar/2025</span>
-                  <span class="day">03</span>
-                </div>
-                <h3 class="article-title">
-                  LỊCH THI GIỮA HỌC KÌ II CỦA LỚP 10D4 NĂM HỌC 2024 - 2025
-                </h3>
-              </a>
-            </article>
-
-             <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/loi-chuc-tet-2025-1.png" alt="Thông báo 3" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Feb/2025</span>
-                  <span class="day">22</span>
-                </div>
-                <h3 class="article-title">
-                  THÔNG BÁO NGHỈ TẾT ÂM LỊCH NĂM HỌC 2024 - 2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/gen-h-thanhlaptruong.jpg" alt="Gia hạn" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Feb/2025</span>
-                  <span class="day">10</span>
-                </div>
-                <h3 class="article-title">
-                  GIA HẠN CUỘC THI KỈ NIỆM 70 NĂM THÀNH LẬP TRƯỜNG THPT VIỆT ĐỨC
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img
-                    src="img/lichthihockimotmot.png"
-                    alt="Lịch thi học kì 1"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Dec/2024</span>
-                  <span class="day">02</span>
-                </div>
-                <h3 class="article-title">
-                  LỊCH THI HỌC KÌ I CỦA LỚP 10D4 NĂM HỌC 2024 - 2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img
-                    src="img/khoidongcuocthi.jpg"
-                    alt="Khởi động cuộc thi"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Oct/2024</span>
-                  <span class="day">24</span>
-                </div>
-                <h3 class="article-title">
-                  KHỞI ĐỘNG CUỘC THI KỈ NIỆM 70 NĂM THÀNH LẬP TRƯỜNG THPT VIỆT
-                  ĐỨC
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img
-                    src="img/lichithigiuahockimotmot.png"
-                    alt="Lịch thi giữa học kì 1"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Oct/2024</span>
-                  <span class="day">03</span>
-                </div>
-                <h3 class="article-title">
-                  LỊCH THI GIỮA HỌC KÌ I CỦA LỚP 10D4 NĂM HỌC 2024 - 2025
-                </h3>
-              </a>
-            </article>
-          </div>
-        </div>
-        <div class="slider-controls">
-          <button onclick="magicPrev2()">Prev</button>
-          <button onclick="magicNext2()">Next</button>
-        </div>
-      </section>
-
-      <section class="event-section" id="section3">
-        <h2 class="section-title">HỌC TẬP</h2>
-        <div class="article-slider">
-          <div class="article-wrapper">
-            <article class="article-card">
-              <a href="cedarjung/baibao/dethivao10hn.html" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/dithivao10d4.jpg" alt="Ảnh đi thi" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Jun/2025</span>
-                  <span class="day">08</span>
-                </div>
-                <h3 class="article-title">
-                  ĐÁP ÁN ĐỀ THI VÀO 10 SỞ HÀ NỘI NĂM 2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="cedarjung/baibao/vexroboticusa.html" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/khaimacvex.jpg" alt="Thông báo thi robot" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">May/2025</span>
-                  <span class="day">09</span>
-                </div>
-                <h3 class="article-title">
-                  HỌC SINH LỚP 10D4 THAM DỰ GIẢI ĐẤU ROBOTICS LỚN NHẤT TRÊN THẾ
-                  GIỚI TẠI MỸ NĂM 2025
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img src="img/hocsinhdatgiaiboi.jpg" alt="Thông báo bơi" />
-                </div>
-                <div class="date-tag">
-                  <span class="month">Apr/2025</span>
-                  <span class="day">05</span>
-                </div>
-                <h3 class="article-title">
-                  HỌC SINH LỚP 10D4 ĐẠT HUY CHƯƠNG ĐỒNG TRONG GIẢI THỂ THAO HỌC
-                  SINH THÀNH PHỐ HÀ NỘI NĂM HỌC 2024-2025
-                </h3>
-              </a>
-            </article>
-          </div>
-        </div>
-        <div class="slider-controls">
-          <button onclick="magicPrev3()">Prev</button>
-          <button onclick="magicNext3()">Next</button>
-        </div>
-      </section>
-
-      <section class="event-section" id="section4">
-        <h2 class="section-title">GIẢI TRÍ</h2>
-        <div class="article-slider">
-          <div class="article-wrapper">
-            <article class="article-card">
-              <a href="cedarjung/baibao/rankfifai.html" class="card-link">
-                <div class="thumbnail-container">
-                  <img
-                    src="img/hinh-nen-free-fire-3d-40.jpg"
-                    alt="Game cao thủ"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">May/2025</span>
-                  <span class="day">28</span>
-                </div>
-                <h3 class="article-title">
-                  "QUÂN ĐOÀN" LỚP D4 ĐẠT RANK CAO THỦ TỬ CHIẾN FIFAI
-                </h3>
-              </a>
-            </article>
-
-            <article class="article-card">
-              <a href="#" class="card-link">
-                <div class="thumbnail-container">
-                  <img
-                    src="img/z6593575300994_cdd8d0219a160f5e220a826322fdb4a3.jpg"
-                    alt="Thông báo bơi"
-                  />
-                </div>
-                <div class="date-tag">
-                  <span class="month">May/2025</span>
-                  <span class="day">06</span>
-                </div>
-                <h3 class="article-title">
-                  CẢ LỚP ĐƯỢC THƯỞNG NÓNG SAU KÌ THI CUỐI HỌC KÌ II MÔN TOÁN
-                </h3>
-              </a>
-            </article>
-          </div>
-        </div>
-        <div class="slider-controls">
-          <button onclick="magicPrev4()">Prev</button>
-          <button onclick="magicNext4()">Next</button>
-        </div>
-      </section>
-    </main>
-    <!-- footer-->
-      <footer class="school-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Trường THPT Việt Đức</h3>
-          <p>
-            Trường THPT Việt Đức thành lập ngày 03-3-1955, tại Lý Thường Kiệt -
-            Phường Cửa Nam - Hà Nội. Lớp D4 K69 thuộc khóa thứ 69 của trường
-            THPT Việt Đức và là lớp tổ hợp Địa lí, GDKT - PL, Vật lí, Tin học
-            của trường
-          </p>
-        </div>
-        <div class="footer-column">
-          <h3>Liên hệ</h3>
-          <p>
-            Địa chỉ: 47 Lý Thường Kiệt, phường Cửa Nam, Hà Nội
-          </p>
-        </div>
-        <div class="footer-column">
-          <h3>Liên kết</h3>
-          <a
-            href="https://www.facebook.com/groups/9797569790255960"
-            target="_blank"
-            class="social-icon"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/d4dunglatron/"
-            target="_blank"
-            class="social-icon"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="https://www.tiktok.com/@d4_ever.k69vd?_t=ZS-8ws7Sa5Maag&_r=1"
-            target="_blank"
-            class="social-icon"
-          >
-            <i class="fab fa-tiktok"></i>
-          </a>
-
-          <a href="mailto:Anhthreeco@gmail.com" class="social-icon"
-            ><i class="fas fa-envelope"></i
-          ></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p><em>"When I say D, you say four"</em></p>
-      </div>
-    </footer>
-    </div>
-    <script src="cedarjung/Aboutjs/watw.js"></script>
-    <script src="cedarjung/Aboutjs/slideshow.js"></script>
-    <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
   </body>
 </html>
+
