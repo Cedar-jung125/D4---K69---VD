@@ -22,12 +22,12 @@ const provider = new GoogleAuthProvider();
 
 onAuthStateChanged(auth, (user) => {
   const loginBtn = document.getElementById("login-btn");
-  const mainContent = document.getElementById("main-content");
+  const protectedContent = document.querySelector("[data-auth-guard]");
 
   if (!user) {
-    // Hiện nút login, ẩn nội dung
+    // Hiện nút login, ẩn nội dung chính
     loginBtn.style.display = "block";
-    mainContent.style.display = "none";
+    protectedContent.style.display = "none";
 
     loginBtn.onclick = () => {
       signInWithPopup(auth, provider)
@@ -39,9 +39,10 @@ onAuthStateChanged(auth, (user) => {
         });
     };
   } else {
-    // Ẩn nút login, hiện nội dung
+    // Ẩn nút login, hiện nội dung chính
     loginBtn.style.display = "none";
-    mainContent.style.display = "block";
-    console.log("✅ Already logged in:", user.email);
+    protectedContent.style.display = "block";
+    console.log("✅ Logged in as:", user.email);
   }
 });
+
