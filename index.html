@@ -640,5 +640,22 @@
     </footer>
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script src="cedarjung/Aboutjs/slideshow.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+
+        const firebaseConfig = {
+         apiKey: "AIzaSyD5Z6vQeAHQy4vP0tkTt-YiZ-aiFz0IHOs",
+          authDomain: "class-d4---k69---vd.firebaseapp.com",
+         projectId: "class-d4---k69---vd",
+          storageBucket: "class-d4---k69---vd.firebasestorage.app",
+      messagingSenderId: "97705944134",
+          appId: "1:97705944134:web:9f3b244ffe668dac5d9647",
+        measurementId: "G-EJCD5PGHG1"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
   </body>
 </html>
