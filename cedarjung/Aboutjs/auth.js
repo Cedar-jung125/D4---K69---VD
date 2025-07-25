@@ -19,16 +19,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-
 onAuthStateChanged(auth, (user) => {
+  
   if (!user) {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log("✅ Logged in:", result.user.displayName);
-      })
-      .catch((err) => {
-        console.error("❌ Login failed:", err.message);
-      });
+    const loginBtn = document.getElementById("login-btn");
+    loginBtn.style.display = "block"; // hiện nút nếu chưa đăng nhập
+    loginBtn.onclick = () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          console.log("✅ Logged in:", result.user.displayName);
+          loginBtn.style.display = "none"; // ẩn nút sau khi đăng nhập
+        })
+        .catch((err) => {
+          console.error("❌ Login failed:", err.message);
+        });
+    };
   } else {
     console.log("✅ Already logged in:", user.email);
   }
