@@ -21,23 +21,27 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    // Chưa đăng nhập -> hiện nút login
-    document.getElementById("login-btn").style.display = "block";
-  } else {
-    console.log("✅ Already logged in:", user.email);
-    document.getElementById("login-btn").style.display = "none";
-  }
-});
+  const loginBtn = document.getElementById("login-btn");
+  const mainContent = document.getElementById("main-content");
 
-// Gắn sự kiện click cho nút login
-document.getElementById("login-btn").addEventListener("click", () => {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      console.log("✅ Logged in:", result.user.displayName);
-      document.getElementById("login-btn").style.display = "none";
-    })
-    .catch((err) => {
-      console.error("❌ Login failed:", err.message);
-    });
+  if (!user) {
+    // Hiện nút login, ẩn nội dung
+    loginBtn.style.display = "block";
+    mainContent.style.display = "none";
+
+    loginBtn.onclick = () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          console.log("✅ Logged in:", result.user.displayName);
+        })
+        .catch((err) => {
+          console.error("❌ Login failed:", err.message);
+        });
+    };
+  } else {
+    // Ẩn nút login, hiện nội dung
+    loginBtn.style.display = "none";
+    mainContent.style.display = "block";
+    console.log("✅ Already logged in:", user.email);
+  }
 });
