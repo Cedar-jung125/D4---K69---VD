@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "C19",
       "C20",
     ],
-    "Khối D": ["D00", "D01", "D02"],
+    "Khối D": ["D00", "D01", "D07", "D08", "D09", "D10"],
   };
 
   // ========== LẤY PHẦN TỬ DOM ==========
