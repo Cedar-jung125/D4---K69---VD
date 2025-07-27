@@ -83,17 +83,21 @@
     </nav>
 
     <main class="game-main">
-      <h1>🎮 Game yêu thích</h1>
+      <div class="particles" id="particles-js"></div>
 
-      <!-- Bộ lọc -->
+      <h1 class="animate__animated animate__fadeInDown">
+        🎮 GAME HUB - D4 ZONE
+      </h1>
+
+      <!-- Bộ lọc hiện đại -->
       <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">Tất cả</button>
-        <button class="filter-btn" data-filter="funny">Chơi online</button>
-        <button class="filter-btn" data-filter="learn">Chơi theo nhóm</button>
-        <button class="filter-btn" data-filter="draw">Học tập</button>
+        <button class="filter-btn active" data-filter="all">TẤT CẢ GAME</button>
+        <button class="filter-btn" data-filter="funny">ONLINE</button>
+        <button class="filter-btn" data-filter="learn">NHÓM</button>
+        <button class="filter-btn" data-filter="draw">HỌC TẬP</button>
       </div>
 
-      <!-- Lưới game -->
+      <!-- Lưới game hiện đại -->
       <div class="game-grid">
         <a
           class="game-card"
@@ -102,7 +106,7 @@
           target="_blank"
         >
           <img src="img/Game/ready-set-cook.png" alt="Ready Set Cook" />
-          <p>Ready Set Cook</p>
+          <p>READY SET COOK</p>
         </a>
         <a
           class="game-card"
@@ -111,7 +115,7 @@
           target="_blank"
         >
           <img src="img/Game/wordle-logo.webp" alt="Wordle" />
-          <p>Wordle</p>
+          <p>WORDLE</p>
         </a>
         <a
           class="game-card"
@@ -120,7 +124,7 @@
           target="_blank"
         >
           <img src="img/Game/garticphone.jfif" alt="Gartic Phone" />
-          <p>Gartic Phone</p>
+          <p>GARTIC PHONE</p>
         </a>
         <a
           class="game-card"
@@ -129,7 +133,7 @@
           target="_blank"
         >
           <img src="img/Game/garticio.webp" alt="Gartic.io" />
-          <p>Gartic.io</p>
+          <p>GARTIC.IO</p>
         </a>
         <a
           class="game-card"
@@ -138,27 +142,27 @@
           target="_blank"
         >
           <img src="img/Game/monopoly.jfif" alt="Monopoly" />
-          <p>Monopoly</p>
+          <p>MONOPOLY</p>
         </a>
-         <a
+        <a
           class="game-card"
           data-category="funny"
           href="https://lichess.org"
           target="_blank"
         >
           <img src="img/Game/chessorg.jpg" alt="Chess" />
-          <p>Cờ vua</p>
+          <p>CỜ VUA</p>
         </a>
-         <a
+        <a
           class="game-card"
           data-category="funny"
           href="https://online-go.com/"
           target="_blank"
         >
           <img src="img/Game/covay.jpg" alt="Cờ vây" />
-          <p>Cờ vây</p>
+          <p>CỜ VÂY</p>
         </a>
-         <a
+        <a
           class="game-card"
           data-category="learn"
           href="https://vn.crazygames.com/tr%C3%B2-ch%C6%A1i/uno-online"
@@ -169,12 +173,12 @@
         </a>
         <a
           class="game-card"
-          data-category="funny"
+          data-category="learn"
           href="https://www.minecraft.net/en-us"
           target="_blank"
         >
           <img src="img/Game/minecraft.webp" alt="minecraft" />
-          <p>Minecraft</p>
+          <p>MINECRAFT</p>
         </a>
       </div>
     </main>
@@ -228,7 +232,116 @@
       </div>
     </footer>
     <script src="cedarjung/Aboutjs/watw.js"></script>
+      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+      // Khởi tạo particles.js
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+          },
+          opacity: {
+            value: 0.3,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.2,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+
+      // Filter logic
       const filterButtons = document.querySelectorAll(".filter-btn");
       const gameCards = document.querySelectorAll(".game-card");
 
@@ -243,13 +356,26 @@
           gameCards.forEach((card) => {
             const category = card.getAttribute("data-category");
             if (filter === "all" || filter === category) {
-              card.style.display = "block";
+              card.style.display = "flex";
+              card.classList.add("animate__animated", "animate__fadeIn");
             } else {
               card.style.display = "none";
             }
           });
         });
       });
+
+      // Thêm hiệu ứng khi di chuột vào game card
+      gameCards.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          card.classList.add("animate__pulse");
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.classList.remove("animate__pulse");
+        });
+      });
     </script>
+    <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
   </body>
 </html>
