@@ -281,19 +281,19 @@ const MN2ED_examData = {
             ],
           },
           {
-            title: "Chiến thuật làm bài Reading",
+            title: "100 bài SAT Long Reading",
             pdfs: [
               {
-                name: "Reading Comprehension Guide",
-                path: "/pdf/sat/verbal/reading_guide.pdf",
-                size: "2.3MB",
-                pages: 38,
+                name: "SAT Long Reading 1",
+                path: "pdf/Homework/SAT_Long_Reading_1___D4___K69___VĐ.pdf",
+                size: "464KB",
+                pages: 3,
               },
               {
-                name: "Passage Analysis Techniques",
+                name: "SAT Long Reading 2",
                 path: "/pdf/sat/verbal/passage_analysis.pdf",
-                size: "1.9MB",
-                pages: 30,
+                size: "450KB",
+                pages: 3,
               },
             ],
           },
