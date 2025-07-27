@@ -84,29 +84,20 @@
       </ul>
     </nav>
 
-    <main class="library-main">
-      <h1>📚 Thư viện sách lớp D4</h1>
-      <div class="book-grid">
-        <div
-          class="book-card"
-          data-flip="https://online.fliphtml5.com/fafzj/fgcj/"
-        >
-          <img src="img/Ảnh chụp màn hình (5155).png" alt="Book 1" />
-          <p>Nhật ký tuổi 15</p>
+   <main class="library-main">
+      <!-- Promo Banner -->
+      <div class="promo-banner">
+        <div class="promo-content">
+          <h2>Chào mừng các D4-er đã tới Thư viện của lớp!</h2>
+          <p>
+            Mọi người có thể khám phá nhiều sách có chủ đề đa dạng cũng như
+            nhiều thể loại phong phú, phục vụ nhu cầu học tập và giải trí của
+            mỗi người nha!
+          </p>
+          <button class="promo-btn">Khám phá ngay</button>
         </div>
-        <div
-          class="book-card"
-          data-flip="https://online.fliphtml5.com/abcd/book2/"
-        >
-          <img src="images/book2.jpg" alt="Book 2" />
-          <p>Tên sách 2</p>
-        </div>
-        <div
-          class="book-card"
-          data-flip="https://online.fliphtml5.com/abcd/book3/"
-        >
-          <img src="images/book3.jpg" alt="Book 3" />
-          <p>Tên sách 3</p>
+        <div class="promo-image">
+          <img src="/img/Logoclass.jpg" alt="Thư viện lớp D4" />
         </div>
       </div>
 
@@ -121,6 +112,7 @@
         <button class="close-btn" onclick="closeFlipbook()">✖</button>
       </div>
     </main>
+
 
     <footer class="school-footer">
       <div class="footer-container">
@@ -171,23 +163,6 @@
       </div>
     </footer>
     <script src="cedarjung/Aboutjs/watw.js"></script>
-    <script>
-      const bookCards = document.querySelectorAll(".book-card");
-      const viewer = document.getElementById("flipbookViewer");
-      const frame = document.getElementById("flipbookFrame");
-
-      bookCards.forEach((card) => {
-        card.addEventListener("click", () => {
-          const flipURL = card.getAttribute("data-flip");
-          frame.src = flipURL;
-          viewer.style.display = "flex";
-        });
-      });
-
-      function closeFlipbook() {
-        viewer.style.display = "none";
-        frame.src = "";
-      }
-    </script>
+    <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
   </body>
 </html>
