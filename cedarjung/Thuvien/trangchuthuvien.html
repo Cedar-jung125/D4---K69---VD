@@ -165,5 +165,62 @@
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script src="cedarjung/Thuvien/library.js"></script>
     <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const leafTypes = ["🍂", "🍁", "📜", "📖"];
+        const colors = ["#e67e22", "#d35400", "#f1c40f", "#bdc3c7"];
+
+        function createLeaf() {
+          const leaf = document.createElement("div");
+          leaf.innerHTML =
+            leafTypes[Math.floor(Math.random() * leafTypes.length)];
+          leaf.style.position = "fixed";
+          leaf.style.fontSize = Math.random() * 20 + 15 + "px";
+          leaf.style.zIndex = "9999";
+          leaf.style.userSelect = "none";
+          leaf.style.opacity = Math.random() * 0.7 + 0.3;
+          leaf.style.left = Math.random() * window.innerWidth + "px";
+          leaf.style.top = "-50px";
+
+          // Xoay ngẫu nhiên khi rơi
+          const rotate = Math.random() * 360;
+          leaf.style.transform = `rotate(${rotate}deg)`;
+
+          document.body.appendChild(leaf);
+
+          const fallDuration = Math.random() * 8000 + 5000;
+          const swayAmplitude = Math.random() * 100 + 50;
+
+          leaf.animate(
+            [
+              {
+                top: "-50px",
+                left: `${parseFloat(leaf.style.left)}px`,
+                transform: `rotate(${rotate}deg)`,
+              },
+              {
+                top: window.innerHeight + "px",
+                left: `${
+                  parseFloat(leaf.style.left) +
+                  swayAmplitude * (Math.random() > 0.5 ? 1 : -1)
+                }px`,
+                transform: `rotate(${rotate + 360}deg)`,
+              },
+            ],
+            {
+              duration: fallDuration,
+              easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            }
+          ).onfinish = () => {
+            leaf.remove();
+            createLeaf();
+          };
+        }
+
+        for (let i = 0; i < 25; i++) {
+          setTimeout(createLeaf, Math.random() * 3000);
+        }
+      });
+    </script>
   </body>
 </html>
