@@ -10,6 +10,11 @@ body {
   color: #333;
 }
 
+.helloeveryone {
+  background-color: #5b97d2;
+  z-index: 2;
+}
+
 .container {
   display: flex;
   min-height: 100vh;
