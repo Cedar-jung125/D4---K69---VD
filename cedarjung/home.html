@@ -124,7 +124,7 @@
       </ul>
     </nav>
 
-    <main>
+    <main class="helloeveryone">
       <section class="event-section" id="section1">
         <h2 class="section-title">SỰ KIỆN</h2>
         <div class="article-slider">
@@ -641,5 +641,52 @@
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script src="cedarjung/Aboutjs/slideshow.js"></script>
     <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
+    <script>
+      // Hiệu ứng tuyết rơi
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tạo các bông tuyết
+        function createSnow() {
+          const snowflake = document.createElement("div");
+          snowflake.innerHTML = "❄";
+          snowflake.style.position = "fixed";
+          snowflake.style.color = "#fff";
+          snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
+          snowflake.style.userSelect = "none";
+          snowflake.style.zIndex = "9999";
+          snowflake.style.textShadow = "0 0 5px #fff";
+          snowflake.style.opacity = Math.random() * 0.5 + 0.5;
+
+          // Vị trí ban đầu ngẫu nhiên
+          snowflake.style.left = Math.random() * window.innerWidth + "px";
+          snowflake.style.top = "-50px";
+
+          document.body.appendChild(snowflake);
+
+          // Thời gian rơi ngẫu nhiên từ 5-15 giây
+          const fallDuration = Math.random() * 10000 + 5000;
+
+          // Animation rơi
+          const animation = snowflake.animate(
+            [
+              { top: "-50px", transform: "rotate(0deg)" },
+              { top: window.innerHeight + "px", transform: "rotate(360deg)" },
+            ],
+            {
+              duration: fallDuration,
+              easing: "linear",
+            }
+          );
+
+          animation.onfinish = () => {
+            snowflake.remove();
+            createSnow();
+          };
+        }
+
+        for (let i = 0; i < 50; i++) {
+          setTimeout(createSnow, Math.random() * 5000);
+        }
+      });
+    </script>
   </body>
 </html>
