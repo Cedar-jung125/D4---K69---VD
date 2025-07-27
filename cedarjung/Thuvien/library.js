@@ -6,15 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
       id: 1,
       title: "Nhật ký tuổi 15",
       category: "văn học",
-      image: "/img/Ảnh chụp màn hình (5155).png",
+      image: "img/Ảnh chụp màn hình (5155).png",
       flip: "https://online.fliphtml5.com/fafzj/fgcj/",
     },
     {
       id: 2,
       title: "Doraemon học tập: Cộng - Trừ",
       category: "Tuổi thơ",
-      image: "/img/doraemoncongtru.jpg",
-      flip: "/pdf/Doraemonhoctapcongtru.pdf",
+      image: "img/doraemoncongtru.jpg",
+      flip: "pdf/Doraemonhoctapcongtru.pdf",
     },
     {
       id: 3,
