@@ -291,8 +291,26 @@ const MN2ED_examData = {
               },
               {
                 name: "SAT Long Reading 2",
-                path: "/pdf/sat/verbal/passage_analysis.pdf",
-                size: "450KB",
+                path: "/pdf/Homework/SAT_Long_Reading_2___D4___K69___VĐ.pdf",
+                size: "464KB",
+                pages: 3,
+              },
+              {
+                name: "SAT Long Reading 3",
+                path: "",
+                size: "464KB",
+                pages: 3,
+              },
+              {
+                name: "SAT Long Reading 4",
+                path: "",
+                size: "464KB",
+                pages: 3,
+              },
+              {
+                name: "SAT Long Reading 5",
+                path: "",
+                size: "464KB",
                 pages: 3,
               },
             ],
