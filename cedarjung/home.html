@@ -641,51 +641,141 @@
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script src="cedarjung/Aboutjs/slideshow.js"></script>
     <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
-    <script>
-      // Hiệu ứng tuyết rơi
+     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Tạo các bông tuyết
-        function createSnow() {
+        const frostColors = ["#e6f7ff", "#c6e9ff", "#a8d8ff", "#8ac7ff"];
+        let activeFrostAreas = [];
+
+        // 1. Hiệu ứng tuyết rơi cơ bản
+        function createSnowflake() {
           const snowflake = document.createElement("div");
           snowflake.innerHTML = "❄";
           snowflake.style.position = "fixed";
-          snowflake.style.color = "#fff";
+          snowflake.style.color = "#ffffff";
           snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
-          snowflake.style.userSelect = "none";
-          snowflake.style.zIndex = "9999";
-          snowflake.style.textShadow = "0 0 5px #fff";
-          snowflake.style.opacity = Math.random() * 0.5 + 0.5;
-
-          // Vị trí ban đầu ngẫu nhiên
+          snowflake.style.zIndex = "10000";
+          snowflake.style.pointerEvents = "none";
           snowflake.style.left = Math.random() * window.innerWidth + "px";
           snowflake.style.top = "-50px";
+          snowflake.style.opacity = Math.random() * 0.7 + 0.3;
+          snowflake.style.textShadow = "0 0 5px rgba(255, 255, 255, 0.7)";
 
           document.body.appendChild(snowflake);
 
-          // Thời gian rơi ngẫu nhiên từ 5-15 giây
-          const fallDuration = Math.random() * 10000 + 5000;
+          const duration = Math.random() * 10000 + 5000;
+          const drift = Math.random() * 100 - 50;
 
-          // Animation rơi
           const animation = snowflake.animate(
             [
-              { top: "-50px", transform: "rotate(0deg)" },
-              { top: window.innerHeight + "px", transform: "rotate(360deg)" },
+              {
+                transform: "translateY(0) translateX(0)",
+                opacity: snowflake.style.opacity,
+              },
+              {
+                transform: `translateY(${
+                  window.innerHeight + 50
+                }px) translateX(${drift}px)`,
+                opacity: 0,
+              },
             ],
-            {
-              duration: fallDuration,
-              easing: "linear",
-            }
+            { duration, easing: "linear" }
           );
 
           animation.onfinish = () => {
             snowflake.remove();
-            createSnow();
+            createSnowflake();
           };
         }
 
-        for (let i = 0; i < 50; i++) {
-          setTimeout(createSnow, Math.random() * 5000);
+        // 2. Hiệu ứng đóng băng theo vùng (Frost Zone)
+        function createFrostZone() {
+          if (activeFrostAreas.length > 3) return; // Giới hạn số vùng đóng băng
+
+          const frost = document.createElement("div");
+          const size = Math.random() * 300 + 150;
+          const posX = Math.random() * (window.innerWidth - size);
+          const posY = Math.random() * (window.innerHeight - size);
+
+          frost.style.position = "fixed";
+          frost.style.width = `${size}px`;
+          frost.style.height = `${size}px`;
+          frost.style.left = `${posX}px`;
+          frost.style.top = `${posY}px`;
+          frost.style.borderRadius = "50%";
+          frost.style.zIndex = "9999";
+          frost.style.pointerEvents = "none";
+          frost.style.opacity = "0";
+
+          // Tạo hiệu ứng gradient đóng băng
+          const gradientAngle = Math.random() * 360;
+          frost.style.background = `radial-gradient(circle at ${
+            Math.random() * 100
+          }% ${Math.random() * 100}%, 
+        ${frostColors[0]} 0%, 
+        ${frostColors[1]} 30%, 
+        ${frostColors[2]} 70%, 
+        rgba(255,255,255,0) 100%)`;
+
+          frost.style.backdropFilter = "blur(2px)";
+          frost.style.webkitMaskImage =
+            "radial-gradient(circle, black 50%, transparent 100%)";
+
+          document.body.appendChild(frost);
+          activeFrostAreas.push(frost);
+
+          // Chu kỳ đóng băng -> tan băng
+          const sequence = [
+            { opacity: 0, transform: "scale(0.3)" },
+            { opacity: 0.7, transform: "scale(1)" },
+            { opacity: 0, transform: "scale(1.2)" },
+          ];
+
+          frost.animate(sequence, {
+            duration: 8000,
+            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+          }).onfinish = () => {
+            frost.remove();
+            activeFrostAreas = activeFrostAreas.filter(
+              (item) => item !== frost
+            );
+            setTimeout(createFrostZone, Math.random() * 5000);
+          };
+
+          // Tạo hiệu ứng rìa băng
+          const iceEdge = document.createElement("div");
+          iceEdge.style.position = "absolute";
+          iceEdge.style.width = "100%";
+          iceEdge.style.height = "100%";
+          iceEdge.style.border = "2px solid rgba(255, 255, 255, 0.8)";
+          iceEdge.style.borderRadius = "inherit";
+          iceEdge.style.boxShadow = "0 0 15px rgba(173, 216, 230, 0.6)";
+          iceEdge.style.opacity = "0";
+
+          frost.appendChild(iceEdge);
+
+          iceEdge.animate(
+            [
+              { opacity: 0, transform: "scale(0.9)" },
+              { opacity: 1, transform: "scale(1.05)" },
+              { opacity: 0, transform: "scale(1.1)" },
+            ],
+            { duration: 8000, easing: "ease-in-out" }
+          );
         }
+
+        // Khởi tạo
+        for (let i = 0; i < 50; i++) {
+          setTimeout(createSnowflake, Math.random() * 3000);
+        }
+
+        // Tạo vùng đóng băng định kỳ
+        setInterval(createFrostZone, 3000);
+
+        // Responsive - Xóa hiệu ứng khi resize
+        window.addEventListener("resize", () => {
+          activeFrostAreas.forEach((frost) => frost.remove());
+          activeFrostAreas = [];
+        });
       });
     </script>
   </body>
