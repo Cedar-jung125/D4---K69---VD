@@ -18,9 +18,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .main-bg-wrapper {
-  background: url("https://plus.unsplash.com/premium_photo-1670148434900-5f0af77ba500?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-    no-repeat center center;
-  background-size: cover;
   padding: 40px 0;
 }
 
