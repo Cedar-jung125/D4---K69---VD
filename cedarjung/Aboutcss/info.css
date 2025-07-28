@@ -1,10 +1,3 @@
-body {
-  background: url("img/photo-1498644035638-2c3357894b10.png") no-repeat center
-    center fixed;
-  background-size: cover;
-  position: relative;
-}
-
 .mnc-a93xqp {
   display: grid;
   grid-template-columns: 2fr 1fr;
