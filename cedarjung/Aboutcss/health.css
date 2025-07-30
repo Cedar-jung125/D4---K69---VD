@@ -769,3 +769,929 @@ body {
     width: 80%;
   }
 }
+
+.bmi-calculator {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.bmi-calculator::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 0;
+}
+
+.bmi-calculator-content {
+  position: relative;
+  z-index: 1;
+}
+
+.bmi-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bmi-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.bmi-input-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bmi-input-field {
+  flex: 1;
+}
+
+.bmi-input-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.bmi-input-field input,
+.bmi-input-field select {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.bmi-input-field input:focus,
+.bmi-input-field select:focus {
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.bmi-gender-options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.bmi-gender-option {
+  flex: 1;
+  position: relative;
+}
+
+.bmi-gender-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.bmi-gender-option label {
+  display: block;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+
+.bmi-gender-option input:checked + label {
+  background-color: white;
+  color: #6c5ce7;
+  border-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bmi-calculate-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  color: #6c5ce7;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+.bmi-calculate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bmi-result {
+  display: none;
+  margin-top: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bmi-result-value {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bmi-result-category {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.bmi-scale {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  height: 60px;
+}
+
+.bmi-scale-indicator {
+  position: absolute;
+  top: -15px;
+  height: 90px;
+  width: 4px;
+  background-color: white;
+  z-index: 2;
+  transition: left 1s ease;
+}
+
+.bmi-scale-indicator::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bmi-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.bmi-scale-label {
+  flex: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-top: 10px;
+  position: relative;
+}
+
+.bmi-scale-label::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bmi-scale-ranges {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.bmi-scale-range {
+  flex: 1;
+  height: 10px;
+  position: relative;
+}
+
+.bmi-scale-range:nth-child(1) {
+  background-color: #00b894;
+  border-radius: 5px 0 0 5px;
+}
+.bmi-scale-range:nth-child(2) {
+  background-color: #55efc4;
+}
+.bmi-scale-range:nth-child(3) {
+  background-color: #fdcb6e;
+}
+.bmi-scale-range:nth-child(4) {
+  background-color: #e17055;
+}
+.bmi-scale-range:nth-child(5) {
+  background-color: #d63031;
+  border-radius: 0 5px 5px 0;
+}
+
+.bmi-scale-range-label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.bmi-info {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.bmi-info-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.bmi-info-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.health-advisor {
+  margin: 3rem 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.health-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.health-tab {
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.health-tab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #74b9ff, #0984e3);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 50px;
+}
+
+.health-tab.active {
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(9, 132, 227, 0.3);
+}
+
+.health-tab.active::before {
+  opacity: 1;
+}
+
+.health-tab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.health-tab.active:hover {
+  transform: translateY(-5px);
+}
+
+.health-content {
+  display: none;
+  animation: fadeInUp 0.5s ease;
+}
+
+.health-content.active {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nutrition Advisor Styles */
+.nutrition-advisor {
+  background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 184, 148, 0.2);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.nutrition-advisor::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 0;
+}
+
+.nutrition-content {
+  position: relative;
+  z-index: 1;
+}
+
+.nutrition-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.nutrition-input-group {
+  margin-bottom: 1rem;
+}
+
+.nutrition-input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nutrition-input-group input,
+.nutrition-input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nutrition-input-group input:focus,
+.nutrition-input-group select:focus {
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.nutrition-submit {
+  grid-column: span 2;
+  padding: 15px;
+  background-color: white;
+  color: #00b894;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nutrition-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nutrition-result {
+  display: none;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #2d3436;
+  margin-top: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-meal-plan {
+  margin-top: 1rem;
+}
+
+.meal-time {
+  font-weight: 700;
+  color: #00b894;
+  margin: 1rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.meal-time::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #00b894;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.meal-suggestion {
+  background-color: #f5f6fa;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover {
+  background-color: #0767b1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mental Health Styles */
+.mental-health {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(108, 92, 231, 0.2);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.mental-health::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 0;
+}
+
+.mental-content {
+  position: relative;
+  z-index: 1;
+}
+
+.mental-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mental-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mental-option {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.mental-option:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mental-option i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: white;
+}
+
+.mental-option h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.mental-option p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.mental-assessment {
+  display: none;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #2d3436;
+  margin-top: 1.5rem;
+}
+
+.assessment-question {
+  margin-bottom: 1.5rem;
+}
+
+.assessment-question h4 {
+  margin-bottom: 0.5rem;
+  color: #6c5ce7;
+}
+
+.assessment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.assessment-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f6fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.assessment-option:hover {
+  background-color: #dfe6e9;
+}
+
+.assessment-option input {
+  margin-right: 10px;
+}
+
+.assessment-result {
+  display: none;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.assessment-result h3 {
+  color: #6c5ce7;
+  margin-bottom: 1rem;
+}
+
+.resources-list {
+  margin-top: 1.5rem;
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.resource-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.resource-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: white;
+}
+
+.resource-info h4 {
+  margin-bottom: 0.3rem;
+}
+
+.resource-info p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Lifestyle Tracker Styles */
+.lifestyle-tracker {
+  background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(225, 112, 85, 0.2);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.lifestyle-tracker::before {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 0;
+}
+
+.lifestyle-content {
+  position: relative;
+  z-index: 1;
+}
+
+.lifestyle-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lifestyle-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.lifestyle-feature {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.lifestyle-feature:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lifestyle-feature i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: white;
+}
+
+.lifestyle-feature h3 {
+  margin-bottom: 0.5rem;
+}
+
+.lifestyle-feature p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.tracker-tool {
+  display: none;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #2d3436;
+  margin-top: 1.5rem;
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dfe6e9;
+}
+
+.tracker-header h3 {
+  color: #e17055;
+}
+
+.tracker-form {
+  margin-top: 1rem;
+}
+
+.tracker-input-group {
+  margin-bottom: 1rem;
+}
+
+.tracker-input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #636e72;
+}
+
+.tracker-input-group input,
+.tracker-input-group textarea,
+.tracker-input-group select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.tracker-submit {
+  padding: 12px 25px;
+  background-color: #e17055;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.tracker-submit:hover {
+  background-color: #d63031;
+  transform: translateY(-2px);
+}
+
+.tracker-history {
+  margin-top: 2rem;
+}
+
+.history-item {
+  background-color: #f5f6fa;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.history-date {
+  font-weight: 600;
+  color: #e17055;
+  margin-bottom: 0.5rem;
+}
+
+.history-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history-value {
+  font-weight: 700;
+}
+
+.reminder-bell {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #e17055;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(225, 112, 85, 0.4);
+  animation: pulse 2s infinite;
+  z-index: 100;
+}
+
+.reminder-bell i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.reminder-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: none;
+  z-index: 100;
+}
+
+.reminder-popup h4 {
+  color: #e17055;
+  margin-bottom: 1rem;
+}
+
+.reminder-popup p {
+  margin-bottom: 1rem;
+}
+
+.reminder-close {
+  background-color: #e17055;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(225, 112, 85, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(225, 112, 85, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(225, 112, 85, 0);
+  }
+}
