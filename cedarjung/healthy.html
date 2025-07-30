@@ -114,6 +114,476 @@
 
     <!-- Phần main content -->
     <main class="mylove-main" id="mainContent">
+    <div class="mylove-section-title">
+        <h2>KIỂM TRA CHỈ SỐ BMI - D4</h2>
+      </div>
+
+      <div class="bmi-calculator">
+        <div class="bmi-calculator-content">
+          <h3 class="bmi-title">KIỂM TRA CHỈ SỐ BMI</h3>
+
+          <div class="bmi-input-group">
+            <div class="bmi-input-row">
+              <div class="bmi-input-field">
+                <label for="bmi-height">CHIỀU CAO (cm)</label>
+                <input type="number" id="bmi-height" placeholder="Ví dụ: 170" />
+              </div>
+              <div class="bmi-input-field">
+                <label for="bmi-weight">CÂN NẶNG (kg)</label>
+                <input type="number" id="bmi-weight" placeholder="Ví dụ: 65" />
+              </div>
+            </div>
+
+            <div class="bmi-input-field">
+              <label>GIỚI TÍNH</label>
+              <div class="bmi-gender-options">
+                <div class="bmi-gender-option">
+                  <input
+                    type="radio"
+                    id="bmi-male"
+                    name="bmi-gender"
+                    value="male"
+                    checked
+                  />
+                  <label for="bmi-male">Nam</label>
+                </div>
+                <div class="bmi-gender-option">
+                  <input
+                    type="radio"
+                    id="bmi-female"
+                    name="bmi-gender"
+                    value="female"
+                  />
+                  <label for="bmi-female">Nữ</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="bmi-calculate-btn" id="bmi-calculate">TÍNH BMI</button>
+
+          <div class="bmi-result" id="bmi-result">
+            <div class="bmi-result-value" id="bmi-result-value">22.5</div>
+            <div class="bmi-result-category" id="bmi-result-category">
+              Bình thường
+            </div>
+
+            <div class="bmi-scale">
+              <div class="bmi-scale-indicator" id="bmi-scale-indicator"></div>
+              <div class="bmi-scale-labels">
+                <div class="bmi-scale-label">Thiếu cân</div>
+                <div class="bmi-scale-label">Bình thường</div>
+                <div class="bmi-scale-label">Thừa cân</div>
+                <div class="bmi-scale-label">Béo phì độ 1</div>
+                <div class="bmi-scale-label">Béo phì độ 2</div>
+              </div>
+              <div class="bmi-scale-ranges">
+                <div class="bmi-scale-range">
+                  <span class="bmi-scale-range-label">&lt; 18.5</span>
+                </div>
+                <div class="bmi-scale-range">
+                  <span class="bmi-scale-range-label">18.5 - 22.9</span>
+                </div>
+                <div class="bmi-scale-range">
+                  <span class="bmi-scale-range-label">23 - 24.9</span>
+                </div>
+                <div class="bmi-scale-range">
+                  <span class="bmi-scale-range-label">25 - 29.9</span>
+                </div>
+                <div class="bmi-scale-range">
+                  <span class="bmi-scale-range-label">≥ 30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bmi-info">
+              <div class="bmi-info-title">NHẬN ĐỊNH CHUNG</div>
+              <div class="bmi-info-text" id="bmi-info-text">
+                Chỉ số BMI của bạn nằm trong khoảng bình thường. Duy trì chế độ
+                ăn uống lành mạnh và tập thể dục đều đặn để giữ gìn sức khỏe.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mylove-section-title">
+        <h2>TƯ VẤN SỨC KHỎE HỌC SINH D4</h2>
+      </div>
+
+      <div class="health-advisor" id="healthAdvisor">
+        <div class="health-tabs">
+          <button class="health-tab active" data-tab="nutrition">
+            Dinh dưỡng
+          </button>
+          <button class="health-tab" data-tab="mental">
+            Sức khỏe tâm thần
+          </button>
+          <button class="health-tab" data-tab="lifestyle">
+            Theo dõi lối sống
+          </button>
+        </div>
+
+        <!-- Nutrition Advisor -->
+        <div class="health-content active" id="nutrition-content">
+          <div class="nutrition-advisor">
+            <div class="nutrition-content">
+              <h3 class="nutrition-title">TƯ VẤN DINH DƯỠNG CÁ NHÂN HÓA</h3>
+
+              <div class="nutrition-form" id="nutrition-form">
+                <div class="nutrition-input-group">
+                  <label for="nutri-age">Độ tuổi</label>
+                  <input
+                    type="number"
+                    id="nutri-age"
+                    placeholder="Tuổi của bạn"
+                  />
+                </div>
+                <div class="nutrition-input-group">
+                  <label for="nutri-gender">Giới tính</label>
+                  <select id="nutri-gender">
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                  </select>
+                </div>
+                <div class="nutrition-input-group">
+                  <label for="nutri-height">Chiều cao (cm)</label>
+                  <input
+                    type="number"
+                    id="nutri-height"
+                    placeholder="Ví dụ: 170"
+                  />
+                </div>
+                <div class="nutrition-input-group">
+                  <label for="nutri-weight">Cân nặng (kg)</label>
+                  <input
+                    type="number"
+                    id="nutri-weight"
+                    placeholder="Ví dụ: 65"
+                  />
+                </div>
+                <div class="nutrition-input-group">
+                  <label for="nutri-activity">Mức độ vận động</label>
+                  <select id="nutri-activity">
+                    <option value="sedentary">Ít vận động</option>
+                    <option value="light">Vận động nhẹ (1-3 lần/tuần)</option>
+                    <option value="moderate">
+                      Vận động vừa (3-5 lần/tuần)
+                    </option>
+                    <option value="active">
+                      Vận động nhiều (6-7 lần/tuần)
+                    </option>
+                    <option value="extreme">
+                      Vận động rất nhiều (2 lần/ngày)
+                    </option>
+                  </select>
+                </div>
+                <div class="nutrition-input-group">
+                  <label for="nutri-goal">Mục tiêu</label>
+                  <select id="nutri-goal">
+                    <option value="maintain">Duy trì cân nặng</option>
+                    <option value="lose">Giảm cân</option>
+                    <option value="gain">Tăng cân</option>
+                  </select>
+                </div>
+
+                <button class="nutrition-submit" id="nutrition-submit">
+                  NHẬN TƯ VẤN
+                </button>
+              </div>
+
+              <div class="nutrition-result" id="nutrition-result">
+                <h3>KẾ HOẠCH DINH DƯỠNG CỦA BẠN</h3>
+                <p>
+                  Dựa trên thông tin bạn cung cấp, đây là gợi ý khẩu phần ăn phù
+                  hợp:
+                </p>
+
+                <div class="nutrition-meal-plan">
+                  <div class="meal-time">Bữa sáng</div>
+                  <div class="meal-suggestion">
+                    1 tô phở bò + 1 ly sữa đậu nành
+                  </div>
+                  <div class="meal-suggestion">
+                    Hoặc: 2 lát bánh mì nguyên cám + 1 quả trứng ốp + 1 ly nước
+                    cam
+                  </div>
+
+                  <div class="meal-time">Bữa phụ sáng</div>
+                  <div class="meal-suggestion">
+                    1 hộp sữa chua + 1 nắm hạt mix
+                  </div>
+
+                  <div class="meal-time">Bữa trưa</div>
+                  <div class="meal-suggestion">
+                    1 chén cơm + 100g thịt/cá + 1 chén rau xanh + canh rau củ
+                  </div>
+
+                  <div class="meal-time">Bữa phụ chiều</div>
+                  <div class="meal-suggestion">
+                    1 quả chuối + 10 hạt hạnh nhân
+                  </div>
+
+                  <div class="meal-time">Bữa tối</div>
+                  <div class="meal-suggestion">
+                    1/2 chén cơm + 100g đậu hũ/trứng + 1 chén rau luộc + canh bí
+                    đỏ
+                  </div>
+                </div>
+
+                <p>
+                  <strong>Lượng calo khuyến nghị:</strong> 2,000 - 2,200
+                  kcal/ngày
+                </p>
+                <p>
+                  <strong>Lưu ý:</strong> Uống đủ 2 lít nước mỗi ngày, hạn chế
+                  đồ ngọt và thức ăn nhanh.
+                </p>
+
+                <button
+                  class="back-btn"
+                  onclick="document.getElementById('nutrition-form').style.display='block'; document.getElementById('nutrition-result').style.display='none'"
+                >
+                  QUAY LẠI
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mental Health -->
+        <div class="health-content" id="mental-content">
+          <div class="mental-health">
+            <div class="mental-content">
+              <h3 class="mental-title">SỨC KHỎE TÂM THẦN & HỌC ĐƯỜNG</h3>
+
+              <div class="mental-options">
+                <div class="mental-option" data-assessment="stress">
+                  <i>🧠</i>
+                  <h3>Đánh giá căng thẳng</h3>
+                  <p>
+                    Trắc nghiệm DASS-21 giúp đánh giá mức độ căng thẳng của bạn
+                  </p>
+                </div>
+                <div class="mental-option" data-assessment="sleep">
+                  <i>😴</i>
+                  <h3>Chất lượng giấc ngủ</h3>
+                  <p>Trắc nghiệm PSQI đánh giá rối loạn giấc ngủ</p>
+                </div>
+                <div class="mental-option" data-assessment="anxiety">
+                  <i>😰</i>
+                  <h3>Lo âu học đường</h3>
+                  <p>Đánh giá mức độ lo âu trong mùa thi</p>
+                </div>
+                <div class="mental-option" data-assessment="resources">
+                  <i>📚</i>
+                  <h3>Tài nguyên hỗ trợ</h3>
+                  <p>Bài viết, podcast về quản lý căng thẳng</p>
+                </div>
+              </div>
+
+              <div class="mental-assessment" id="stress-assessment">
+                <div class="assessment-question">
+                  <h4>Câu 1: Tôi cảm thấy khó thư giãn</h4>
+                  <div class="assessment-options">
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q1" value="0" /> Không
+                      bao giờ</label
+                    >
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q1" value="1" /> Đôi
+                      khi</label
+                    >
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q1" value="2" /> Thường
+                      xuyên</label
+                    >
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q1" value="3" /> Rất
+                      thường xuyên</label
+                    >
+                  </div>
+                </div>
+
+                <div class="assessment-question">
+                  <h4>Câu 2: Tôi cảm thấy dễ nổi cáu hoặc bực bội</h4>
+                  <div class="assessment-options">
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q2" value="0" /> Không
+                      bao giờ</label
+                    >
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q2" value="1" /> Đôi
+                      khi</label
+                    >
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q2" value="2" /> Thường
+                      xuyên</label
+                    >
+                    <label class="assessment-option"
+                      ><input type="radio" name="stress-q2" value="3" /> Rất
+                      thường xuyên</label
+                    >
+                  </div>
+                </div>
+
+                <button
+                  class="nutrition-submit"
+                  style="background-color: #6c5ce7; color: white"
+                  id="submit-stress"
+                >
+                  XEM KẾT QUẢ
+                </button>
+                <button class="back-btn" onclick="hideAssessment()">
+                  QUAY LẠI
+                </button>
+              </div>
+
+              <div class="assessment-result" id="stress-result">
+                <h3>KẾT QUẢ ĐÁNH GIÁ CĂNG THẲNG</h3>
+                <p>
+                  Dựa trên câu trả lời của bạn, mức độ căng thẳng của bạn là:
+                  <strong>Trung bình</strong>
+                </p>
+                <p>Điểm số của bạn: 15/42</p>
+                <p>
+                  <strong>Khuyến nghị:</strong> Bạn đang có dấu hiệu căng thẳng.
+                  Hãy thử các kỹ thuật thở sâu, tập thể dục nhẹ nhàng và sắp xếp
+                  lại thời gian biểu hợp lý hơn.
+                </p>
+
+                <div class="resources-list">
+                  <div class="resourse-item">
+                    <div class="resource-icon">🎧</div>
+                    <div class="resource-info">
+                      <h4>Podcast: Quản lý căng thẳng mùa thi</h4>
+                      <p>30 phút • Dr. Nguyễn Văn A</p>
+                    </div>
+                  </div>
+                  <div class="resourse-item">
+                    <div class="resource-icon">📺</div>
+                    <div class="resource-info">
+                      <h4>Video: 5 bài tập thở giảm stress</h4>
+                      <p>12 phút • Yoga với Mai</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="back-btn" onclick="hideResult()">
+                  QUAY LẠI
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lifestyle Tracker -->
+        <div class="health-content" id="lifestyle-content">
+          <div class="lifestyle-tracker">
+            <div class="lifestyle-content">
+              <h3 class="lifestyle-title">THEO DÕI THỂ CHẤT & LỐI SỐNG</h3>
+
+              <div class="lifestyle-features">
+                <div class="lifestyle-feature" data-tool="sleep">
+                  <i>😴</i>
+                  <h3>Nhật ký giấc ngủ</h3>
+                  <p>Theo dõi chất lượng và thời lượng giấc ngủ hàng ngày</p>
+                </div>
+                <div class="lifestyle-feature" data-tool="activity">
+                  <i>🏃</i>
+                  <h3>Vận động thể chất</h3>
+                  <p>Ghi lại các hoạt động thể chất trong ngày</p>
+                </div>
+                <div class="lifestyle-feature" data-tool="nutrition">
+                  <i>🍎</i>
+                  <h3>Nhật ký ăn uống</h3>
+                  <p>Theo dõi các bữa ăn và lượng calo nạp vào</p>
+                </div>
+                <div class="lifestyle-feature" data-tool="reminder">
+                  <i>⏰</i>
+                  <h3>Nhắc nhở vận động</h3>
+                  <p>Nhắc bạn đứng lên sau mỗi 45 phút ngồi học</p>
+                </div>
+              </div>
+
+              <div class="tracker-tool" id="sleep-tracker">
+                <div class="tracker-header">
+                  <h3>NHẬT KÝ GIẤC NGỦ</h3>
+                  <button class="back-btn" onclick="hideTool()">
+                    QUAY LẠI
+                  </button>
+                </div>
+
+                <div class="tracker-form">
+                  <div class="tracker-input-group">
+                    <label for="sleep-date">Ngày</label>
+                    <input type="date" id="sleep-date" />
+                  </div>
+                  <div class="tracker-input-group">
+                    <label for="sleep-time">Giờ đi ngủ</label>
+                    <input type="time" id="sleep-time" />
+                  </div>
+                  <div class="tracker-input-group">
+                    <label for="wake-time">Giờ thức dậy</label>
+                    <input type="time" id="wake-time" />
+                  </div>
+                  <div class="tracker-input-group">
+                    <label for="sleep-quality"
+                      >Chất lượng giấc ngủ (1-10)</label
+                    >
+                    <input type="number" id="sleep-quality" min="1" max="10" />
+                  </div>
+                  <div class="tracker-input-group">
+                    <label for="sleep-notes">Ghi chú</label>
+                    <textarea id="sleep-notes" rows="3"></textarea>
+                  </div>
+
+                  <button class="tracker-submit">LƯU THÔNG TIN</button>
+                </div>
+
+                <div class="tracker-history">
+                  <h4>LỊCH SỬ GIẤC NGỦ</h4>
+
+                  <div class="history-item">
+                    <div class="history-date">Hôm nay - 6 tiếng 30 phút</div>
+                    <div class="history-content">
+                      <span>Chất lượng: 6/10</span>
+                      <span class="history-value">23:30 - 06:00</span>
+                    </div>
+                  </div>
+
+                  <div class="history-item">
+                    <div class="history-date">Hôm qua - 7 tiếng</div>
+                    <div class="history-content">
+                      <span>Chất lượng: 8/10</span>
+                      <span class="history-value">23:00 - 06:00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reminder-bell" id="reminderBell">
+        <i>🔔</i>
+      </div>
+
+      <div class="reminder-popup" id="reminderPopup">
+        <h4>ĐÃ ĐẾN LÚC VẬN ĐỘNG!</h4>
+        <p>
+          Đừng ngồi học lâu quá! Hãy đứng dậy, vươn vai và đi lại ít nhất 5 phút
+          để máu lưu thông nhé!
+        </p>
+        <button
+          class="reminder-close"
+          onclick="document.getElementById('reminderPopup').style.display='none'"
+        >
+          ĐÃ HIỂU
+        </button>
+      </div>
+      
       <div class="mylove-section-title">
         <h2>CHƯƠNG TRÌNH RÈN LUYỆN SỨC KHỎE</h2>
       </div>
@@ -189,6 +659,450 @@
     </footer>
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script src="cedarjung/Aboutjs/healthcare.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const calculateBtn = document.getElementById("bmi-calculate");
+        const resultSection = document.getElementById("bmi-result");
+        const resultValue = document.getElementById("bmi-result-value");
+        const resultCategory = document.getElementById("bmi-result-category");
+        const infoText = document.getElementById("bmi-info-text");
+        const scaleIndicator = document.getElementById("bmi-scale-indicator");
+
+        calculateBtn.addEventListener("click", function () {
+          const height = parseFloat(
+            document.getElementById("bmi-height").value
+          );
+          const weight = parseFloat(
+            document.getElementById("bmi-weight").value
+          );
+          const gender = document.querySelector(
+            'input[name="bmi-gender"]:checked'
+          ).value;
+
+          if (!height || !weight) {
+            alert("Ờm hãy nhập nhập đầy đủ chiều cao và cân nặng nha");
+            return;
+          }
+
+          // Tính BMI
+          const heightInMeter = height / 100;
+          const bmi = weight / (heightInMeter * heightInMeter);
+          const roundedBMI = Math.round(bmi * 10) / 10;
+
+          // Hiển thị kết quả
+          resultValue.textContent = roundedBMI;
+
+          // Xác định phân loại BMI
+          let category, info;
+          let indicatorPosition = 0;
+
+          if (bmi < 18.5) {
+            category = "Thiếu cân";
+            info =
+              "Chỉ số BMI của bạn cho thấy bạn đang thiếu cân. Bạn nên xem xét tăng cường dinh dưỡng và tập luyện để đạt mức cân nặng hợp lý.";
+            indicatorPosition = 5 + (bmi / 18.5) * 15;
+          } else if (bmi >= 18.5 && bmi < 23) {
+            category = "Bình thường";
+            info =
+              "Chỉ số BMI của bạn nằm trong khoảng bình thường. Duy trì chế độ ăn uống lành mạnh và tập thể dục đều đặn để giữ gìn sức khỏe.";
+            indicatorPosition = 20 + ((bmi - 18.5) / (23 - 18.5)) * 20;
+          } else if (bmi >= 23 && bmi < 25) {
+            category = "Thừa cân";
+            info =
+              "Chỉ số BMI của bạn cho thấy bạn đang thừa cân. Bạn nên điều chỉnh chế độ ăn và tăng cường vận động để tránh các nguy cơ sức khỏe.";
+            indicatorPosition = 40 + ((bmi - 23) / (25 - 23)) * 20;
+          } else if (bmi >= 25 && bmi < 30) {
+            category = "Béo phì độ 1";
+            info =
+              "Chỉ số BMI của bạn cho thấy bạn đang ở mức béo phì độ 1. Bạn nên tham khảo ý kiến bác sĩ hoặc chuyên gia dinh dưỡng để có kế hoạch giảm cân an toàn.";
+            indicatorPosition = 60 + ((bmi - 25) / (30 - 25)) * 20;
+          } else {
+            category = "Béo phì độ 2";
+            info =
+              "Chỉ số BMI của bạn cho thấy bạn đang ở mức béo phì độ 2. Đây là mức độ nguy hiểm, bạn nên gặp bác sĩ để được tư vấn kế hoạch giảm cân phù hợp.";
+            indicatorPosition = 80 + Math.min((bmi - 30) / 10, 1) * 15;
+          }
+
+          // Cập nhật thông tin theo giới tính
+          if (gender === "female") {
+            if (category === "Bình thường") {
+              info +=
+                " Đối với nữ giới, tỷ lệ mỡ cơ thể có thể cao hơn nam giới cùng chỉ số BMI.";
+            } else if (category === "Thừa cân") {
+              info +=
+                " Phụ nữ thường có nguy cơ cao hơn với các vấn đề sức khỏe liên quan đến thừa cân.";
+            }
+          } else {
+            if (category === "Bình thường") {
+              info +=
+                " Đối với nam giới, hãy chú ý đến tỷ lệ mỡ bụng vì nó có thể ảnh hưởng đến sức khỏe dù BMI bình thường.";
+            }
+          }
+
+          resultCategory.textContent = category;
+          infoText.textContent = info;
+
+          // Di chuyển kim chỉ thị
+          scaleIndicator.style.left = `calc(${indicatorPosition}% - 2px)`;
+
+          // Hiển thị kết quả
+          resultSection.style.display = "block";
+        });
+      });
+    </script>
+    <script>
+      // Tab switching
+      const tabs = document.querySelectorAll(".health-tab");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          const tabId = tab.getAttribute("data-tab");
+          document.querySelectorAll(".health-content").forEach((content) => {
+            content.classList.remove("active");
+          });
+          document.getElementById(`${tabId}-content`).classList.add("active");
+        });
+      });
+
+      // Nutrition Advisor
+      document
+        .getElementById("nutrition-submit")
+        .addEventListener("click", function () {
+          const age = document.getElementById("nutri-age").value;
+          const height = document.getElementById("nutri-height").value;
+          const weight = document.getElementById("nutri-weight").value;
+
+          if (!age || !height || !weight) {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return;
+          }
+
+          document.getElementById("nutrition-form").style.display = "none";
+          document.getElementById("nutrition-result").style.display = "block";
+        });
+
+      // Mental Health Assessment
+      const mentalOptions = document.querySelectorAll(".mental-option");
+      mentalOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          const assessmentType = this.getAttribute("data-assessment");
+
+          if (assessmentType === "resources") {
+            document.getElementById("stress-result").style.display = "block";
+          } else {
+            document.getElementById(
+              `${assessmentType}-assessment`
+            ).style.display = "block";
+          }
+        });
+      });
+
+      document
+        .getElementById("submit-stress")
+        .addEventListener("click", function () {
+          document.getElementById("stress-assessment").style.display = "none";
+          document.getElementById("stress-result").style.display = "block";
+        });
+
+      function hideAssessment() {
+        document
+          .querySelectorAll(".mental-assessment")
+          .forEach((assessment) => {
+            assessment.style.display = "none";
+          });
+      }
+
+      function hideResult() {
+        document.querySelectorAll(".assessment-result").forEach((result) => {
+          result.style.display = "none";
+        });
+      }
+
+      // Lifestyle Tracker Tools
+      const lifestyleFeatures = document.querySelectorAll(".lifestyle-feature");
+      lifestyleFeatures.forEach((feature) => {
+        feature.addEventListener("click", function () {
+          const toolId = this.getAttribute("data-tool");
+          document.getElementById(`${toolId}-tracker`).style.display = "block";
+        });
+      });
+
+      function hideTool() {
+        document.querySelectorAll(".tracker-tool").forEach((tool) => {
+          tool.style.display = "none";
+        });
+      }
+
+      // Reminder Bell
+      document
+        .getElementById("reminderBell")
+        .addEventListener("click", function () {
+          document.getElementById("reminderPopup").style.display = "block";
+        });
+
+      // Simulate reminder after 45 minutes (for demo)
+      setTimeout(() => {
+        document.getElementById("reminderPopup").style.display = "block";
+      }, 5000); // In real app, this would be 45*60*1000 = 2700000ms
+    </script>
+    <script src="/cedarjung/Aboutjs/auth.js"></script>
+    <script>
+      // HEALTH WELCOME EFFECT - IMPROVED HEARTBEAT
+      (function () {
+        const __healthCanvas = document.createElement("canvas");
+        __healthCanvas.style.position = "fixed";
+        __healthCanvas.style.top = "0";
+        __healthCanvas.style.left = "0";
+        __healthCanvas.style.zIndex = "9999";
+        __healthCanvas.style.pointerEvents = "none";
+        document.body.appendChild(__healthCanvas);
+
+        const ctx = __healthCanvas.getContext("2d");
+        __healthCanvas.width = window.innerWidth;
+        __healthCanvas.height = window.innerHeight;
+
+        // Màu sắc nhẹ nhàng (pastel)
+        const colors = {
+          heart: "#FF9AA2", // Màu hồng pastel
+          bg: "rgba(245, 245, 245, 0.2)",
+          message: "#6D6875", // Màu tím xám nhạt
+          vitamins: [
+            "#B5EAD7",
+            "#FFDAC1",
+            "#E2F0CB",
+            "#C7CEEA",
+            "#FFB7B2",
+            "#FF9AA2",
+          ],
+          smoke: "rgba(200, 214, 229, 0.6)", // Màu khói xanh nhạt
+        };
+
+        // Các thành phần hiệu ứng
+        const effects = {
+          heart: {
+            x: __healthCanvas.width / 2,
+            y: __healthCanvas.height / 2,
+            size: 60,
+            scale: 1,
+            beatSpeed: 0.08,
+            pulseFactor: 0.25, // Độ phồng của tim
+          },
+
+          vitamins: Array.from({ length: 25 }, () => ({
+            x: Math.random() * __healthCanvas.width,
+            y: Math.random() * __healthCanvas.height,
+            size: Math.random() * 15 + 10,
+            speed: Math.random() * 2 + 1,
+            type: Math.floor(Math.random() * 6),
+            angle: 0,
+            color:
+              colors.vitamins[
+                Math.floor(Math.random() * colors.vitamins.length)
+              ],
+          })),
+
+          smokes: Array.from({ length: 12 }, () => ({
+            x: __healthCanvas.width - 100,
+            y: __healthCanvas.height - 100,
+            size: Math.random() * 25 + 15,
+            opacity: Math.random() * 0.4 + 0.2,
+            speedX: (Math.random() - 0.5) * 1.5,
+            speedY: Math.random() * -1 - 0.3,
+            life: 100,
+          })),
+
+          message: {
+            text: "Chào mừng tới phần Sức khỏe lớp D4!",
+            alpha: 0,
+            size: 36,
+            yPos: 120,
+          },
+
+          startTime: Date.now(),
+          duration: 10000,
+        };
+
+        // Vẽ trái tim đập mượt hơn
+        function drawSmoothHeart() {
+          const h = effects.heart;
+          ctx.save();
+          ctx.translate(h.x, h.y);
+          ctx.scale(h.scale, h.scale);
+
+          // Tạo hình tim bằng đường cong Bezier
+          ctx.beginPath();
+          const topCurveHeight = h.size * 0.3;
+          ctx.moveTo(0, 0);
+
+          // Vế bên trái
+          ctx.bezierCurveTo(
+            -h.size / 2,
+            -topCurveHeight * 2,
+            -h.size,
+            0,
+            0,
+            h.size
+          );
+
+          // Vế bên phải
+          ctx.bezierCurveTo(h.size, 0, h.size / 2, -topCurveHeight * 2, 0, 0);
+
+          ctx.fillStyle = colors.heart;
+          ctx.shadowColor = "rgba(0,0,0,0.1)";
+          ctx.shadowBlur = 10;
+          ctx.fill();
+
+          // Thêm hiệu ứng ánh sáng
+          const gradient = ctx.createRadialGradient(
+            0,
+            -h.size / 3,
+            1,
+            0,
+            -h.size / 3,
+            h.size
+          );
+          gradient.addColorStop(0, "rgba(255,255,255,0.8)");
+          gradient.addColorStop(1, "rgba(255,255,255,0)");
+          ctx.fillStyle = gradient;
+          ctx.fill();
+
+          ctx.restore();
+        }
+
+        // Animation loop cải tiến
+        function animate() {
+          const elapsed = Date.now() - effects.startTime;
+          const progress = Math.min(elapsed / effects.duration, 1);
+
+          // Clear canvas với màu nền nhẹ
+          ctx.fillStyle = colors.bg;
+          ctx.fillRect(0, 0, __healthCanvas.width, __healthCanvas.height);
+
+          // Cập nhật trái tim - đập mượt hơn
+          effects.heart.scale =
+            1 +
+            Math.sin(elapsed * effects.heart.beatSpeed) *
+              effects.heart.pulseFactor;
+
+          // Vẽ các thành phần
+          drawVitamins();
+          if (progress > 0.3) drawSmoke();
+          drawMessage(progress);
+          drawSmoothHeart(); // Luôn vẽ tim sau cùng để nổi bật
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            fadeOut();
+          }
+        }
+
+        function drawVitamins() {
+          effects.vitamins.forEach((v) => {
+            v.y += v.speed;
+            v.angle += 0.03;
+            if (v.y > __healthCanvas.height + 50) v.y = -30;
+
+            ctx.save();
+            ctx.font = `${v.size}px Arial`;
+            ctx.fillStyle = v.color;
+            ctx.translate(v.x, v.y);
+            ctx.rotate(v.angle);
+            ctx.fillText(["💊", "💉", "🩹", "🧪", "🧬", "🌡️"][v.type], 0, 0);
+            ctx.restore();
+          });
+        }
+
+        function drawSmoke() {
+          effects.smokes.forEach((s) => {
+            s.x += s.speedX;
+            s.y += s.speedY;
+            s.life--;
+
+            ctx.save();
+            ctx.globalAlpha = s.opacity;
+            ctx.fillStyle = colors.smoke;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.size * (s.life / 100), 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            if (s.life <= 0) resetSmoke(s);
+          });
+
+          // Vẽ dấu X cấm
+          ctx.save();
+          ctx.translate(
+            __healthCanvas.width - 100,
+            __healthCanvas.height - 100
+          );
+          ctx.strokeStyle = "rgba(230, 126, 115, 0.7)";
+          ctx.lineWidth = 6;
+          ctx.beginPath();
+          ctx.arc(0, 0, 30, 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(-25, -25);
+          ctx.lineTo(25, 25);
+          ctx.moveTo(25, -25);
+          ctx.lineTo(-25, 25);
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        function drawMessage(progress) {
+          if (progress > 0.1 && progress < 0.8) {
+            effects.message.alpha = Math.min(1, (progress - 0.1) * 2);
+            effects.message.size = 36 + Math.sin(Date.now() / 300) * 2;
+          } else if (progress >= 0.8) {
+            effects.message.alpha = Math.max(0, 1 - (progress - 0.8) * 5);
+          }
+
+          ctx.save();
+          ctx.font = `bold ${effects.message.size}px 'Arial', sans-serif`;
+          ctx.textAlign = "center";
+          ctx.fillStyle = `${colors.message}`;
+          ctx.globalAlpha = effects.message.alpha;
+          ctx.fillText(
+            effects.message.text,
+            __healthCanvas.width / 2,
+            effects.message.yPos
+          );
+          ctx.restore();
+        }
+
+        function resetSmoke(smoke) {
+          Object.assign(smoke, {
+            x: __healthCanvas.width - 100,
+            y: __healthCanvas.height - 100,
+            life: 100,
+            opacity: Math.random() * 0.3 + 0.1,
+          });
+        }
+
+        function fadeOut() {
+          let opacity = 1;
+          const fade = () => {
+            opacity -= 0.02;
+            __healthCanvas.style.opacity = opacity;
+            if (opacity > 0) requestAnimationFrame(fade);
+            else __healthCanvas.remove();
+          };
+          fade();
+        }
+
+        // Bắt đầu
+        animate();
+        window.addEventListener("resize", () => {
+          __healthCanvas.width = window.innerWidth;
+          __healthCanvas.height = window.innerHeight;
+          effects.heart.x = __healthCanvas.width / 2;
+          effects.heart.y = __healthCanvas.height / 2;
+        });
+      })();
+    </script>
     <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
   </body>
 </html>
