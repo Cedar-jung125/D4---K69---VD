@@ -234,6 +234,137 @@
     </footer>
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script src="cedarjung/Open/open.js"></script>
+    <script>
+      // Sand Storm Effect - Unique Namespace
+      (function () {
+        // Unique variable names
+        const __sandStormCanvas = document.createElement("canvas");
+        const __sandStormCtx = __sandStormCanvas.getContext("2d");
+        const __sandStormText = document.createElement("div");
+
+        // Styling with unique class names
+        __sandStormCanvas.style.position = "fixed";
+        __sandStormCanvas.style.top = "0";
+        __sandStormCanvas.style.left = "0";
+        __sandStormCanvas.style.zIndex = "9999";
+        __sandStormCanvas.style.pointerEvents = "none";
+
+        __sandStormText.className = "__sand-storm-welcome";
+        __sandStormText.textContent = "WELCOME";
+        __sandStormText.style.position = "fixed";
+        __sandStormText.style.top = "50%";
+        __sandStormText.style.left = "50%";
+        __sandStormText.style.transform = "translate(-50%, -50%)";
+        __sandStormText.style.zIndex = "10000";
+        __sandStormText.style.color = "#8b4513";
+        __sandStormText.style.fontSize = "0";
+        __sandStormText.style.opacity = "0";
+        __sandStormText.style.transition = "all 1.5s ease-out";
+        __sandStormText.style.fontWeight = "bold";
+        __sandStormText.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.3)";
+        __sandStormText.style.fontFamily = "Arial, sans-serif";
+
+        // Add elements to body
+        document.body.appendChild(__sandStormCanvas);
+        document.body.appendChild(__sandStormText);
+
+        // Resize handling
+        function __sandStormResize() {
+          __sandStormCanvas.width = window.innerWidth;
+          __sandStormCanvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", __sandStormResize);
+        __sandStormResize();
+
+        // Particle system
+        const __sandParticles = [];
+        const __sandCenterX = __sandStormCanvas.width / 2;
+        const __sandCenterY = __sandStormCanvas.height / 2;
+
+        // Create particles
+        for (let __sandI = 0; __sandI < 150; __sandI++) {
+          __sandParticles.push({
+            x: Math.random() * __sandStormCanvas.width,
+            y: Math.random() * __sandStormCanvas.height,
+            s: Math.random() * 5 + 1,
+            sp: Math.random() * 2 + 0.5,
+            a: Math.random() * Math.PI * 2,
+            r: Math.random() * 100 + 50,
+            c: `rgba(194, 178, 128, ${Math.random() * 0.5 + 0.3})`,
+          });
+        }
+
+        // Animation
+        const __sandStartTime = Date.now();
+        const __sandDuration = 8000;
+
+        function __sandAnimate() {
+          const __sandElapsed = Date.now() - __sandStartTime;
+          const __sandProgress = Math.min(__sandElapsed / __sandDuration, 1);
+
+          // Clear canvas
+          __sandStormCtx.fillStyle = "rgba(245, 232, 192, 0.2)";
+          __sandStormCtx.fillRect(
+            0,
+            0,
+            __sandStormCanvas.width,
+            __sandStormCanvas.height
+          );
+
+          // Update particles
+          __sandParticles.forEach((__sandP) => {
+            const __sandSpiral = __sandProgress * 1.2;
+            const __sandAngle = __sandP.a + __sandSpiral * 10;
+            const __sandRadius = __sandP.r * (1 - __sandSpiral);
+
+            if (__sandSpiral < 1) {
+              __sandP.x = __sandCenterX + Math.cos(__sandAngle) * __sandRadius;
+              __sandP.y = __sandCenterY + Math.sin(__sandAngle) * __sandRadius;
+            } else {
+              __sandP.x += (__sandCenterX - __sandP.x) * 0.05;
+              __sandP.y += (__sandCenterY - __sandP.y) * 0.05;
+            }
+
+            __sandStormCtx.fillStyle = __sandP.c;
+            __sandStormCtx.beginPath();
+            __sandStormCtx.arc(__sandP.x, __sandP.y, __sandP.s, 0, Math.PI * 2);
+            __sandStormCtx.fill();
+          });
+
+          // Show text at 70% progress
+          if (
+            __sandProgress > 0.55 &&
+            !__sandStormText.classList.contains("__sand-show")
+          ) {
+            __sandStormText.style.fontSize = "5rem";
+            __sandStormText.style.opacity = "1";
+            __sandStormText.classList.add("__sand-show");
+          }
+
+          // Fade out text at 90% progress
+          if (
+            __sandProgress > 0.9 &&
+            __sandStormText.classList.contains("__sand-show")
+          ) {
+            __sandStormText.style.opacity = "0";
+            __sandStormText.style.transition = "opacity 0.8s ease-out";
+          }
+
+          // Cleanup when complete
+          if (__sandProgress < 1) {
+            requestAnimationFrame(__sandAnimate);
+          } else {
+            setTimeout(() => {
+              __sandStormCanvas.remove();
+              __sandStormText.remove();
+            }, 1000);
+          }
+        }
+
+        // Start animation
+        __sandAnimate();
+      })();
+    </script>
     <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
   </body>
 </html>
