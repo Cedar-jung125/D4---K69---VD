@@ -56,8 +56,7 @@ function setupClassroomButtons() {
     button.addEventListener("click", function () {
       const courseName =
         this.closest(".course-card").querySelector("h2").textContent;
-      alert(`Chuyển đến AP Classroom cho ${courseName}`);
-      // Thực tế: window.location.href = '/ap-classroom';
+      alert(`Chuyển đến phần Classroom cho ${courseName}`);
     });
   });
 }
