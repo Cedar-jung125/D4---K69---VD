@@ -1,39 +1,88 @@
-.search-container {
+.crack-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 25, 47, 0.9) 0%,
+    rgba(32, 82, 149, 0.9) 100%
+  );
+  z-index: 9999;
+  display: none;
+  overflow: hidden;
+}
+
+/* Vết nứt gồ ghề */
+.crack {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform-origin: center;
+  animation: crackSpread 1.5s forwards, crackJagged 0.5s infinite alternate;
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.8);
 }
 
-.search-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px; /* Bo góc trái */
-  outline: none;
+/* Mảnh vỡ băng */
+.ice-piece {
+  position: absolute;
+  background: rgba(200, 230, 255, 0.9);
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(0.5px);
+  box-shadow: 0 0 5px rgba(173, 216, 230, 0.8);
+  animation: fallAndFade 2s forwards;
 }
 
-.search-button {
-  padding: 10px 15px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 0 4px 4px 0; /* Bo góc phải */
-  cursor: pointer;
+/* Hiệu ứng lan từ trung tâm */
+@keyframes crackSpread {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+  }
+  100% {
+    transform: scale(1) rotate(var(--final-rotate));
+    opacity: 0.9;
+    left: var(--final-left);
+    top: var(--final-top);
+  }
 }
 
-.search-button:hover {
-  background: #0056b3;
+/* Hiệu ứng gồ ghề */
+@keyframes crackJagged {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(
+      0% 20%,
+      10% 0%,
+      30% 15%,
+      50% 5%,
+      70% 15%,
+      90% 0%,
+      100% 20%,
+      85% 40%,
+      95% 60%,
+      70% 65%,
+      50% 95%,
+      30% 65%,
+      15% 60%,
+      5% 40%
+    );
+  }
 }
 
-.search-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-@media (max-width: 768px) {
-  .search-container {
-    width: 90%;
-    right: 5%;
+@keyframes fallAndFade {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) scale(0.5);
+    opacity: 0;
   }
 }
