@@ -119,6 +119,7 @@
           <ul class="dropdown-content">
             <li><a href="cedarjung/Thuvien/trangchuthuvien.html">Thư viện</a></li>
             <li><a href="cedarjung/Game/trangchugame.html">Trò chơi</a></li>
+            <li><a href="cedarjung/tourism.html">Du lịch</a></li>
           </ul>
         </li>
       </ul>
@@ -925,6 +926,113 @@
           activeFrostAreas.forEach((frost) => frost.remove());
           activeFrostAreas = [];
         });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const articleCards = document.querySelectorAll(".article-card");
+        const crackOverlay = document.getElementById("crackOverlay");
+        const crackContainer = document.getElementById("crackContainer");
+        let targetUrl = "";
+
+        articleCards.forEach((card) => {
+          card.addEventListener("click", function (e) {
+            e.preventDefault();
+            targetUrl = card.querySelector("a").getAttribute("href");
+            crackOverlay.style.display = "flex";
+            createCrackEffect();
+
+            setTimeout(() => {
+              window.location.href = targetUrl;
+            }, 5000);
+          });
+        });
+
+        function createCrackEffect() {
+          crackContainer.innerHTML = "";
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          const centerX = width / 2;
+          const centerY = height / 2;
+
+          // Tạo các vết nứt gồ ghề
+          for (let i = 0; i < 20; i++) {
+            const crack = document.createElement("div");
+            crack.className = "crack";
+
+            // Tính toán hướng lan từ trung tâm
+            const angle = Math.random() * Math.PI * 2;
+            const distance =
+              100 + Math.random() * Math.max(width, height) * 0.4;
+            const jaggedness = 0.3 + Math.random() * 0.7;
+
+            // Vị trí cuối cùng
+            const finalX = centerX + Math.cos(angle) * distance;
+            const finalY = centerY + Math.sin(angle) * distance;
+
+            // Kích thước vết nứt
+            const length = 80 + Math.random() * 120;
+            const thickness = 1 + Math.random() * 4;
+            const rotate = Math.random() * 30 - 15;
+
+            crack.style.setProperty("--final-left", `${finalX}px`);
+            crack.style.setProperty("--final-top", `${finalY}px`);
+            crack.style.setProperty("--final-rotate", `${rotate}deg`);
+            crack.style.width = `${length}px`;
+            crack.style.height = `${thickness}px`;
+            crack.style.left = `${centerX}px`;
+            crack.style.top = `${centerY}px`;
+            crack.style.animationDelay = `${Math.random() * 0.3}s`;
+            crack.style.animationDuration = `${1 + Math.random() * 0.5}s`;
+
+            // Tạo hiệu ứng gồ ghề
+            crack.style.clipPath = generateJaggedPath(
+              length,
+              thickness,
+              jaggedness
+            );
+
+            crackContainer.appendChild(crack);
+          }
+
+          // Tạo mảnh vỡ băng
+          for (let i = 0; i < 60; i++) {
+            const piece = document.createElement("div");
+            piece.className = "ice-piece";
+
+            const size = 3 + Math.random() * 12;
+            const startX = centerX + (Math.random() - 0.5) * 200;
+            const startY = centerY + (Math.random() - 0.5) * 200;
+            const fallSpeed = 1 + Math.random() * 2;
+
+            piece.style.width = `${size}px`;
+            piece.style.height = `${size}px`;
+            piece.style.left = `${startX}px`;
+            piece.style.top = `${startY}px`;
+            piece.style.animationDelay = `${0.3 + Math.random() * 0.5}s`;
+            piece.style.animationDuration = `${fallSpeed}s`;
+
+            crackContainer.appendChild(piece);
+          }
+        }
+
+        function generateJaggedPath(length, thickness, jaggedness) {
+          const steps = 10;
+          let path = "polygon(";
+
+          for (let i = 0; i <= steps; i++) {
+            const x = (i / steps) * 100;
+            const yBase = 50;
+            const yOffset = (Math.random() * 2 - 1) * jaggedness * 50;
+            const y = Math.min(100, Math.max(0, yBase + yOffset));
+
+            if (i > 0) path += ", ";
+            path += `${x}% ${y}%`;
+          }
+
+          path += ")";
+          return path;
+        }
       });
     </script>
   </body>
