@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ Thống Học Tập Môn Tin học</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .container {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        width: 250px;
+        background-color: #91a9b4;
+        color: white;
+        padding: 20px 0;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar-header {
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #546b82;
+      }
+
+      .sidebar h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-item {
+        padding: 12px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .menu-item:hover {
+        background-color: #34495e;
+      }
+
+      .menu-item.active {
+        background-color: #56ccfe;
+        border-left: 4px solid #39ced6;
+      }
+
+      .main-content {
+        flex: 1;
+        padding: 30px;
+        background-color: white;
+      }
+
+      .course-header {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
+
+      .unit-title {
+        color: #91a9b4;
+        margin-bottom: 5px;
+      }
+
+      .unit-weight {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .lesson-card {
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .lesson-title {
+        margin-top: 0;
+        color: #2c3e50;
+      }
+
+      .video-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .video-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .video-item:last-child {
+        border-bottom: none;
+      }
+
+      .video-link {
+        color: #386482;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .video-link:hover {
+        text-decoration: underline;
+      }
+
+      .video-icon {
+        margin-right: 10px;
+        color: #fa7162;
+      }
+
+      .pdf-link {
+        color: #df6952;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .pdf-link:hover {
+        text-decoration: underline;
+      }
+
+      .pdf-icon {
+        margin-right: 10px;
+      }
+
+      .content-section {
+        display: none;
+      }
+
+      .content-section.active {
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h2>Hệ Thống Học Tập</h2>
+        </div>
+        <ul class="menu">
+          <li class="menu-item" data-target="overview">Tổng Quan</li>
+          <li class="menu-item" data-target="course-guide">
+            Hướng Dẫn Khóa Học
+          </li>
+          <li class="menu-item active" data-target="unit1">Bài 1</li>
+          <li class="menu-item" data-target="unit2">Bài 2</li>
+          <li class="menu-item" data-target="unit3">Bài 3</li>
+          <li class="menu-item" data-target="unit4">Bài 4</li>
+          <li class="menu-item" data-target="unit5">Bài 5</li>
+          <li class="menu-item" data-target="unit6">Bài 6</li>
+          <li class="menu-item" data-target="unit7">Bài 7</li>
+          <li class="menu-item" data-target="unit8">Bài 8</li>
+          <li class="menu-item" data-target="review">Ôn Tập</li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <!-- Nội dung tổng quan -->
+        <div id="overview" class="content-section">
+          <div class="course-header">
+            <h1>Tin học - Tổng Quan</h1>
+          </div>
+          <p>
+            Chào mừng bạn đến với khóa học về môn Tin học. Khóa học này bao gồm
+            8 bài học chính và phần ôn tập bao gồm những kiến thức cơ bản từ cấp
+            Trung học phổ thông trở xuống.
+          </p>
+          <p>Hãy chọn một bài học từ menu bên trái để bắt đầu.</p>
+        </div>
+
+        <!-- Hướng dẫn khóa học -->
+        <div id="course-guide" class="content-section">
+          <div class="course-header">
+            <h1>Hướng Dẫn</h1>
+          </div>
+          <p>Đây là hướng dẫn chi tiết về cách sử dụng khóa học hiệu quả.</p>
+          <ul>
+            <li>Xem video bài giảng theo thứ tự</li>
+            <li>
+              Sử dụng tài liệu tổng hợp, tham khảo của cả bài học ở cuối trang
+            </li>
+            <li>
+              Luyện tập bằng cách làm những bài ôn tập ở cuối trang (Có cả đáp
+              án đi kèm)
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bài 1 -->
+        <div id="unit1" class="content-section active">
+          <div class="course-header">
+            <h1>Tin học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 1: Tin học ứng dụng</h2>
+            <div class="unit-weight">Trọng số thi: 5-7%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">
+                1.1 Phần mềm văn phòng (Word, Excel, PowerPoint)
+              </h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >1.1: Video 1 - Làm chủ Word: Gõ, định dạng, mục lục tự
+                      động</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >1.1: Video 2 - Excel cơ bản: công thức, bảng, biểu
+                      đồ</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >1.1: Video 3 - PowerPoint: thiết kế trình chiếu, hiệu
+                      ứng</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="lesson-card">
+              <h3 class="lesson-title">1.2 Quản lý tệp và thư mục</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>1.2: Video 1 - Cách tổ chức thư mục hiệu quả</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>1.2: Video 2 - Định dạng tệp, nén, đổi đuôi tệp</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">1.3 Một số ứng dụng mở rộng</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>1.3: Video 1 - Sơ lược</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Thêm các mục tiếp theo cho Bài 1 -->
+            <div class="lesson-card">
+              <h3 class="lesson-title">1.5 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >1.5: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 1 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a
+                    href="/pdf/SÁCH GIÁO KHOA TIN HỌC 10 CHUYÊN ĐỀ HỌC TẬP TIN HỌC ỨNG DỤNG KẾT NỐI TRI THỨC.pdf"
+                    class="pdf-link"
+                    target="_blank"
+                  >
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >1.5: Sách Chuyên đề học tập Tin học (Tin học ứng dụng) 10
+                      - Kết nối tri thức
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bài 2 -->
+        <div id="unit2" class="content-section">
+          <div class="course-header">
+            <h1>Tin học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 2: Mạng máy tính & Internet</h2>
+            <div class="unit-weight">Trọng số thi: 10-12%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">2.1 Kiến thức cơ bản về mạng</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>2.1: Video 1 - Mạng LAN, WAN, Internet là gì?</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >2.1: Video 2 - Thiết bị mạng: Router, Switch, IP</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="lesson-card">
+              <h3 class="lesson-title">2.2 Kỹ năng sử dụng Internet an toàn</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>2.2: Video 1 - Tìm kiếm hiệu quả</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>2.2: Video 2 - Email, Drive, lưu trữ đám mây</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>2.2: Video 3 - Bảo mật khi dùng mạng công cộng</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">2.3 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >2.3: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 2 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span>2.3: </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bài 3 -->
+        <div id="unit3" class="content-section">
+          <div class="course-header">
+            <h1>Tin học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 3: Dữ liệu & Cơ sở dữ liệu</h2>
+            <div class="unit-weight">Trọng số thi: 9-13%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">3.1 Kiểu dữ liệu và tổ chức dữ liệu</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>3.1: Video 1 - Dữ liệu số, chuỗi, logic</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>3.1: Video 2 - Bảng, danh sách, cây</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">3.2 Cơ sở dữ liệu</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>3.2: Video 1 - Tìm hiểu khái niệm</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>3.2: Video 2 - Tạo bảng, nhập liệu</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >3.2: Video 3 - Tìm kiếm & truy vấn dữ liệu đơn giản</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="lesson-card">
+              <h3 class="lesson-title">3.3 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >3.3: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 3 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span>3.3: </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Các bài khác (có thể thêm tương tự) -->
+        <div id="unit4" class="content-section">
+          <div class="course-header">
+            <h1>Tin học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 4: Thuật toán & Giải quyết vấn đề</h2>
+            <div class="unit-weight">Trọng số thi: 5-7%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">4.1 Tư duy thuật toán</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >4.1: Video 1 - Tư duy bước - từ bài toán đời thực đến máy
+                      tính</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.1: Video 2 - Biểu diễn bằng sơ đồ khối</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">4.2 Một số thuật toán cơ bản</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.2: Video 1 - Code cơ bản</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.2: Video 2 - Thuật toán tham lam</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.2: Video 3 - Tìm kiếm tuyến tính/nhị phân</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.2: Video 4 - Sắp xếp nổi bọt, chọn, chèn</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="lesson-card">
+              <h3 class="lesson-title">4.3 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >4.3: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 3 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a
+                    href="https://wiki.vnoi.info/"
+                    class="pdf-link"
+                    target="_blank"
+                  >
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >4.3: VNOI WIKI - Nguồn tài liệu chuẩn mực cung cấp kiến
+                      thức dành cho các bạn học sinh có niềm đam mê với môn Tin
+                      học</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="unit5" class="content-section">
+          <!-- Nội dung bài 5 -->
+        </div>
+
+        <!-- Ôn tập -->
+        <div id="review" class="content-section">
+          <div class="course-header">
+            <h1>Ôn Tập Cuối Khóa</h1>
+          </div>
+          <p>Tổng hợp các kiến thức trọng tâm và bài tập ôn luyện.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Xử lý click vào menu
+      document.querySelectorAll(".menu-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          // Xóa active khỏi tất cả các mục menu
+          document.querySelectorAll(".menu-item").forEach((i) => {
+            i.classList.remove("active");
+          });
+
+          // Thêm active vào mục được click
+          this.classList.add("active");
+
+          // Ẩn tất cả các section nội dung
+          document.querySelectorAll(".content-section").forEach((section) => {
+            section.classList.remove("active");
+          });
+
+          // Hiển thị section tương ứng
+          const targetId = this.getAttribute("data-target");
+          document.getElementById(targetId).classList.add("active");
+        });
+      });
+
+      // Xử lý click vào video (ví dụ)
+      document.querySelectorAll(".video-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const videoTitle = this.querySelector(
+            "span:not(.video-icon)"
+          ).textContent;
+          alert(
+            `Đang mở video: ${videoTitle}\n\nBạn có thể thay thế bằng trình phát video thực tế.`
+          );
+        });
+      });
+
+      // Xử lý click vào PDF (có thể thêm hành động tùy chỉnh)
+      document.querySelectorAll(".pdf-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          // Cho phép mở link PDF bình thường
+          // Có thể thêm tracking hoặc xử lý khác ở đây nếu cần
+        });
+      });
+    </script>
+  </body>
+</html>
