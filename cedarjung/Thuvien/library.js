@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize books data (you can expand this with real data)
   const books = [
-    {
+   {
       id: 1,
       title: "Nhật ký tuổi 15",
       category: "văn học",
@@ -18,27 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 3,
-      title: "Toán nâng cao 10",
-      category: "giáo dục",
-      image: "images/math.jpg",
-      flip: "https://example.com/book3",
+      title: "SGK Toán 11 - Tập 1 - Kết nối tri thức",
+      category: "Giáo dục",
+      image: "img/sgktoan11tap1kntt.png",
+      flip: "pdf/sach-giao-khoa-toan-11-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf",
     },
     {
       id: 4,
+      title:
+        "Sách Chuyên đề học tập Tin học (Tin học ứng dụng) 10 - Kết nối tri thức",
+      category: "Giáo dục",
+      image: "img/chuyen-de-tin-hoc-ung-dung-10.png",
+      flip: "pdf/SÁCH GIÁO KHOA TIN HỌC 10 CHUYÊN ĐỀ HỌC TẬP TIN HỌC ỨNG DỤNG KẾT NỐI TRI THỨC.pdf",
+    },
+    {
+      id: 5,
       title: "Truyện ngắn hay",
-      category: "văn học",
+      category: "Văn học",
       image: "images/story.jpg",
       flip: "https://example.com/book4",
     },
     {
-      id: 5,
+      id: 6,
       title: "Lịch sử Việt Nam",
       category: "lịch sử",
       image: "images/history.jpg",
       flip: "https://example.com/book5",
     },
     {
-      id: 6,
+      id: 7,
       title: "Khoa học vui",
       category: "khoa học",
       image: "images/science.jpg",
@@ -48,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const librarySection = document.createElement("div");
   librarySection.className = "library-section";
-  librarySection.style.display = "none"; // Ẩn ban đầu
+  librarySection.style.display = "none"; 
   librarySection.innerHTML = `
     <h1>📚 Thư viện sách lớp D4</h1>
     <div class="book-grid">
@@ -190,3 +198,4 @@ function closeFlipbook() {
   document.getElementById("flipbookFrame").src = "";
   document.body.style.overflow = "auto"; // Re-enable scrolling
 }
+
