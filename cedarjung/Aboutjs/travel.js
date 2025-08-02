@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Chuyến đi Sầm Sơn với lớp thực sự là trải nghiệm tuyệt vời nhất năm học của mình. Giá cả hợp lý mà dịch vụ rất chuyên nghiệp!",
       author: "Nguyễn Minh Khôi",
       role: "Học sinh lớp 10D4 - K69 - VĐ",
-      avatar: "/img/member/nguyenminhkhoi.jpg",
+      avatar: "img/member/nguyenminhkhoi.jpg",
     },
     {
       content: "Chuyến đi thăm cố đô Hoa Lư - Ninh Bình",
@@ -501,3 +501,4 @@ document.addEventListener("DOMContentLoaded", function () {
   renderInternationalDestinations();
   renderAirlines();
 });
+
