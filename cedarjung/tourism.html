@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Du lịch D4</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/cedarjung/Aboutcss/style.css" />
+    <link rel="stylesheet" href="/cedarjung/Aboutcss/voyage.css" />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="header-left">
+        <img src="/img/Logoclass.jpg" alt="Logo lớp" class="logo" />
+      </div>
+      <div class="header-center">
+        <p style="margin: 0">TRƯỜNG THPT VIỆT ĐỨC</p>
+        <h1>K69 D4 (2024 -2027)</h1>
+        <p style="margin: 0">
+          47 Lý Thường Kiệt, phường Cửa Nam, Thành phố Hà Nội
+        </p>
+      </div>
+      <div class="header-right">
+        <select class="lang-select">
+          <option value="vi">Tiếng Việt</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="ja">Japanese</option>
+          <option value="ko">Korean</option>
+        </select>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <div class="navbar-header">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      </div>
+      <ul id="navbar-menu">
+        <li><a href="/cedarjung/home.html">Trang chủ</a></li>
+        <li class="dropdown">
+          <a href="#">Giới thiệu ⯆</a>
+          <ul class="dropdown-content">
+            <li>
+              <a href="/cedarjung/gioithieuchung/introduction.html"
+                >Về chúng tôi</a
+              >
+            </li>
+            <li>
+              <a href="/cedarjung/gioithieuchung/member.html">Thành viên</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/cedarjung/infogeneral.html">Tin tức</a></li>
+        <li class="dropdown">
+          <a href="#">Học tập ⯆</a>
+          <ul class="dropdown-content">
+            <li><a href="/cedarjung/hoctapd4/study.html">Khoá học</a></li>
+            <li><a href="/cedarjung/Open/Homeopen.html">Mở rộng</a></li>
+            <li>
+              <a href="/cedarjung/hoctapd4/result.html">Nhắc nhở bài tập</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/cedarjung/healthy.html">Sức khỏe</a>
+        </li>
+        <li>
+          <a href="/cedarjung/thongbaophobien/schedule.html">Thời khoá biểu</a>
+        </li>
+        <li class="dropdown">
+          <a href="#">Khác ⯆</a>
+          <ul class="dropdown-content">
+            <li>
+              <a href="/cedarjung/Thuvien/trangchuthuvien.html">Thư viện</a>
+            </li>
+            <li><a href="/cedarjung/Game/trangchugame.html">Trò chơi</a></li>
+            <li>
+              <a href="#">Du lịch</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="sakura-container"></div>
+    <div id="fireworks-container"></div>
+
+    <div class="hero-section genius-hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Khám Phá Thế Giới <span class="highlight">Cùng D4</span>
+        </h1>
+        <p class="hero-subtitle">
+          Những địa điểm hấp dẫn đáng để chúng ta khám phá
+        </p>
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Bạn muốn đi đâu?"
+            id="genius-search-input"
+          />
+          <button class="search-btn" id="genius-search-btn">
+            <i class="fas fa-search"></i> Tìm kiếm
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main class="travel-main">
+      <!-- Domestic Travel Section -->
+      <section class="travel-section" id="domestic">
+        <h2 class="section-title">
+          Điểm Đến Trong Nước <i class="fas fa-map-marked-alt"></i>
+        </h2>
+        <nav class="travel-nav">
+          <button class="nav-btn active" data-target="domestic">
+            Trong Nước
+          </button>
+          <button class="nav-btn" data-target="international">
+            Nước Ngoài
+          </button>
+          <button class="nav-btn" data-target="airlines">Hãng Bay</button>
+        </nav>
+        <div class="destination-grid" id="domestic-grid">
+          <!-- Sẽ được thêm bằng JS -->
+        </div>
+      </section>
+
+      <!-- International Travel Section -->
+      <section class="travel-section hidden" id="international">
+        <h2 class="section-title">
+          Điểm Đến Quốc Tế <i class="fas fa-globe-asia"></i>
+        </h2>
+        <div class="destination-grid" id="international-grid">
+          <!-- Sẽ được thêm bằng JS -->
+        </div>
+      </section>
+
+      <!-- Airlines Section -->
+      <section class="travel-section hidden" id="airlines">
+        <h2 class="section-title">
+          Hãng Hàng Không <i class="fas fa-plane"></i>
+        </h2>
+        <div class="airlines-grid" id="airlines-grid">
+          <!-- Sẽ được thêm bằng JS -->
+        </div>
+      </section>
+
+      <section class="travel-tips">
+        <h2 class="section-title">
+          Bí Kíp Du Lịch <i class="fas fa-lightbulb"></i>
+        </h2>
+        <div class="tips-carousel">
+          <!-- Các mẹo sẽ được thêm bằng JS -->
+        </div>
+      </section>
+
+      <section class="student-discounts">
+        <div class="discount-banner">
+          <div class="discount-content">
+            <h3>Ưu Đãi Đặc Biệt Cho Học Sinh D4</h3>
+            <p>Giảm đến 1.25% khi xuất trình thẻ học sinh</p>
+            <button class="discount-btn">Xem chi tiết</button>
+          </div>
+          <div class="discount-image">
+            <img src="/img/111A2534.JPG" alt="Học sinh du lịch" />
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <h2 class="section-title">Cảm Nhận Của Bạn Bè</h2>
+        <div class="testimonial-slider">
+          <!-- Các testimonial sẽ được thêm bằng JS -->
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div class="newsletter-container">
+          <h3>Hãy đăng ký nha các bạn!</h3>
+          <p>Cập nhật các chương trình khuyến mãi và điểm đến hấp dẫn</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email của bạn" />
+            <button type="submit" class="subscribe-btn">
+              Đăng ký <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="detail-overlay hidden" id="detail-overlay">
+      <div class="detail-container" id="detail-container">
+        <!-- Nội dung chi tiết sẽ được thêm bằng JS -->
+      </div>
+      <button class="back-btn" id="back-btn">
+        <i class="fas fa-arrow-left"></i> Quay lại
+      </button>
+    </div>
+
+    <footer class="school-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Trường THPT Việt Đức</h3>
+          <p>
+            Trường THPT Việt Đức thành lập ngày 03-3-1955, tại Lý Thường Kiệt -
+            Phường Cửa Nam - Hà Nội. Lớp D4 K69 thuộc khóa thứ 69 của trường
+            THPT Việt Đức và là lớp tổ hợp Địa lí, GDKT - PL, Vật lí, Tin học
+            của trường
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Liên hệ</h3>
+          <p>Địa chỉ: 47 Lý Thường Kiệt, phường Cửa Nam, Hà Nội</p>
+        </div>
+        <div class="footer-column">
+          <h3>Liên kết</h3>
+          <a
+            href="https://www.facebook.com/groups/9797569790255960"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/d4dunglatron/"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@d4_ever.k69vd?_t=ZS-8ws7Sa5Maag&_r=1"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+
+          <a href="mailto:Anhthreeco@gmail.com" class="social-icon"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p><em>"When I say D, you say four"</em></p>
+      </div>
+    </footer>
+    <script src="/cedarjung/Aboutjs/watw.js"></script>
+    <script src="/cedarjung/Aboutjs/travel.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tạo hiệu ứng hoa anh đào rơi
+        function createSakura() {
+          const sakuraContainer = document.getElementById("sakura-container");
+
+          // Tạo 30 cánh hoa
+          for (let i = 0; i < 50; i++) {
+            const sakura = document.createElement("div");
+            sakura.className = "sakura";
+
+            // Kích thước ngẫu nhiên
+            const size = Math.random() * 15 + 10;
+            sakura.style.width = `${size}px`;
+            sakura.style.height = `${size}px`;
+
+            // Vị trí bắt đầu ngẫu nhiên
+            sakura.style.left = `${Math.random() * 100}vw`;
+
+            // Thời gian rơi và delay ngẫu nhiên
+            const animationDuration = Math.random() * 10 + 10;
+            const animationDelay = Math.random() * 5;
+            sakura.style.animation = `falling ${animationDuration}s linear ${animationDelay}s infinite`;
+
+            // Màu sắc ngẫu nhiên từ hồng nhạt đến hồng đậm
+            const hue = Math.random() * 20 + 330; // Màu hồng từ 330-350
+            const saturation = Math.random() * 30 + 70;
+            const lightness = Math.random() * 20 + 70;
+            sakura.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+
+            // Độ trong suốt
+            sakura.style.opacity = Math.random() * 0.5 + 0.3;
+
+            // Xoay ngẫu nhiên
+            sakura.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+            sakuraContainer.appendChild(sakura);
+          }
+
+          // Thêm gió xuân (các hạt nhỏ bay)
+          for (let i = 0; i < 20; i++) {
+            const wind = document.createElement("div");
+            wind.className = "spring-wind";
+
+            // Kích thước rất nhỏ
+            const size = Math.random() * 3 + 1;
+            wind.style.width = `${size}px`;
+            wind.style.height = `${size}px`;
+
+            // Vị trí bắt đầu ngẫu nhiên
+            wind.style.left = `${Math.random() * 100}vw`;
+
+            // Thời gian bay và delay ngẫu nhiên
+            const animationDuration = Math.random() * 15 + 15;
+            const animationDelay = Math.random() * 10;
+            wind.style.animation = `windBlow ${animationDuration}s linear ${animationDelay}s infinite`;
+
+            // Màu hồng nhạt
+            wind.style.backgroundColor = `rgba(255, 221, 225, ${
+              Math.random() * 0.5 + 0.2
+            })`;
+
+            // Đường bay ngẫu nhiên
+            const xMovement = Math.random() * 100 - 50;
+            wind.style.setProperty("--x-movement", `${xMovement}px`);
+
+            sakuraContainer.appendChild(wind);
+          }
+        }
+
+        // Tạo hiệu ứng pháo hoa trái tim
+        function createHeartFirework() {
+          const fireworksContainer = document.getElementById(
+            "fireworks-container"
+          );
+
+          // Tạo pháo hoa mỗi 20-30 giây
+          setInterval(() => {
+            const firework = document.createElement("div");
+            firework.className = "heart-firework";
+
+            // Vị trí ngẫu nhiên
+            const left = Math.random() * 80 + 10;
+            firework.style.left = `${left}%`;
+
+            // Kích thước ngẫu nhiên
+            const size = Math.random() * 100 + 50;
+            firework.style.setProperty("--size", `${size}px`);
+
+            // Màu sắc ngẫu nhiên (hồng hoặc đỏ)
+            const hue =
+              Math.random() < 0.5
+                ? Math.random() * 20 + 330
+                : Math.random() * 20;
+            firework.style.setProperty("--hue", hue);
+
+            fireworksContainer.appendChild(firework);
+
+            // Tự động xóa sau khi animation kết thúc
+            setTimeout(() => {
+              firework.remove();
+            }, 3000);
+          }, Math.random() * 10000 + 20000);
+        }
+
+        // Thêm CSS động cho hiệu ứng
+        function addDynamicStyles() {
+          const style = document.createElement("style");
+          style.textContent = `
+            /* Hiệu ứng hoa anh đào rơi */
+            .sakura {
+                position: fixed;
+                top: -20px;
+                pointer-events: none;
+                z-index: 1000;
+                border-radius: 50% 0 50% 50%;
+                transform-origin: center;
+            }
+            
+            @keyframes falling {
+                0% {
+                    transform: translateY(-20px) rotate(0deg) translateX(0);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(360deg) translateX(50px);
+                    opacity: 0;
+                }
+            }
+            
+            /* Hiệu ứng gió xuân */
+            .spring-wind {
+                position: fixed;
+                top: -5px;
+                pointer-events: none;
+                z-index: 999;
+                border-radius: 50%;
+                transform-origin: center;
+            }
+            
+            @keyframes windBlow {
+                0% {
+                    transform: translateY(-5px) translateX(0);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 0.5;
+                }
+                100% {
+                    transform: translateY(100vh) translateX(var(--x-movement));
+                    opacity: 0;
+                }
+            }
+            
+            /* Hiệu ứng pháo hoa trái tim */
+            .heart-firework {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none;
+                z-index: 1001;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                animation: heartExplosion 1s ease-out forwards;
+            }
+            
+            @keyframes heartExplosion {
+                0% {
+                    transform: translateY(-50%) scale(0);
+                    opacity: 1;
+                    box-shadow: 0 0 0 0 hsla(var(--hue), 100%, 70%, 0.8);
+                }
+                50% {
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(-50%) scale(1);
+                    opacity: 0;
+                    box-shadow: 
+                        0 0 0 var(--size) hsla(var(--hue), 100%, 70%, 0),
+                        0 0 0 calc(var(--size) * 0.7) hsla(var(--hue), 100%, 70%, 0),
+                        0 0 0 calc(var(--size) * 0.4) hsla(var(--hue), 100%, 70%, 0);
+                }
+            }
+            
+            /* Tạo hình trái tim bằng pseudo-elements */
+            .heart-firework::before,
+            .heart-firework::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: calc(var(--size) * 0.3);
+                height: calc(var(--size) * 0.5);
+                background: hsla(var(--hue), 100%, 70%, 0.7);
+                border-radius: calc(var(--size) * 0.3) calc(var(--size) * 0.3) 0 0;
+            }
+            
+            .heart-firework::before {
+                left: calc(var(--size) * 0.25);
+                transform: rotate(-45deg);
+                transform-origin: 0 100%;
+            }
+            
+            .heart-firework::after {
+                left: calc(var(--size) * -0.25);
+                transform: rotate(45deg);
+                transform-origin: 100% 100%;
+            }
+        `;
+          document.head.appendChild(style);
+        }
+
+        // Khởi tạo tất cả hiệu ứng
+        addDynamicStyles();
+        createSakura();
+        createHeartFirework();
+      });
+    </script>
+  </body>
+</html>
