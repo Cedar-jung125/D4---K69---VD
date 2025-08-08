@@ -157,6 +157,589 @@
           height: auto;
         }
       }
+
+      .math-tools-container {
+        margin-top: 20px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .tools-title {
+        color: #2c3e50;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        text-align: center;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .tools-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #3498db, #2ecc71);
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 15px;
+      }
+
+      .tool-card {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: #333;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .tool-image-wrapper {
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f7fa;
+        padding: 15px;
+      }
+
+      .tool-image-wrapper img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      .tool-info {
+        padding: 15px;
+        flex-grow: 1;
+      }
+
+      .tool-info h4 {
+        margin: 0 0 8px 0;
+        color: #2c3e50;
+        font-size: 1.1rem;
+      }
+
+      .tool-info p {
+        margin: 0;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      :root {
+        --MATHD4-primary: #4a6bdf;
+        --MATHD4-secondary: #f8f9fa;
+        --MATHD4-accent: #ff6b6b;
+        --MATHD4-dark: #343a40;
+        --MATHD4-light: #ffffff;
+        --MATHD4-success: #28a745;
+        --MATHD4-danger: #dc3545;
+        --MATHD4-warning: #ffc107;
+        --MATHD4-info: #17a2b8;
+      }
+
+      /* Header Styles */
+      .MATHD4-course-header {
+        text-align: center;
+        padding: 2rem 0;
+        background: linear-gradient(135deg, var(--MATHD4-primary), #3a56c7);
+        color: white;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .MATHD4-main-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        animation: fadeInDown 0.8s ease;
+      }
+
+      .MATHD4-subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        animation: fadeIn 1s ease 0.3s both;
+      }
+
+      /* Exam Type Selection */
+      .MATHD4-exam-type-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .MATHD4-exam-type {
+        background-color: var(--MATHD4-light);
+        border-radius: 12px;
+        padding: 2rem;
+        width: 280px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .MATHD4-exam-type:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .MATHD4-exam-type i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--MATHD4-primary);
+      }
+
+      .MATHD4-exam-type h2 {
+        margin-bottom: 1rem;
+        color: var(--MATHD4-primary);
+      }
+
+      .MATHD4-exam-type p {
+        color: var(--MATHD4-dark);
+        opacity: 0.8;
+      }
+
+      .MATHD4-exam-type::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--MATHD4-primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .MATHD4-exam-type:hover::after {
+        transform: scaleX(1);
+      }
+
+      /* Thêm vào phần style */
+      .MATHD4-exam-type {
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .MATHD4-exam-type::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 0;
+      }
+
+      .MATHD4-exam-type > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .MATHD4-mock-test-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+      .MATHD4-test-selection,
+      .MATHD4-mock-test-selection,
+      .MATHD4-test-instructions {
+        transition: opacity 0.3s ease;
+      }
+
+      /* MCQ Section */
+      .MATHD4-mcq-container {
+        display: none;
+        background-color: var(--MATHD4-light);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .MATHD4-mcq-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .MATHD4-mcq-title {
+        font-size: 1.5rem;
+        color: var(--MATHD4-primary);
+      }
+
+      .MATHD4-mcq-timer {
+        background-color: var(--MATHD4-primary);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: bold;
+      }
+
+      .MATHD4-mcq-body {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .MATHD4-question-pdf {
+        flex: 1;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 1rem;
+        height: 500px;
+        overflow-y: auto;
+        background-color: #f9f9f9;
+      }
+
+      .MATHD4-question-container {
+        flex: 1;
+      }
+
+      .MATHD4-question-text {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .MATHD4-options-container {
+        margin-bottom: 2rem;
+      }
+
+      .MATHD4-option {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+        border-radius: 8px;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .MATHD4-option:hover {
+        background-color: #e9e9e9;
+      }
+
+      .MATHD4-option input {
+        margin-right: 1rem;
+        transform: scale(1.2);
+      }
+
+      .MATHD4-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+      }
+
+      .MATHD4-btn {
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .MATHD4-btn-primary {
+        background-color: var(--MATHD4-primary);
+        color: white;
+      }
+
+      .MATHD4-btn-primary:hover {
+        background-color: #3a56c7;
+      }
+
+      .MATHD4-btn-outline {
+        background-color: transparent;
+        border: 1px solid var(--MATHD4-primary);
+        color: var(--MATHD4-primary);
+      }
+
+      .MATHD4-btn-outline:hover {
+        background-color: #f0f4ff;
+      }
+
+      .MATHD4-btn-danger {
+        background-color: var(--MATHD4-danger);
+        color: white;
+      }
+
+      .MATHD4-btn-danger:hover {
+        background-color: #c82333;
+      }
+
+      /* Question Navigator */
+      .MATHD4-question-nav {
+        position: fixed;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        background-color: white;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .MATHD4-question-nav {
+          width: 200px;
+          right: 5px;
+          padding: 0.5rem;
+        }
+
+        #toggleNavBtn {
+          right: 5px;
+          top: 80px;
+          padding: 0.3rem 0.8rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      .MATHD4-question-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
+      }
+
+      /* Thêm vào phần CSS */
+      .MATHD4-question-number {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .MATHD4-question-number.active::after {
+        content: "\f3c5";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        color: firebrick;
+        font-size: 16px;
+        background: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .MATHD4-question-number:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 2px var(--MATHD4-primary);
+      }
+
+      .MATHD4-question-number.active {
+        background-color: var(--MATHD4-primary);
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 0 0 2px var(--MATHD4-primary);
+      }
+
+      .MATHD4-question-number.answered {
+        background-color: var(--MATHD4-success);
+        color: white;
+      }
+
+      .MATHD4-question-number.marked {
+        background-color: var(--MATHD4-warning);
+        color: white;
+      }
+
+      @keyframes pulse-location {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .MATHD4-question-number.active::after {
+        animation: pulse-location 1.5s infinite;
+      }
+
+      /* Results Section */
+      .MATHD4-results-container {
+        display: none;
+        text-align: center;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .MATHD4-score-circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        position: relative;
+        background: conic-gradient(
+          var(--MATHD4-success) 0% 70%,
+          var(--MATHD4-danger) 70% 100%
+        );
+      }
+
+      .MATHD4-score-inner {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .MATHD4-score {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--MATHD4-primary);
+      }
+
+      .MATHD4-score-total {
+        font-size: 1rem;
+        color: var(--MATHD4-dark);
+        opacity: 0.7;
+      }
+
+      .MATHD4-stats {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .MATHD4-stat {
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        background-color: #f5f5f5;
+      }
+
+      .MATHD4-stat-correct {
+        color: var(--MATHD4-success);
+      }
+
+      .MATHD4-stat-incorrect {
+        color: var(--MATHD4-danger);
+      }
+
+      /* True/False Section */
+      .MATHD4-tf-container {
+        display: none;
+      }
+
+      /* Short Answer Section */
+      .MATHD4-sa-container {
+        display: none;
+      }
+
+      .MATHD4-sa-input {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Essay Section */
+      .MATHD4-essay-container {
+        display: none;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .MATHD4-mcq-body {
+          flex-direction: column;
+        }
+
+        .MATHD4-question-pdf {
+          height: 300px;
+        }
+
+        .MATHD4-question-nav {
+          display: none !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -209,6 +792,88 @@
               Luyện tập bằng cách làm những bài ôn tập ở cuối trang (Có cả đáp
               án đi kèm)
             </li>
+            <div class="math-tools-container">
+              <h3 class="tools-title">CÔNG CỤ HỖ TRỢ TOÁN HỌC</h3>
+              <div class="tools-grid">
+                <!-- Tool 1 -->
+                <a
+                  href="https://www.casio.com/products/calculators/fx-580vn-x"
+                  target="_blank"
+                  class="tool-card"
+                >
+                  <div class="tool-image-wrapper">
+                    <img src="img/Casio.jpg" alt="Máy tính Casio 580VNX" />
+                  </div>
+                  <div class="tool-info">
+                    <h4>Casio 580VNX</h4>
+                    <p>
+                      Đây là máy tính cầm tay quen thuộc mà rất nhiều bạn học sử
+                      dụng trực tiếp khi thi cử. Hầu hết nó có thể xử lí các
+                      phép toán được học trên trường, nhưng hiện tại thì muốn sử
+                      dụng nó online thì phải download xuống
+                    </p>
+                  </div>
+                </a>
+
+                <!-- Tool 2 -->
+                <a
+                  href="https://www.desmos.com/"
+                  target="_blank"
+                  class="tool-card"
+                >
+                  <div class="tool-image-wrapper">
+                    <img
+                      src="img/desmos.jpg"
+                      alt="Desmos Graphing Calculator"
+                    />
+                  </div>
+                  <div class="tool-info">
+                    <h4>Desmos</h4>
+                    <p>
+                      Đây là công cụ vẽ đồ thị trực tuyến free vô cùng mạnh mẽ
+                      và trực quan. Công cụ này có thể được sử dụng trong các kì
+                      thi được tổ chức bởi College Board như SAT, AP á.
+                    </p>
+                  </div>
+                </a>
+
+                <!-- Tool 3 -->
+                <a
+                  href="https://www.geogebra.org/"
+                  target="_blank"
+                  class="tool-card"
+                >
+                  <div class="tool-image-wrapper">
+                    <img src="img/geogebra.jpg" alt="GeoGebra" />
+                  </div>
+                  <div class="tool-info">
+                    <h4>GeoGebra</h4>
+                    <p>
+                      Đây cũng là phần mềm hình học động, đại số và giải tích
+                      toàn diện
+                    </p>
+                  </div>
+                </a>
+
+                <!-- Tool 4 -->
+                <a
+                  href="https://www.symbolab.com/"
+                  target="_blank"
+                  class="tool-card"
+                >
+                  <div class="tool-image-wrapper">
+                    <img src="img/Symbolab.png" alt="Symbolab" />
+                  </div>
+                  <div class="tool-info">
+                    <h4>Symbolab</h4>
+                    <p>
+                      Đây là công cụ dùng để giải toán từng bước với hướng dẫn
+                      khá cụ thể, chi tiết
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
           </ul>
         </div>
 
@@ -337,22 +1002,36 @@
           </div>
 
           <div>
-            <h2 class="unit-title">Bài 2: Hàm số</h2>
+            <h2 class="unit-title">Bài 2: Vector</h2>
             <div class="unit-weight">Trọng số thi: 10-12%</div>
 
             <div class="lesson-card">
-              <h3 class="lesson-title">2.1 Hàm số cơ bản</h3>
+              <h3 class="lesson-title">2.1 Quy tắc cộng trừ vector</h3>
               <ul class="video-list">
                 <li class="video-item">
                   <a href="#" class="video-link">
                     <span class="video-icon">▶</span>
-                    <span>2.1: Video 1 - Tính đơn điệu của hàm số</span>
+                    <span>2.1: Video 1 - </span>
                   </a>
                 </li>
                 <li class="video-item">
                   <a href="#" class="video-link">
                     <span class="video-icon">▶</span>
-                    <span>2.1: Video 2 - Ý nghĩa hình học của hàm số</span>
+                    <span>2.1: Video 2 - </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="lesson-card">
+              <h3 class="lesson-title">2.5 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >2.5: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 2 (Có
+                      đáp án)</span
+                    >
                   </a>
                 </li>
               </ul>
@@ -367,41 +1046,35 @@
           </div>
 
           <div>
-            <h2 class="unit-title">Bài 3: Vector</h2>
+            <h2 class="unit-title">Bài 3: Hàm số</h2>
             <div class="unit-weight">Trọng số thi: 9-13%</div>
 
             <div class="lesson-card">
-              <h3 class="lesson-title">3.1 Quy tắc cộng trừ vector</h3>
+              <h3 class="lesson-title">3.1 Hàm số cơ bản</h3>
               <ul class="video-list">
                 <li class="video-item">
                   <a href="#" class="video-link">
                     <span class="video-icon">▶</span>
-                    <span
-                      >3.1: Video 1 - Nhận biết hàm hợp và áp dụng quy tắc
-                      chuỗi</span
-                    >
+                    <span>3.1: Video 1 - Tính đơn điệu của hàm số</span>
                   </a>
                 </li>
                 <li class="video-item">
                   <a href="#" class="video-link">
                     <span class="video-icon">▶</span>
-                    <span
-                      >3.1: Video 2 - Áp dụng quy tắc chuỗi cho các hàm cụ
-                      thể</span
-                    >
+                    <span>3.1: Video 2 - </span>
                   </a>
                 </li>
                 <li class="video-item">
                   <a href="#" class="video-link">
                     <span class="video-icon">▶</span>
-                    <span>3.1: Video 3 - Bài tập ứng dụng quy tắc chuỗi</span>
+                    <span>3.1: Video 3 - </span>
                   </a>
                 </li>
               </ul>
             </div>
 
             <div class="lesson-card">
-              <h3 class="lesson-title">3.2 Đạo Hàm Hàm Ẩn</h3>
+              <h3 class="lesson-title">3.2</h3>
               <ul class="video-list">
                 <li class="video-item">
                   <a href="#" class="video-link">
@@ -411,24 +1084,1081 @@
                 </li>
               </ul>
             </div>
+            <div class="lesson-card">
+              <h3 class="lesson-title">3.5 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >3.5: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 3 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!-- Các bài khác (có thể thêm tương tự) -->
         <div id="unit4" class="content-section">
-          <!-- Nội dung bài 4 -->
+          <div class="course-header">
+            <h1>Toán học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 4: Hình học</h2>
+            <div class="unit-weight">Trọng số thi: 10-12%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">4.1 Hình học phẳng</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >4.1: Video 1 - Các khái niệm cơ bản (Đoạn thẳng, đường
+                      thẳng, góc, ...)</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.1: Video 2 - Đa giác</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >4.1: Video 3 - Các kĩ thuật xử lí tam giác, tứ giác</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >4.1: Video 4 - Các kĩ thuật xử lí tam giác, tứ giác
+                      (Tiếp)</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.1: Video 5 - Đường tròn</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >4.1: Video 6 - Các kĩ thuật đặc biệt (Biến đổi hình, quỹ
+                      tích, ...)</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">4.2 Lượng giác</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.2: Video 1 - Tỉ số lượng giác</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >4.2: Video 2 - Hệ thức lượng trong tam giác vuông và tam
+                      giác thường</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.2: Video 3 - Công thức lượng giác</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>4.2: Video 4 - Hàm số lượng giác</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >4.2: Video 5 - Các phương trình lượng giác cơ bản</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">4.6 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >4.6: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 4 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="unit5" class="content-section">
-          <!-- Nội dung bài 5 -->
+          <div class="course-header">
+            <h1>Toán học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 5: Số học</h2>
+            <div class="unit-weight">Trọng số thi: 6-8%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">5.1</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.1: Video 1 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.1: Video 2 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.1: Video 3 </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.1: Video 4 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.1: Video 5 - Đường tròn</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.1: Video 6 - </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">5.2</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.2: Video 1 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.2: Video 2 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.2: Video 3 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.2: Video 4 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>5.2: Video 5 - </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">5.6 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >5.6: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 5 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="unit6" class="content-section">
+          <div class="course-header">
+            <h1>Toán học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 6: Tiền giải tích && Giải tích</h2>
+            <div class="unit-weight">Trọng số thi: 13-15%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">6.1</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.1: Video 1 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.1: Video 2 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.1: Video 3 </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.1: Video 4 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.1: Video 5 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.1: Video 6 - </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">6.2</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.2: Video 1 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.2: Video 2 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.2: Video 3 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.2: Video 4 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>6.2: Video 5 - </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">6.15 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >6.15: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 6
+                      (Có đáp án)</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="unit7" class="content-section">
+          <div class="course-header">
+            <h1>Toán học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 7: Toán rời rạc</h2>
+            <div class="unit-weight">Trọng số thi: 9-13%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">7.1 Khái niệm toán rời rạc</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.1: Video 1 - Toán rời rạc là gì?</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span
+                      >7.1: Video 2 - Tổ hợp, một phần của Toán rời rạc</span
+                    >
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.1: Video 3 - Quy tắc cộng và quy tắc nhân</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">7.2 Tổ hợp cơ bản</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.2: Video 1 - Hoán vị và chỉnh hợp</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.2: Video 2 - Tổ hợp và tam giác Pascal</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.2: Video 3 - Tổ hợp có ràng buộc</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.2: Video 4 - Nguyên lý bù trừ</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.2: Video 5 - Phương pháp song ánh</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">7.3 Truy hồi và đệ quy</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.3: Video 1 - Quy nạp toán học (Mở rộng)</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.3: Video 2 - Công thức truy hồi</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.3: Video 3 - Số Catalan</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">
+                7.4 Logic và suy luận (Mở rộng từ bài 1)
+              </h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.4: Video 1 - Mệnh đề và bảng chân trị</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.4: Video 2 - Quy tắc De Morgan và ứng dụng</span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>7.4: Video 3 - Bài toán giả thiết - suy luận</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">7.5 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >7.5: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 7 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="unit8" class="content-section">
+          <div class="course-header">
+            <h1>Toán học</h1>
+          </div>
+
+          <div>
+            <h2 class="unit-title">Bài 8: Xác suất && Thống kê</h2>
+            <div class="unit-weight">Trọng số thi: 7-8%</div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">8.1</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.1: Video 1 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.1: Video 2 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.1: Video 3 </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.1: Video 4 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.1: Video 5 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.1: Video 6 - </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">8.2</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.2: Video 1 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.2: Video 2 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.2: Video 3 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.2: Video 4 - </span>
+                  </a>
+                </li>
+                <li class="video-item">
+                  <a href="#" class="video-link">
+                    <span class="video-icon">▶</span>
+                    <span>8.2: Video 5 - </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="lesson-card">
+              <h3 class="lesson-title">8.5 Tài liệu tham khảo</h3>
+              <ul class="video-list">
+                <li class="video-item">
+                  <a href="#" class="pdf-link" target="_blank">
+                    <span class="pdf-icon">📄</span>
+                    <span
+                      >8.5: Tài liệu PDF - Tổng hợp lý thuyết, bài tập bài 8 (Có
+                      đáp án)</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <!-- Ôn tập -->
         <div id="review" class="content-section">
-          <div class="course-header">
-            <h1>Ôn Tập Cuối Khóa</h1>
+          <div class="MATHD4-course-header">
+            <h1 class="MATHD4-main-title">Ôn Tập Cuối Khóa</h1>
+            <p class="MATHD4-subtitle">
+              Tổng hợp các kiến thức trọng tâm và bài tập ôn luyện
+            </p>
           </div>
-          <p>Tổng hợp các kiến thức trọng tâm và bài tập ôn luyện.</p>
+
+          <div class="MATHD4-exam-type-container">
+            <!-- Sửa lại phần MATHD4-exam-type -->
+            <div
+              class="MATHD4-exam-type"
+              id="mcqType"
+              style="
+                background: linear-gradient(
+                    rgba(255, 255, 255, 0.9),
+                    rgba(255, 255, 255, 0.9)
+                  ),
+                  url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+                background-size: cover;
+              "
+            >
+              <i class="fas fa-list-ol"></i>
+              <h2>Trắc nghiệm</h2>
+              <p>Luyện tập với các câu hỏi trắc nghiệm đa dạng</p>
+            </div>
+            <div
+              class="MATHD4-exam-type"
+              id="essayType"
+              style="
+                background: linear-gradient(
+                    rgba(255, 255, 255, 0.9),
+                    rgba(255, 255, 255, 0.9)
+                  ),
+                  url('https://images.unsplash.com/photo-1509869175650-a1d97972541a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+                background-size: cover;
+              "
+            >
+              <i class="fas fa-pen-fancy"></i>
+              <h2>Tự luận</h2>
+              <p>Phát triển kỹ năng giải bài tập tự luận</p>
+            </div>
+          </div>
+
+          <!-- MCQ Test Selection -->
+          <div
+            class="MATHD4-test-selection"
+            id="mcqTestSelection"
+            style="display: none"
+          >
+            <h2 style="margin-bottom: 1.5rem; color: var(--MATHD4-primary)">
+              Chọn loại trắc nghiệm
+            </h2>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap">
+              <div
+                class="MATHD4-test-option"
+                style="
+                  flex: 1;
+                  min-width: 250px;
+                  background: white;
+                  padding: 1.5rem;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                "
+                onclick="showMCQTest('multiple-choice')"
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-check-circle"
+                    style="margin-right: 0.5rem"
+                  ></i
+                  >Nhiều lựa chọn
+                </h3>
+                <p style="color: #666">Câu hỏi với 4 phương án lựa chọn</p>
+              </div>
+              <div
+                class="MATHD4-test-option"
+                style="
+                  flex: 1;
+                  min-width: 250px;
+                  background: white;
+                  padding: 1.5rem;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                "
+                onclick="showMCQTest('true-false')"
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-check-circle"
+                    style="margin-right: 0.5rem"
+                  ></i
+                  >Đúng/Sai
+                </h3>
+                <p style="color: #666">
+                  Xác định tính đúng sai của các phát biểu
+                </p>
+              </div>
+              <div
+                class="MATHD4-test-option"
+                style="
+                  flex: 1;
+                  min-width: 250px;
+                  background: white;
+                  padding: 1.5rem;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                "
+                onclick="showMCQTest('short-answer')"
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-check-circle"
+                    style="margin-right: 0.5rem"
+                  ></i
+                  >Trả lời ngắn
+                </h3>
+                <p style="color: #666">Nhập đáp án ngắn cho câu hỏi</p>
+              </div>
+            </div>
+            <button
+              class="MATHD4-btn MATHD4-btn-outline"
+              style="margin-top: 2rem"
+              onclick="backToExamType()"
+            >
+              <i class="fas fa-arrow-left" style="margin-right: 0.5rem"></i>Quay
+              lại
+            </button>
+          </div>
+
+          <div
+            class="MATHD4-mock-test-selection"
+            id="mockTestSelection"
+            style="display: none"
+          >
+            <h2 style="margin-bottom: 1.5rem; color: var(--MATHD4-primary)">
+              Chọn Mock Test
+            </h2>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+              "
+            >
+              <div
+                class="MATHD4-mock-test-card"
+                onclick="selectMockTest(1)"
+                style="
+                  background: white;
+                  border-radius: 10px;
+                  padding: 1.5rem;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                  border-left: 4px solid var(--MATHD4-primary);
+                "
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i class="fas fa-file-alt" style="margin-right: 0.5rem"></i
+                  >Mock Test 1
+                </h3>
+                <p style="color: #666; margin-bottom: 0.5rem">Đại số cơ bản</p>
+                <div style="display: flex; gap: 1rem; font-size: 0.9rem">
+                  <span
+                    ><i class="fas fa-clock" style="margin-right: 0.3rem"></i>30
+                    phút</span
+                  >
+                  <span
+                    ><i
+                      class="fas fa-question-circle"
+                      style="margin-right: 0.3rem"
+                    ></i
+                    >20 câu</span
+                  >
+                </div>
+              </div>
+              <div
+                class="MATHD4-mock-test-card"
+                onclick="selectMockTest(2)"
+                style="
+                  background: white;
+                  border-radius: 10px;
+                  padding: 1.5rem;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                  border-left: 4px solid var(--MATHD4-accent);
+                "
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i class="fas fa-file-alt" style="margin-right: 0.5rem"></i
+                  >Mock Test 2
+                </h3>
+                <p style="color: #666; margin-bottom: 0.5rem">
+                  Hình học không gian
+                </p>
+                <div style="display: flex; gap: 1rem; font-size: 0.9rem">
+                  <span
+                    ><i class="fas fa-clock" style="margin-right: 0.3rem"></i>25
+                    phút</span
+                  >
+                  <span
+                    ><i
+                      class="fas fa-question-circle"
+                      style="margin-right: 0.3rem"
+                    ></i
+                    >15 câu</span
+                  >
+                </div>
+              </div>
+            </div>
+            <button
+              class="MATHD4-btn MATHD4-btn-outline"
+              style="margin-top: 2rem"
+              onclick="backToTestType()"
+            >
+              <i class="fas fa-arrow-left" style="margin-right: 0.5rem"></i>Quay
+              lại
+            </button>
+          </div>
+
+          <!-- MCQ Test Instructions -->
+          <div
+            class="MATHD4-test-instructions"
+            id="mcqTestInstructions"
+            style="
+              display: none;
+              background: white;
+              padding: 2rem;
+              border-radius: 12px;
+              box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+              margin-bottom: 2rem;
+            "
+          >
+            <h2
+              style="color: var(--MATHD4-primary); margin-bottom: 1.5rem"
+              id="instructionTitle"
+            >
+              Hướng dẫn làm bài
+            </h2>
+            <div id="instructionContent" style="margin-bottom: 2rem">
+              <p>Đây là bài kiểm tra trắc nghiệm gồm 20 câu hỏi.</p>
+              <p>Thời gian làm bài: <strong>30 phút</strong>.</p>
+              <p>Tổng điểm tối đa: <strong>40 điểm</strong>.</p>
+              <p>Bạn có thể sử dụng máy tính bỏ túi và giấy nháp.</p>
+              <p>Chúc bạn làm bài tốt!</p>
+            </div>
+            <button
+              class="MATHD4-btn MATHD4-btn-primary"
+              onclick="startMCQTest()"
+            >
+              Bắt đầu làm bài
+            </button>
+            <button
+              class="MATHD4-btn MATHD4-btn-outline"
+              style="margin-left: 1rem"
+              onclick="backToTestSelection()"
+            >
+              Quay lại
+            </button>
+          </div>
+
+          <!-- MCQ Test Container -->
+          <div class="MATHD4-mcq-container" id="mcqTestContainer">
+            <div class="MATHD4-mcq-header">
+              <div class="MATHD4-mcq-title">Bài kiểm tra trắc nghiệm</div>
+              <div class="MATHD4-mcq-timer" id="mcqTimer">30:00</div>
+            </div>
+            <div class="MATHD4-mcq-body">
+              <div class="MATHD4-question-pdf" id="questionPdf">
+                <p style="text-align: center; margin-top: 2rem; color: #666">
+                  Tài liệu PDF câu hỏi sẽ hiển thị tại đây
+                </p>
+              </div>
+              <div class="MATHD4-question-container" id="questionContainer">
+                <!-- Questions will be loaded here by JavaScript -->
+              </div>
+            </div>
+            <div class="MATHD4-navigation">
+              <button
+                class="MATHD4-btn MATHD4-btn-outline"
+                id="prevBtn"
+                onclick="prevQuestion()"
+              >
+                <i class="fas fa-arrow-left" style="margin-right: 0.5rem"></i
+                >Trước
+              </button>
+              <div>
+                <button
+                  class="MATHD4-btn MATHD4-btn-outline"
+                  id="markBtn"
+                  onclick="markQuestion()"
+                  style="margin-right: 1rem"
+                >
+                  <i class="fas fa-flag" style="margin-right: 0.5rem"></i>Đánh
+                  dấu
+                </button>
+                <button
+                  class="MATHD4-btn MATHD4-btn-primary"
+                  id="nextBtn"
+                  onclick="nextQuestion()"
+                >
+                  Tiếp theo<i
+                    class="fas fa-arrow-right"
+                    style="margin-left: 0.5rem"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question Navigator -->
+          <div class="MATHD4-question-nav" id="questionNav">
+            <h3 style="margin-bottom: 1rem; text-align: center">Câu hỏi</h3>
+            <div class="MATHD4-question-grid" id="questionGrid">
+              <!-- Question numbers will be added here by JavaScript -->
+            </div>
+            <button
+              class="MATHD4-btn MATHD4-btn-danger"
+              style="width: 100%; margin-top: 1rem"
+              onclick="submitTest()"
+            >
+              <i class="fas fa-paper-plane" style="margin-right: 0.5rem"></i>Nộp
+              bài
+            </button>
+          </div>
+
+          <!-- Results Container -->
+          <div class="MATHD4-results-container" id="resultsContainer">
+            <div class="MATHD4-score-circle">
+              <div class="MATHD4-score-inner">
+                <div class="MATHD4-score" id="finalScore">0</div>
+                <div class="MATHD4-score-total">/ 40 điểm</div>
+              </div>
+            </div>
+            <h2 style="margin-bottom: 1rem">Kết quả bài kiểm tra</h2>
+            <p style="margin-bottom: 2rem; color: #666">
+              Bạn đã hoàn thành bài kiểm tra với kết quả như sau:
+            </p>
+            <div class="MATHD4-stats">
+              <div class="MATHD4-stat MATHD4-stat-correct">
+                <h3 id="correctCount">0</h3>
+                <p>Đúng</p>
+              </div>
+              <div class="MATHD4-stat MATHD4-stat-incorrect">
+                <h3 id="incorrectCount">0</h3>
+                <p>Sai</p>
+              </div>
+            </div>
+            <button
+              class="MATHD4-btn MATHD4-btn-primary"
+              style="margin-top: 2rem"
+              onclick="backToHome()"
+            >
+              <i class="fas fa-home" style="margin-right: 0.5rem"></i>Về trang
+              chủ
+            </button>
+          </div>
+
+          <!-- Essay Test Selection -->
+          <div
+            class="MATHD4-test-selection"
+            id="essayTestSelection"
+            style="display: none"
+          >
+            <h2 style="margin-bottom: 1.5rem; color: var(--MATHD4-primary)">
+              Chọn bài tự luận
+            </h2>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap">
+              <div
+                class="MATHD4-test-option"
+                style="
+                  flex: 1;
+                  min-width: 250px;
+                  background: white;
+                  padding: 1.5rem;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                "
+                onclick="showEssayTest(1)"
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i class="fas fa-file-alt" style="margin-right: 0.5rem"></i
+                  >Bài tập 1
+                </h3>
+                <p style="color: #666">Đại số - Phương trình bậc hai</p>
+              </div>
+              <div
+                class="MATHD4-test-option"
+                style="
+                  flex: 1;
+                  min-width: 250px;
+                  background: white;
+                  padding: 1.5rem;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                "
+                onclick="showEssayTest(2)"
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i class="fas fa-file-alt" style="margin-right: 0.5rem"></i
+                  >Bài tập 2
+                </h3>
+                <p style="color: #666">Hình học - Tam giác đồng dạng</p>
+              </div>
+              <div
+                class="MATHD4-test-option"
+                style="
+                  flex: 1;
+                  min-width: 250px;
+                  background: white;
+                  padding: 1.5rem;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                "
+                onclick="showEssayTest(3)"
+              >
+                <h3 style="color: var(--MATHD4-primary); margin-bottom: 0.5rem">
+                  <i class="fas fa-file-alt" style="margin-right: 0.5rem"></i
+                  >Bài tập 3
+                </h3>
+                <p style="color: #666">Giải tích - Đạo hàm và ứng dụng</p>
+              </div>
+            </div>
+            <button
+              class="MATHD4-btn MATHD4-btn-outline"
+              style="margin-top: 2rem"
+              onclick="backToExamType()"
+            >
+              <i class="fas fa-arrow-left" style="margin-right: 0.5rem"></i>Quay
+              lại
+            </button>
+          </div>
+
+          <!-- Essay Test Container -->
+          <div
+            class="MATHD4-essay-container"
+            id="essayTestContainer"
+            style="
+              display: none;
+              background: white;
+              padding: 2rem;
+              border-radius: 12px;
+              box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+              margin-bottom: 2rem;
+            "
+          >
+            <h2
+              style="color: var(--MATHD4-primary); margin-bottom: 1.5rem"
+              id="essayTitle"
+            >
+              Bài tập tự luận
+            </h2>
+            <div id="essayContent" style="margin-bottom: 2rem">
+              <iframe
+                id="essayPdf"
+                src=""
+                style="
+                  width: 100%;
+                  height: 600px;
+                  border: 1px solid #ddd;
+                  border-radius: 8px;
+                "
+              ></iframe>
+            </div>
+            <button
+              class="MATHD4-btn MATHD4-btn-outline"
+              onclick="backToEssaySelection()"
+            >
+              <i class="fas fa-arrow-left" style="margin-right: 0.5rem"></i>Quay
+              lại
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -472,10 +2202,10 @@
       // Xử lý click vào PDF (có thể thêm hành động tùy chỉnh)
       document.querySelectorAll(".pdf-link").forEach((link) => {
         link.addEventListener("click", function (e) {
-          // Cho phép mở link PDF bình thường
-          // Có thể thêm tracking hoặc xử lý khác ở đây nếu cần
         });
       });
     </script>
+    <script src="cedarjung/hoctapd4/Baigiang/Toanhoc.js"></script>
+    <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
   </body>
 </html>
