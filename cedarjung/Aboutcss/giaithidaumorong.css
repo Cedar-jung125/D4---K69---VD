@@ -1,0 +1,747 @@
+/* Biến màu sắc */
+:root {
+  --dtb-primary: #6a11cb;
+  --dtb-secondary: #2575fc;
+  --dtb-accent: #ff4d4d;
+  --dtb-light: #f8f9fa;
+  --dtb-dark: #212529;
+  --dtb-dark-bg: #1a1a1a;
+  --dtb-gold: #ffd700;
+  --dtb-success: #28a745;
+  --dtb-info: #17a2b8;
+  --dtb-warning: #ffc107;
+  --dtb-danger: #dc3545;
+  --dtb-gray: #6c757d;
+  --dtb-white: #ffffff;
+  --dtb-black: #000000;
+  --dtb-gradient: linear-gradient(
+    135deg,
+    var(--dtb-primary) 0%,
+    var(--dtb-secondary) 100%
+  );
+}
+
+/* Reset và base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--dtb-light);
+  color: var(--dtb-dark);
+  line-height: 1.6;
+}
+
+/* Banner quảng cáo */
+.dtb-event-banner {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/img//Sukiend4.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.dtb-banner-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dtb-banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Danh sách sự kiện */
+.dtb-event-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.dtb-section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  color: var(--dtb-primary);
+}
+
+.dtb-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--dtb-gradient);
+  border-radius: 3px;
+}
+
+.dtb-event-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.dtb-event-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.dtb-event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dtb-event-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+.dtb-event-info {
+  padding: 20px;
+  position: relative;
+}
+
+.dtb-event-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--dtb-primary);
+}
+
+.dtb-event-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  color: var(--dtb-gray);
+  font-size: 0.9rem;
+}
+
+.dtb-event-meta i {
+  margin-right: 5px;
+}
+
+.dtb-event-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dtb-event-badge.active {
+  background: var(--dtb-accent);
+}
+
+.dtb-event-badge.upcoming {
+  background: var(--dtb-secondary);
+}
+
+/* Nội dung sự kiện */
+.dtb-event-content {
+  display: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.dtb-back-button {
+  background: var(--dtb-primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.dtb-back-button:hover {
+  background: var(--dtb-secondary);
+  transform: translateX(-5px);
+}
+
+.dtb-content-section {
+  display: none;
+}
+
+.dtb-content-section.active {
+  display: block;
+}
+
+/* ===== Phần Xổ số ===== */
+.dtb-lottery-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dtb-lottery-countdown {
+  margin-top: 20px;
+}
+
+.dtb-countdown-timer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dtb-countdown-number {
+  background: var(--dtb-gradient);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 20px;
+  min-width: 40px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Bảng kim tự tháp */
+.dtb-pyramid-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+  background: var(--dtb-dark-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  border: 5px solid #333;
+}
+
+.dtb-pyramid-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.dtb-prize-label {
+  width: 150px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  color: white;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dtb-pyramid-numbers {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.dtb-pyramid-number {
+  width: 80px;
+  height: 50px;
+  background: #111;
+  color: var(--dtb-gold);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.dtb-pyramid-number::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+/* Màu sắc các giải */
+.dtb-special-prize .dtb-prize-label {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.dtb-first-prize .dtb-prize-label {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+.dtb-second-prize .dtb-prize-label {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+.dtb-third-prize .dtb-prize-label {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #555;
+}
+
+/* Nút quay số */
+.dtb-draw-button {
+  background: var(--dtb-gradient);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 30px auto;
+  box-shadow: 0 10px 20px rgba(106, 17, 203, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.dtb-draw-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(106, 17, 203, 0.4);
+}
+
+.dtb-draw-button:active {
+  transform: translateY(0);
+}
+
+.dtb-draw-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.dtb-draw-button:hover::after {
+  transform: translateX(100%);
+}
+
+/* Phần thưởng */
+.dtb-prizes-section {
+  margin: 50px 0;
+}
+
+.dtb-prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.dtb-prize-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.dtb-prize-card:hover {
+  transform: translateY(-10px);
+}
+
+.dtb-prize-image {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.dtb-prize-info {
+  padding: 20px;
+}
+
+.dtb-prize-info h4 {
+  font-size: 1.2rem;
+  color: var(--dtb-primary);
+  margin-bottom: 10px;
+}
+
+/* Thể lệ */
+.dtb-lottery-rules {
+  background: rgba(106, 17, 203, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border-left: 4px solid var(--dtb-primary);
+}
+
+.dtb-rules-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--dtb-primary);
+}
+
+.dtb-rules-list {
+  list-style-type: none;
+}
+
+.dtb-rules-list li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.dtb-rules-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--dtb-success);
+  font-weight: bold;
+}
+
+/* Người trúng thưởng */
+.dtb-winners-section {
+  margin: 50px 0;
+}
+
+.dtb-winners-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dtb-winners-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  background: var(--dtb-primary);
+  color: white;
+  font-weight: bold;
+  padding: 15px 20px;
+}
+
+.dtb-winners-body {
+  background: white;
+}
+
+.dtb-winner-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.dtb-winner-row:last-child {
+  border-bottom: none;
+}
+
+.dtb-winner-row:hover {
+  background: rgba(106, 17, 203, 0.05);
+}
+
+.dtb-winner-rank {
+  font-weight: bold;
+}
+
+.dtb-winner-rank.first {
+  color: #d4af37;
+}
+
+.dtb-winner-rank.second {
+  color: #c0c0c0;
+}
+
+.dtb-winner-rank.third {
+  color: #cd7f32;
+}
+
+/* ===== Phần Cờ vua ===== */
+.dtb-chess-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.dtb-chess-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dtb-chess-hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dtb-chess-hero-text {
+  flex: 1;
+}
+
+.dtb-chess-hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.dtb-chess-hero-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline */
+.dtb-timeline {
+  position: relative;
+  padding-left: 80px;
+}
+
+.dtb-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  height: 100%;
+  width: 2px;
+  background: var(--dtb-primary);
+}
+
+.dtb-timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.dtb-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.dtb-timeline-date {
+  position: absolute;
+  left: -80px;
+  top: 0;
+  width: 70px;
+  padding: 5px;
+  text-align: center;
+  background: var(--dtb-primary);
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.dtb-timeline-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dtb-timeline-content h4 {
+  margin-bottom: 10px;
+  color: var(--dtb-primary);
+}
+
+/* Giải thưởng cờ vua */
+.dtb-prizes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.dtb-prize-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.dtb-prize-card:hover {
+  transform: translateY(-5px);
+}
+
+.dtb-prize-rank {
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+}
+
+.dtb-prize-rank.first {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+.dtb-prize-rank.second {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.dtb-prize-rank.third {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: var(--dtb-dark);
+}
+
+.dtb-prize-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.dtb-prize-value {
+  font-weight: bold;
+  color: var(--dtb-primary);
+  font-size: 18px;
+}
+
+/* Accordion */
+.dtb-accordion {
+  margin-bottom: 30px;
+}
+
+.dtb-accordion-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dtb-accordion-button {
+  width: 100%;
+  padding: 15px 20px;
+  text-align: left;
+  background: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dtb-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.dtb-accordion-button:hover {
+  background: rgba(106, 17, 203, 0.05);
+}
+
+.dtb-accordion-button i {
+  transition: transform 0.3s;
+}
+
+.dtb-accordion-button.active i {
+  transform: rotate(180deg);
+}
+
+.dtb-accordion-content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: white;
+}
+
+.dtb-accordion-content.active {
+  padding: 20px;
+  max-height: 500px;
+}
+
+/* Countdown cờ vua */
+.dtb-chess-countdown {
+  text-align: center;
+  padding: 20px;
+  background: rgba(106, 17, 203, 0.05);
+  border-radius: 12px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .dtb-chess-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dtb-event-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dtb-pyramid-number {
+    width: 60px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .dtb-winners-header,
+  .dtb-winner-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dtb-winner-name,
+  .dtb-winner-prize {
+    grid-column: span 2;
+  }
+
+  .dtb-timeline {
+    padding-left: 60px;
+  }
+
+  .dtb-timeline::before {
+    left: 30px;
+  }
+
+  .dtb-timeline-date {
+    left: -60px;
+    width: 50px;
+  }
+}
