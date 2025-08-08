@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game lớp D4</title>
+    <link rel="stylesheet" href="/cedarjung/Aboutcss/style.css" />
+    <link rel="stylesheet" href="/cedarjung/Aboutcss/giaithidaumorong.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="header-left">
+        <img src="/img/Logoclass.jpg" alt="Logo lớp" class="logo" />
+      </div>
+      <div class="header-center">
+        <p style="margin: 0">TRƯỜNG THPT VIỆT ĐỨC</p>
+        <h1>K69 D4 (2024 - 2027)</h1>
+        <p style="margin: 0">
+          47 Lý Thường Kiệt, phường Cửa Nam, Thành phố Hà Nội
+        </p>
+      </div>
+      <div class="header-right">
+        <select class="lang-select">
+          <option value="vi">Tiếng Việt</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="ja">Japanese</option>
+          <option value="ko">Korean</option>
+        </select>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <div class="navbar-header">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      </div>
+
+      <ul id="navbar-menu">
+        <li><a href="/cedarjung/home.html">Trang chủ</a></li>
+        <li class="dropdown">
+          <a href="#">Giới thiệu ⯆</a>
+          <ul class="dropdown-content">
+            <li>
+              <a href="/cedarjung/gioithieuchung/introduction.html">Về lớp</a>
+            </li>
+            <li>
+              <a href="/cedarjung/gioithieuchung/introduction.html"
+                >Thành viên</a
+              >
+            </li>
+            <li>
+              <a href="/cedarjung/gioithieuchung/memory.html">Kỉ niệm</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/cedarjung/infogeneral.html">Tin tức</a></li>
+        <li class="dropdown">
+          <a href="#">Học tập ⯆</a>
+          <ul class="dropdown-content">
+            <li><a href="/cedarjung/hoctapd4/study.html">Khoá học</a></li>
+            <li><a href="/cedarjung/Open/Homeopen.html">Mở rộng</a></li>
+            <li>
+              <a href="/cedarjung/hoctapd4/result.html">Nhắc nhở bài tập</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/cedarjung/healthy.html">Sức khỏe</a>
+        </li>
+        <li>
+          <a href="/cedarjung/thongbaophobien/schedule.html">Thời khoá biểu</a>
+        </li>
+        <li>
+          <a href="#">Tournament</a>
+        </li>
+        <li class="dropdown">
+          <a href="#">Khác ⯆</a>
+          <ul class="dropdown-content">
+            <li>
+              <a href="/cedarjung/Thuvien/trangchuthuvien.html">Thư viện</a>
+            </li>
+            <li><a href="/cedarjung/Game/trangchugame.html">Trò chơi</a></li>
+            <li><a href="/cedarjung/tourism.html">Du lịch</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Banner quảng cáo -->
+    <div class="dtb-event-banner">
+      <div class="dtb-banner-content">
+        <h1>Tournament của lớp D4</h1>
+        <p>Hãy tham gia ngay để có cơ hội nhận những phần quà giá trị nha!</p>
+      </div>
+    </div>
+
+    <!-- Danh sách sự kiện -->
+    <div class="dtb-event-container">
+      <h2 class="dtb-section-title">Sự kiện đang diễn ra</h2>
+
+      <div class="dtb-event-cards">
+        <!-- Thẻ sự kiện Xổ số -->
+        <div class="dtb-event-card active" data-event="lottery">
+          <div
+            class="dtb-event-image"
+            style="background-image: url('/img/quaysomayman.png')"
+          ></div>
+          <div class="dtb-event-info">
+            <h3>Quay số may mắn</h3>
+            <div class="dtb-event-meta">
+              <span><i class="far fa-calendar-alt"></i> Hàng tuần - Thứ 6</span>
+              <span><i class="far fa-clock"></i> 20:00</span>
+            </div>
+            <p>Quay số trúng thưởng với nhiều giải giá trị</p>
+            <div class="dtb-event-badge active">Đang diễn ra</div>
+          </div>
+        </div>
+
+        <!-- Thẻ sự kiện Cờ vua -->
+        <div class="dtb-event-card" data-event="chess">
+          <div
+            class="dtb-event-image"
+            style="background-image: url('/img/chesstournamentd4.png')"
+          ></div>
+          <div class="dtb-event-info">
+            <h3>Giải cờ vua trí tuệ</h3>
+            <div class="dtb-event-meta">
+              <span><i class="far fa-calendar-alt"></i> 15/08 - 30/08</span>
+              <span><i class="far fa-clock"></i> 09:00 - 17:00</span>
+            </div>
+            <p>Thi đấu cờ vua tranh giải đặc biệt</p>
+            <div class="dtb-event-badge upcoming">Sắp diễn ra</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nội dung sự kiện -->
+    <div class="dtb-event-content">
+      <!-- Nút quay lại -->
+      <button class="dtb-back-button">
+        <i class="fas fa-arrow-left"></i> Quay lại trang chủ
+      </button>
+
+      <!-- Nội dung Xổ số -->
+      <div class="dtb-content-section active" id="dtb-lottery-content">
+        <div class="dtb-lottery-header">
+          <h2>Quay số may mắn</h2>
+          <div class="dtb-lottery-countdown">
+            <span>Chương trình sẽ bắt đầu sau:</span>
+            <div class="dtb-countdown-timer">
+              <span class="dtb-countdown-number" id="dtb-days">03</span>d
+              <span class="dtb-countdown-number" id="dtb-hours">14</span>h
+              <span class="dtb-countdown-number" id="dtb-minutes">25</span>m
+              <span class="dtb-countdown-number" id="dtb-seconds">30</span>s
+            </div>
+          </div>
+        </div>
+
+        <!-- Bảng quay số kim tự tháp -->
+        <div class="dtb-pyramid-table">
+          <div class="dtb-pyramid-row dtb-special-prize">
+            <div class="dtb-prize-label">Giải đặc biệt</div>
+            <div class="dtb-pyramid-numbers" id="dtb-pyramid-special"></div>
+          </div>
+          <div class="dtb-pyramid-row dtb-first-prize">
+            <div class="dtb-prize-label">Giải nhất</div>
+            <div class="dtb-pyramid-numbers" id="dtb-pyramid-first"></div>
+          </div>
+          <div class="dtb-pyramid-row dtb-second-prize">
+            <div class="dtb-prize-label">Giải nhì</div>
+            <div class="dtb-pyramid-numbers" id="dtb-pyramid-second"></div>
+          </div>
+          <div class="dtb-pyramid-row dtb-third-prize">
+            <div class="dtb-prize-label">Giải ba</div>
+            <div class="dtb-pyramid-numbers" id="dtb-pyramid-third"></div>
+          </div>
+        </div>
+
+        <!-- Nút quay số -->
+        <button class="dtb-draw-button" id="dtb-start-draw">
+          Xem kết quả tuần này
+        </button>
+
+        <!-- Phần thưởng -->
+        <div class="dtb-prizes-section">
+          <h3>Giải thưởng tuần này</h3>
+          <div class="dtb-prizes-grid">
+            <div class="dtb-prize-card">
+              <div
+                class="dtb-prize-image"
+                style="background-image: url('/img/combogiaidacbiet.jpg')"
+              ></div>
+              <div class="dtb-prize-info">
+                <h4>Giải đặc biệt</h4>
+                <p>
+                  Combo 1 chiếc máy tính Casio FX580VN X-BU và 1 tài liệu bí mật
+                </p>
+              </div>
+            </div>
+            <div class="dtb-prize-card">
+              <div
+                class="dtb-prize-image"
+                style="background-image: url('/img/combogiainhat.jpg')"
+              ></div>
+              <div class="dtb-prize-info">
+                <h4>Giải nhất</h4>
+                <p>
+                  Combo vở ghi 120 trang - 5 bút bi xanh - 1 cục tẩy chì màu đen
+                  - 1 cây thước kẻ 30cm
+                </p>
+              </div>
+            </div>
+            <div class="dtb-prize-card">
+              <div
+                class="dtb-prize-image"
+                style="background-image: url('/img/combogiainhi.jpg')"
+              ></div>
+              <div class="dtb-prize-info">
+                <h4>Giải nhì</h4>
+                <p>Combo 1 bút bi đỏ - 1 bút chì - 10.000VND</p>
+              </div>
+            </div>
+            <div class="dtb-prize-card">
+              <div
+                class="dtb-prize-image"
+                style="background-image: url('/img/butbithienlong.jpg')"
+              ></div>
+              <div class="dtb-prize-info">
+                <h4>Giải ba</h4>
+                <p>2 cây bút bi bấm Thiên Long TL-027 0.05mm mực xanh</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thể lệ -->
+        <div class="dtb-lottery-rules">
+          <h3 class="dtb-rules-title">Thể lệ chương trình</h3>
+          <ul class="dtb-rules-list">
+            <li>
+              Mỗi bạn học sinh D4 sẽ được chọn 1 vé số bất kì miễn phí mỗi tuần
+            </li>
+            <li>Quay số diễn ra vào 20h thứ 6 hàng tuần</li>
+            <li>Kết quả sẽ được công bố sau 2h quay</li>
+            <li>Quà tặng sẽ được trao vào sáng thứ 2 hàng tuần</li>
+          </ul>
+        </div>
+
+        <!-- Người trúng thưởng -->
+        <div class="dtb-winners-section">
+          <h3>Người trúng thưởng tuần này</h3>
+          <div class="dtb-winners-table">
+            <div class="dtb-winners-header">
+              <div>Giải</div>
+              <div>Số trúng</div>
+              <div>Người trúng</div>
+              <div>Phần thưởng</div>
+            </div>
+            <div class="dtb-winners-body" id="dtb-winners-body">
+              <!-- Dữ liệu sẽ được thêm bằng JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nội dung Cờ vua -->
+      <div class="dtb-content-section" id="dtb-chess-content">
+        <h3 class="dtb-section-title">TÀI NĂNG CỜ VUA</h3>
+
+        <div class="dtb-chess-hero">
+          <div class="dtb-chess-hero-text">
+            <h3>Thi đấu trí tuệ - Rèn luyện tư duy</h3>
+            <p>
+              Giải đấu dành cho tất cả các bạn học sinh đến từ lớp D4 - K69 -
+              Trường THPT Việt Đức
+            </p>
+          </div>
+          <div class="dtb-chess-hero-image">
+            <img src="/img/chesstournamentd4.png" alt="Cờ vua" />
+          </div>
+        </div>
+        <div class="dtb-chess-container">
+          <!-- Column 1 -->
+          <div class="dtb-chess-column">
+            <div class="dtb-chess-schedule">
+              <h3 class="dtb-section-title">Lịch trình giải đấu</h3>
+              <div class="dtb-timeline">
+                <div class="dtb-timeline-item">
+                  <div class="dtb-timeline-date">15/08</div>
+                  <div class="dtb-timeline-content">
+                    <h4>Đăng ký mở</h4>
+                    <p>Bắt đầu nhận đăng ký tham gia giải đấu</p>
+                  </div>
+                </div>
+                <div class="dtb-timeline-item">
+                  <div class="dtb-timeline-date">30/08</div>
+                  <div class="dtb-timeline-content">
+                    <h4>Hạn cuối đăng ký</h4>
+                    <p>Kết thúc nhận đăng ký tham gia</p>
+                  </div>
+                </div>
+                <div class="dtb-timeline-item">
+                  <div class="dtb-timeline-date">02/09</div>
+                  <div class="dtb-timeline-content">
+                    <h4>Vòng loại</h4>
+                    <p>Thi đấu loại trực tiếp</p>
+                  </div>
+                </div>
+                <div class="dtb-timeline-item">
+                  <div class="dtb-timeline-date">09/09</div>
+                  <div class="dtb-timeline-content">
+                    <h4>Chung kết</h4>
+                    <p>Thi đấu chung kết xếp hạng</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="dtb-chess-column">
+            <div class="dtb-chess-prizes">
+              <h3 class="dtb-section-title">Giải thưởng</h3>
+              <div class="dtb-prizes-grid">
+                <div class="dtb-prize-card">
+                  <div class="dtb-prize-rank first">Vô địch</div>
+                  <div class="dtb-prize-details">
+                    <p>Huy chương vàng</p>
+                    <p class="dtb-prize-value">2.000.000đ + Học bổng</p>
+                  </div>
+                </div>
+                <div class="dtb-prize-card">
+                  <div class="dtb-prize-rank second">Á quân</div>
+                  <div class="dtb-prize-details">
+                    <p>Huy chương bạc</p>
+                    <p class="dtb-prize-value">1.000.000đ + Học bổng</p>
+                  </div>
+                </div>
+                <div class="dtb-prize-card">
+                  <div class="dtb-prize-rank third">Hạng ba</div>
+                  <div class="dtb-prize-details">
+                    <p>Huy chương đồng</p>
+                    <p class="dtb-prize-value">500.000đ + Học bổng</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dtb-chess-rules">
+          <h3 class="dtb-section-title">Thể lệ giải đấu</h3>
+          <div class="dtb-accordion">
+            <div class="dtb-accordion-item">
+              <button class="dtb-accordion-button">
+                Đối tượng tham gia <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dtb-accordion-content">
+                <p>
+                  Tất cả học sinh từ lớp 1 đến lớp 12 trên địa bàn thành phố.
+                </p>
+              </div>
+            </div>
+            <div class="dtb-accordion-item">
+              <button class="dtb-accordion-button">
+                Hình thức thi đấu <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dtb-accordion-content">
+                <p>
+                  Thi đấu loại trực tiếp, mỗi trận đấu gồm 2 ván cờ tiêu chuẩn.
+                </p>
+              </div>
+            </div>
+            <div class="dtb-accordion-item">
+              <button class="dtb-accordion-button">
+                Luật thi đấu <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dtb-accordion-content">
+                <p>
+                  Áp dụng luật cờ vua tiêu chuẩn của Liên đoàn Cờ vua Thế giới
+                  (FIDE).
+                </p>
+              </div>
+            </div>
+            <div class="dtb-accordion-item">
+              <button class="dtb-accordion-button">
+                Đăng ký tham gia <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dtb-accordion-content">
+                <p>
+                  Đăng ký trực tuyến qua trang web hoặc đăng ký trực tiếp tại
+                  văn phòng BTC.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dtb-chess-countdown">
+          <h3>Bắt đầu sau:</h3>
+          <div class="dtb-countdown-timer">
+            <span class="dtb-countdown-number" id="dtb-chess-days">14</span>d
+            <span class="dtb-countdown-number" id="dtb-chess-hours">12</span>h
+            <span class="dtb-countdown-number" id="dtb-chess-minutes">45</span>m
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="school-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Trường THPT Việt Đức</h3>
+          <p>
+            Trường THPT Việt Đức thành lập ngày 03-3-1955, tại Lý Thường Kiệt -
+            Phường Cửa Nam - Hà Nội. Lớp D4 K69 thuộc khóa thứ 69 của trường
+            THPT Việt Đức và là lớp tổ hợp Địa lí, GDKT - PL, Vật lí, Tin học
+            của trường
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Liên hệ</h3>
+          <p>Địa chỉ: 47 Lý Thường Kiệt, phường Cửa Nam, Hà Nội</p>
+        </div>
+        <div class="footer-column">
+          <h3>Liên kết</h3>
+          <a
+            href="https://www.facebook.com/groups/9797569790255960"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/d4dunglatron/"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@d4_ever.k69vd?_t=ZS-8ws7Sa5Maag&_r=1"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+
+          <a href="mailto:Anhthreeco@gmail.com" class="social-icon"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p><em>"When I say D, you say four"</em></p>
+      </div>
+    </footer>
+    <script src="/cedarjung/Aboutjs/watw.js"></script>
+    <script src="/cedarjung/Aboutjs/Tournament.js"></script>
+  </body>
+</html>
