@@ -35,6 +35,19 @@ body {
   line-height: 1.6;
 }
 
+.dtb-event-banner {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://i.imgur.com/xRd0mn1.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
 .dtb-banner-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
@@ -731,6 +744,7 @@ body {
     width: 50px;
   }
 }
+
 
 
 
