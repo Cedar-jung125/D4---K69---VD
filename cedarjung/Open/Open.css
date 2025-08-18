@@ -5,8 +5,23 @@
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  position: relative;
 }
 
+.MN2ED_root-container::before {
+  content: "";
+  background-image: url("https://imgur.com/8XKAEeA");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -9999;
+}
 .MN2ED_main-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -248,4 +263,192 @@
 }
 .MN2ED_korean {
   background: linear-gradient(135deg, #654ea3, #eaafc8);
+}
+
+/* Phần Khám Phá Độc Quyền */
+.MN2ED_exclusive-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  margin: 3rem auto;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+
+.MN2ED_exclusive-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.MN2ED_exclusive-text {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.MN2ED_exclusive-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.MN2ED_exclusive-desc {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+.MN2ED_exclusive-btn {
+  display: inline-block;
+  background: white;
+  color: #764ba2;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.MN2ED_exclusive-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 50px;
+}
+
+.MN2ED_exclusive-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.MN2ED_exclusive-btn:hover::before {
+  opacity: 1;
+}
+
+.MN2ED_exclusive-btn i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.MN2ED_exclusive-btn:hover i {
+  transform: translateX(5px);
+}
+
+.MN2ED_exclusive-image {
+  flex: 1;
+  text-align: center;
+}
+
+.MN2ED_exclusive-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+
+.MN2ED_exclusive-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng nền */
+.MN2ED_exclusive-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 1;
+  animation: MN2ED_rotate 15s linear infinite;
+}
+
+@keyframes MN2ED_rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.locked-feature-btn {
+  position: relative;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.locked-feature-btn:hover {
+  opacity: 0.9;
+}
+
+.locked-feature-btn .lock-icon {
+  margin-left: 8px;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+/* Làm mờ ảnh nền khi bị khóa */
+.MN2ED_exclusive-container.locked .MN2ED_exclusive-image img {
+  filter: brightness(0.6);
+}
+
+/* Hiệu ứng popup giống menu đặc biệt */
+#exclusive-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.exclusive-popup-content {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
