@@ -36,6 +36,7 @@ body {
   height: 100vh;
   background: url("https://example.com/travel-hero.jpg") no-repeat center
     center/cover;
+  z-index: -3;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -901,3 +902,4 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(255, 126, 103, 0.3);
 }
+
