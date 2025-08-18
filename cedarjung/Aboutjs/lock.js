@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="popup-message">
                     Tính năng đang được phát triển và sẽ ra mắt vào ngày
                 </div>
-                <div class="popup-date" id="releaseDate">01/01/2025</div>
+                <div class="popup-date" id="releaseDate">02/01/2026</div>
                 <button class="popup-close">ĐÓNG</button>
             </div>
         </div>
@@ -56,4 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (img) img.src = imageUrl;
   }
 });
+
+
 
