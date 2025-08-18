@@ -39,7 +39,7 @@ body {
 .dtb-event-banner {
   height: 70vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/img//Sukiend4.png");
+    url("img//Sukiend4.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -745,3 +745,4 @@ body {
     width: 50px;
   }
 }
+
