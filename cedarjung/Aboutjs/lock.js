@@ -1,32 +1,59 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const lockedLinks = document.querySelectorAll('.locked-feature a');
-    
-    lockedLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Thay alert bằng cách hiển thị khác nếu cần
-            const releaseDate = new Date('2026-01-02');
-            const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-            const formattedDate = releaseDate.toLocaleDateString('vi-VN', options);
-            
-            // Tạo popup tùy chỉnh thay vì dùng alert()
-            const popup = document.createElement('div');
-            popup.style.position = 'fixed';
-            popup.style.top = '50%';
-            popup.style.left = '50%';
-            popup.style.transform = 'translate(-50%, -50%)';
-            popup.style.backgroundColor = 'white';
-            popup.style.padding = '20px';
-            popup.style.borderRadius = '5px';
-            popup.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
-            popup.style.zIndex = '1000';
-            popup.innerHTML = `
-                <p>Hệ thống sẽ ra mắt vào ngày ${formattedDate}</p>
-                <button onclick="this.parentElement.remove()">Đóng</button>
-            `;
-            
-            document.body.appendChild(popup);
-        });
+document.addEventListener("DOMContentLoaded", function () {
+  // Tạo popup HTML
+  const popupHTML = `
+    <div id="comingSoonPopup" class="coming-soon-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                THÔNG BÁO
+            </div>
+            <div class="popup-body">
+                <div class="popup-image">
+                    <img src="img/commingsoon.webp" alt="Coming Soon" id="popupImage">
+                </div>
+                <div class="popup-message">
+                    Tính năng đang được phát triển và sẽ ra mắt vào ngày
+                </div>
+                <div class="popup-date" id="releaseDate">01/01/2025</div>
+                <button class="popup-close">ĐÓNG</button>
+            </div>
+        </div>
+    </div>`;
+
+  // Thêm popup vào body
+  document.body.insertAdjacentHTML("beforeend", popupHTML);
+
+  // Xử lý sự kiện click
+  document.querySelectorAll(".locked-feature a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Cập nhật ngày ra mắt
+      const releaseDate = new Date("2026-01-01");
+      const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+      document.getElementById("releaseDate").textContent =
+        releaseDate.toLocaleDateString("vi-VN", options);
+
+      // Hiển thị popup
+      document.getElementById("comingSoonPopup").style.display = "flex";
     });
+  });
+
+  // Đóng popup khi click nút đóng hoặc bên ngoài
+  document
+    .getElementById("comingSoonPopup")
+    .addEventListener("click", function (e) {
+      if (
+        e.target.classList.contains("popup-close") ||
+        e.target.classList.contains("coming-soon-popup")
+      ) {
+        this.style.display = "none";
+      }
+    });
+
+  // Thay đổi ảnh tùy chỉnh (bạn có thể xóa phần này nếu không cần)
+  function setPopupImage(imageUrl) {
+    const img = document.getElementById("popupImage");
+    if (img) img.src = imageUrl;
+  }
 });
+
