@@ -89,46 +89,83 @@
 
     <nav class="navbar">
       <div class="navbar-header">
+        <div class="navbar-brand">
+          HÃY CHỌN MỤC MÀ MỌI NGƯỜI MUỐN KHÁM PHÁ NHA!
+        </div>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       </div>
 
+      <!-- Phần menu chính -->
       <ul id="navbar-menu">
-        <li><a href="cedarjung/home.html">Trang chủ</a></li>
+        <li><a href="cedarjung.home.html">TRANG CHỦ</a></li>
         <li class="dropdown">
-          <a href="#">Giới thiệu ⯆</a>
+          <a href="#">GIỚI THIỆU</a>
           <ul class="dropdown-content">
-            <li><a href="#" target="_blank">Về lớp</a></li>
-            <li><a href="cedarjung/gioithieuchung/member.html">Thành viên</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Tin tức</a></li>
-        <li class="dropdown">
-          <a href="#">Học tập ⯆</a>
-          <ul class="dropdown-content">
-            <li><a href="cedarjung/hoctapd4/study.html">Khoá học</a></li>
-            <li><a href="cedarjung/Open/Homeopen.html">Mở rộng</a></li>
             <li>
-              <a href="cedarjung/hoctapd4/result.html">Nhắc nhở bài tập</a>
+              <a href="#">VỀ LỚP</a>
+            </li>
+            <li>
+              <a href="cedarjung/gioithieuchung/member.html">THÀNH VIÊN</a>
+            </li>
+            <li>
+              <a href="cedarjung/gioithieuchung/memory.html">KỈ NIỆM</a>
             </li>
           </ul>
         </li>
-        <li>
-          <a href="cedarjung/healthy.html">Sức khỏe</a>
+        <li><a href="cedarjung/infogeneral.html">TIN TỨC</a></li>
+        <li class="dropdown">
+          <a href="#">HỌC TẬP</a>
+          <ul class="dropdown-content">
+            <li><a href="cedarjung/hoctapd4/study.html">KHÓA HỌC</a></li>
+            <li><a href="cedarjung/Open/Homeopen.html">MỞ RỘNG</a></li>
+            <li>
+              <a href="cedarjung/hoctapd4/result.html">NHẮC NHỞ BÀI TẬP</a>
+            </li>
+          </ul>
         </li>
+        <li><a href="cedarjung/healthy.html">SỨC KHỎE</a></li>
+        <li><a href="cedarjung/tournament.html">TOURNAMENT</a></li>
         <li>
-          <a href="cedarjung/thongbaophobien/schedule.html">Thời khoá biểu</a>
+          <a href="cedarjung/thongbaophobien/schedule.html">THỜI KHÓA BIỂU</a>
         </li>
         <li class="dropdown">
-          <a href="#">Khác ⯆</a>
+          <a href="#">KHÁC</a>
           <ul class="dropdown-content">
             <li>
-              <a href="cedarjung/Thuvien/trangchuthuvien.html">Thư viện</a>
+              <a href="cedarjung/Thuvien/trangchuthuvien.html">THƯ VIỆN</a>
             </li>
-            <li><a href="cedarjung/Game/trangchugame.html">Trò chơi</a></li>
-            <li><a href="cedarjung/tourism.html">Du lịch</a></li>
+            <li><a href="cedarjung/Game/trangchugame.html">TRÒ CHƠI</a></li>
+            <li><a href="cedarjung/tourism.html">DU LỊCH</a></li>
           </ul>
         </li>
       </ul>
+
+      <!-- Phần đặc biệt khi click nút menu -->
+      <div id="special-panel" class="special-panel">
+        <h3>MENU ĐẶC BIỆT</h3>
+        <ul>
+          <li>
+            <a href="https://www.classmarker.com/" target="_blank"
+              >CLASSMARKER</a
+            >
+          </li>
+          <li>
+            <a href="cedarjung/tips.html" target="_blank">TIPS NHỎ CHO BẠN</a>
+          </li>
+          <li class="locked-feature">
+            <a href="#" class="locked-link">
+              <span class="locked-text">HỆ THỐNG LUYỆN THI D4SP</span>
+              <i class="lock-icon">🔒</i>
+            </a>
+          </li>
+          <li class="locked-feature">
+            <a href="#" class="locked-link">
+              <span class="locked-text">ZODIAC D4</span>
+              <i class="lock-icon">🔒</i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main>
@@ -330,5 +367,6 @@
     <script src="cedarjung/Aboutjs/watw.js"></script>
     <script src="cedarjung/Aboutjs/slideshow.js"></script>
     <script type="module" src="cedarjung/Aboutjs/auth.js"></script>
+    <script src="cedarjung/Aboutjs/lock.js"></script>
   </body>
 </html>
