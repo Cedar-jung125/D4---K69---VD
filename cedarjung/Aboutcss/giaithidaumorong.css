@@ -35,20 +35,6 @@ body {
   line-height: 1.6;
 }
 
-/* Banner quảng cáo */
-.dtb-event-banner {
-  height: 70vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("img/Sukiend4.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
 .dtb-banner-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
@@ -745,5 +731,6 @@ body {
     width: 50px;
   }
 }
+
 
 
