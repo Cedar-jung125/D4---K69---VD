@@ -262,6 +262,7 @@ header {
   position: relative;
   width: 100%;
   font-family: "Arial", sans-serif;
+  z-index: 5;
 }
 
 .navbar-header {
