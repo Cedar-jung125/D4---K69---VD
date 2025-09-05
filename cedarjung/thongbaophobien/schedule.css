@@ -677,6 +677,22 @@
   background: linear-gradient(135deg, #ffd166, #ff9e2c);
 }
 
+.grid-header .grid-cell:nth-child(4),
+.grid-header .grid-cell:nth-child(5) {
+  background-color: #1919be; /* Màu xanh nước biển đậm */
+  color: white;
+}
+
+/* Chú thích mới */
+.uniform-note {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f0f8ff;
+  border-left: 4px solid #1919be;
+  border-radius: 4px;
+  font-style: italic;
+}
+
 /* Responsive cho logo */
 @media (max-width: 768px) {
   .title-container {
