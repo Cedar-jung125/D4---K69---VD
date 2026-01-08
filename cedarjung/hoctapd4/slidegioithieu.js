@@ -122,9 +122,21 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (5).png",
           },
-          7: {
-            name: "Nguyễn Trâm Anh",
+         7: {
+            name: "Nguyễn Thùy Anh",
             id: "D4-K69-VĐ-007",
+            class: "D4",
+            dob: "20/09/2009",
+            hometown: "Hà Nội",
+            gpa: "10",
+            favSubject: "",
+            food: "",
+            excellent: "Xuất sắc",
+            avatar: "img/cute/shopper (1).png",
+          },
+          8: {
+            name: "Nguyễn Trâm Anh",
+            id: "D4-K69-VĐ-008",
             class: "D4",
             dob: "20/09/2009",
             hometown: "Hà Nội",
@@ -134,9 +146,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (6).png",
           },
-          8: {
+          9: {
             name: "Phạm Thu Anh",
-            id: "D4-K69-VĐ-008",
+            id: "D4-K69-VĐ-009",
             class: "D4",
             dob: "11/12/2009",
             hometown: "Hà Nội",
@@ -146,7 +158,7 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (7).png",
           },
-          9: {
+          10: {
             name: "Trịnh Tài Anh",
             id: "D4-K69-VĐ-009",
             class: "D4",
@@ -158,9 +170,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (14).png",
           },
-          10: {
+          11: {
             name: "Vũ Linh Anh",
-            id: "D4-K69-VĐ-010",
+            id: "D4-K69-VĐ-011",
             class: "D4",
             dob: "16/10/2009",
             hometown: "Hà Nội",
@@ -170,9 +182,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (8).png",
           },
-          11: {
+          12: {
             name: "Hà Minh Châu",
-            id: "D4-K69-VĐ-011",
+            id: "D4-K69-VĐ-012",
             class: "D4",
             dob: "18/10/2009",
             hometown: "Hà Nội",
@@ -182,9 +194,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (9).png",
           },
-          12: {
+          13: {
             name: "Nguyễn Vũ Hà Châu",
-            id: "D4-K69-VĐ-012",
+            id: "D4-K69-VĐ-013",
             class: "D4",
             dob: "28/08/2009",
             hometown: "Hà Nội",
@@ -194,9 +206,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (11).png",
           },
-          13: {
+          14: {
             name: "Hoàng Khánh Chi",
-            id: "D4-K69-VĐ-013",
+            id: "D4-K69-VĐ-014",
             class: "D4",
             dob: "23/09/2009",
             hometown: "Hà Nội",
@@ -206,9 +218,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (12).png",
           },
-          14: {
+          15: {
             name: "Phạm Linh Chi",
-            id: "D4-K69-VĐ-014",
+            id: "D4-K69-VĐ-015",
             class: "D4",
             dob: "21/05/2009",
             hometown: "Hà Nội",
@@ -218,9 +230,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (10).png",
           },
-          15: {
+          16: {
             name: "Lê Gia Hân",
-            id: "D4-K69-VĐ-015",
+            id: "D4-K69-VĐ-016",
             class: "D4",
             dob: "29/01/2009",
             hometown: "Hà Nội",
@@ -230,9 +242,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (16).png",
           },
-          16: {
+          17: {
             name: "Hoàng Minh Hiếu",
-            id: "D4-K69-VĐ-016",
+            id: "D4-K69-VĐ-017",
             class: "D4",
             dob: "15/12/2009",
             hometown: "Hà Nội",
@@ -242,9 +254,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (13).png",
           },
-          17: {
+          18: {
             name: "Trịnh Phúc Hưng",
-            id: "D4-K69-VĐ-017",
+            id: "D4-K69-VĐ-018",
             class: "D4",
             dob: "09/10/2009",
             hometown: "Hà Nội",
@@ -254,9 +266,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (15).png",
           },
-          18: {
+          19: {
             name: "Nguyễn Anh Khoa",
-            id: "D4-K69-VĐ-018",
+            id: "D4-K69-VĐ-019",
             class: "D4",
             dob: "25/08/2009",
             hometown: "Hà Nội",
@@ -266,9 +278,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (18).png",
           },
-          19: {
+          20: {
             name: "Nguyễn Công Khôi",
-            id: "D4-K69-VĐ-019",
+            id: "D4-K69-VĐ-020",
             class: "D4",
             dob: "30/12/2009",
             hometown: "Hà Nội",
@@ -278,9 +290,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (17).png",
           },
-          20: {
+          21: {
             name: "Nguyễn Minh Khôi",
-            id: "D4-K69-VĐ-020",
+            id: "D4-K69-VĐ-021",
             class: "D4",
             dob: "27/08/2009",
             hometown: "Hà Nội",
@@ -290,9 +302,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animal (19).png",
           },
-          21: {
+          22: {
             name: "Trần Mai Khuê",
-            id: "D4-K69-VĐ-021",
+            id: "D4-K69-VĐ-022",
             class: "D4",
             dob: "02/07/2009",
             hometown: "Hà Nội",
@@ -302,9 +314,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/animalala.png",
           },
-          22: {
+          23: {
             name: "Phan Trúc Lam",
-            id: "D4-K69-VĐ-022",
+            id: "D4-K69-VĐ-023",
             class: "D4",
             dob: "21/01/2009",
             hometown: "Hà Nội",
@@ -314,9 +326,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/artist.png",
           },
-          23: {
+          24: {
             name: "Lê Ngọc Linh",
-            id: "D4-K69-VĐ-023",
+            id: "D4-K69-VĐ-024",
             class: "D4",
             dob: "10/09/2009",
             hometown: "Hà Nội",
@@ -326,9 +338,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/businessman.png",
           },
-          24: {
+          25: {
             name: "Nguyễn Khánh Linh",
-            id: "D4-K69-VĐ-024",
+            id: "D4-K69-VĐ-025",
             class: "D4",
             dob: "11/06/2009",
             hometown: "Hà Nội",
@@ -337,18 +349,6 @@
             food: "",
             excellent: "Xuất sắc",
             avatar: "img/cute/courier.png",
-          },
-          25: {
-            name: "Trương Ngọc Khánh Linh",
-            id: "D4-K69-VĐ-025",
-            class: "D4",
-            dob: "21/01/2009",
-            hometown: "Hà Nội",
-            gpa: "10",
-            favSubject: "",
-            food: "",
-            excellent: "Xuất sắc",
-            avatar: "img/cute/courier (1).png",
           },
           26: {
             name: "Trịnh Thủy Linh",
@@ -362,9 +362,21 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/courier (2).png",
           },
-          27: {
-            name: "Vũ Khánh Linh",
+         27: {
+            name: "Trương Ngọc Khánh Linh",
             id: "D4-K69-VĐ-027",
+            class: "D4",
+            dob: "21/01/2009",
+            hometown: "Hà Nội",
+            gpa: "10",
+            favSubject: "",
+            food: "",
+            excellent: "Xuất sắc",
+            avatar: "img/cute/courier (1).png",
+          },
+          28: {
+            name: "Vũ Khánh Linh",
+            id: "D4-K69-VĐ-028",
             class: "D4",
             dob: "28/06/2009",
             hometown: "Hà Nội",
@@ -374,9 +386,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/chef.png",
           },
-          28: {
+          29: {
             name: "Ngô Ngọc Mai",
-            id: "D4-K69-VĐ-028",
+            id: "D4-K69-VĐ-029",
             class: "D4",
             dob: "21/01/2009",
             hometown: "Hà Nội",
@@ -386,9 +398,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/judge.png",
           },
-          29: {
+          30: {
             name: "Phạm Quý Mạnh",
-            id: "D4-K69-VĐ-029",
+            id: "D4-K69-VĐ-030",
             class: "D4",
             dob: "17/03/2009",
             hometown: "Hà Nội",
@@ -398,9 +410,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/chemist.png",
           },
-          30: {
+          31: {
             name: "Phạm Hà My",
-            id: "D4-K69-VĐ-030",
+            id: "D4-K69-VĐ-031",
             class: "D4",
             dob: "21/01/2009",
             hometown: "Hà Nội",
@@ -410,9 +422,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/diver.png",
           },
-          31: {
+          32: {
             name: "Đỗ Ngọc Khánh Nam",
-            id: "D4-K69-VĐ-031",
+            id: "D4-K69-VĐ-032",
             class: "D4",
             dob: "05/02/2009",
             hometown: "Hà Nội",
@@ -422,9 +434,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/driver.png",
           },
-          32: {
+          33: {
             name: "Cao Bảo Ngọc",
-            id: "D4-K69-VĐ-032",
+            id: "D4-K69-VĐ-033",
             class: "D4",
             dob: "29/08/2009",
             hometown: "Hà Nội",
@@ -434,9 +446,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/doctor.png",
           },
-          33: {
+          34: {
             name: "Nguyễn Hồng Ngọc",
-            id: "D4-K69-VĐ-033",
+            id: "D4-K69-VĐ-034",
             class: "D4",
             dob: "24/09/2009",
             hometown: "Hà Nội",
@@ -446,9 +458,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/farmer.png",
           },
-          34: {
+          35: {
             name: "Trần Thảo Nguyên",
-            id: "D4-K69-VĐ-034",
+            id: "D4-K69-VĐ-035",
             class: "D4",
             dob: "21/01/2009",
             hometown: "Hà Nội",
@@ -458,9 +470,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/firefighter.png",
           },
-          35: {
+          36: {
             name: "Nguyễn Tuấn Phong",
-            id: "D4-K69-VĐ-035",
+            id: "D4-K69-VĐ-036",
             class: "D4",
             dob: "20/09/2009",
             hometown: "Hà Nội",
@@ -470,9 +482,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/graphic-designer.png",
           },
-          36: {
+          37: {
             name: "Đào Minh Phúc",
-            id: "D4-K69-VĐ-036",
+            id: "D4-K69-VĐ-037",
             class: "D4",
             dob: "13/11/2009",
             hometown: "Hà Nội",
@@ -482,9 +494,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/lifeguard.png",
           },
-          37: {
+          38: {
             name: "Nguyễn Chí Quân",
-            id: "D4-K69-VĐ-037",
+            id: "D4-K69-VĐ-038",
             class: "D4",
             dob: "25/08/2009",
             hometown: "Hà Nội",
@@ -494,9 +506,33 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/mechanic.png",
           },
-          38: {
+         39: {
+            name: "Đỗ Trần Hồng Quyên",
+            id: "D4-K69-VĐ-039",
+            class: "D4",
+            dob: "13/08/2009",
+            hometown: "Hà Nội",
+            gpa: "10",
+            favSubject: "",
+            food: "",
+            excellent: "Xuất sắc",
+            avatar: "img/cute/courier (1).png",
+          },
+         40: {
+            name: "Bùi Hải Thành",
+            id: "D4-K69-VĐ-040",
+            class: "D4",
+            dob: "23/07/2009",
+            hometown: "Hà Nội",
+            gpa: "10",
+            favSubject: "",
+            food: "",
+            excellent: "Xuất sắc",
+            avatar: "img/cute/animal.png",
+          },
+          41: {
             name: "Vũ Thu Thủy",
-            id: "D4-K69-VĐ-038",
+            id: "D4-K69-VĐ-041",
             class: "D4",
             dob: "08/04/2009",
             hometown: "Hà Nội",
@@ -506,9 +542,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/korean-movie.png",
           },
-          39: {
+          42: {
             name: "Chử Anh Thư",
-            id: "D4-K69-VĐ-039",
+            id: "D4-K69-VĐ-042",
             class: "D4",
             dob: "12/04/2009",
             hometown: "Hà Nội",
@@ -518,9 +554,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/painter.png",
           },
-          40: {
+          43: {
             name: "Nguyễn Thị Anh Thư",
-            id: "D4-K69-VĐ-040",
+            id: "D4-K69-VĐ-043",
             class: "D4",
             dob: "07/04/2009",
             hometown: "Hà Nội",
@@ -530,9 +566,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/pilot.png",
           },
-          41: {
+          44: {
             name: "Nguyễn Thị Minh Thư",
-            id: "D4-K69-VĐ-041",
+            id: "D4-K69-VĐ-044",
             class: "D4",
             dob: "05/09/2009",
             hometown: "Hà Nội",
@@ -542,9 +578,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/shopper.png",
           },
-          42: {
+          45: {
             name: "Lê Hà Trang",
-            id: "D4-K69-VĐ-042",
+            id: "D4-K69-VĐ-045",
             class: "D4",
             dob: "25/04/2009",
             hometown: "Hà Nội",
@@ -554,9 +590,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/shopper (1).png",
           },
-          43: {
+          46: {
             name: "Ngô Bảo Trân",
-            id: "D4-K69-VĐ-043",
+            id: "D4-K69-VĐ-046",
             class: "D4",
             dob: "10/01/2009",
             hometown: "Hà Nội",
@@ -566,9 +602,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/postman.png",
           },
-          44: {
+          47: {
             name: "Trịnh Thanh Trức",
-            id: "D4-K69-VĐ-044",
+            id: "D4-K69-VĐ-047",
             class: "D4",
             dob: "28/05/2009",
             hometown: "Hà Nội",
@@ -578,9 +614,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/shopper (2).png",
           },
-          45: {
+          48: {
             name: "Nguyễn Quang Tuấn",
-            id: "D4-K69-VĐ-045",
+            id: "D4-K69-VĐ-048",
             class: "D4",
             dob: "10/12/2009",
             hometown: "Hà Nội",
@@ -590,9 +626,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/romawi.png",
           },
-          46: {
+          49: {
             name: "Đỗ Minh Tùng",
-            id: "D4-K69-VĐ-035",
+            id: "D4-K69-VĐ-049",
             class: "D4",
             dob: "09/09/2009",
             hometown: "Hà Nội",
@@ -602,9 +638,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/police.png",
           },
-          47: {
+          50: {
             name: "Nguyễn Thu Uyên",
-            id: "D4-K69-VĐ-047",
+            id: "D4-K69-VĐ-050",
             class: "D4",
             dob: "05/01/2009",
             hometown: "Hà Nội",
@@ -614,9 +650,9 @@
             excellent: "Xuất sắc",
             avatar: "img/cute/teacher.png",
           },
-          48: {
+          51: {
             name: "Đoàn Tường Vy",
-            id: "D4-K69-VĐ-048",
+            id: "D4-K69-VĐ-051",
             class: "D4",
             dob: "06/11/2009",
             hometown: "Hà Nội",
@@ -641,3 +677,4 @@
           });
         });
       });
+
